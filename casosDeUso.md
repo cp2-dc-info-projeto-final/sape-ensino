@@ -23,7 +23,7 @@
 **Pré-condições:** Nenhuma
 
 **Fluxo principal:**
-1. ALuno - Inserir os dados de cadastramento.
+1. Aluno - Inserir os dados de cadastramento.
 2. Aluno - Selecionar a opção de conta aluno.
 3. Sistema - Adicionar as informações no banco de dados.
    
