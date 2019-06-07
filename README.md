@@ -1,0 +1,30 @@
+# Sape-Ensino
+Projeto Final do Curso Técnico em Desenvolvimento de Sistemas do Colégio Pedro II – Campus Duque de Caxias – 2019
+
+## Integrantes:
+>+ Daniel Novaes Dias
+>+ Issak
+>+ Renan Castro
+>+ Pedro Hasselmann de Souza
+
+## Sumário:
+- [Proposta](#proposta)
+- [Requisitos](#requisitos)
+- [Casos de uso](#casos-de-uso)
+- [Modelagem](#modelagem)
+
+
+### Proposta:
+
+- [proposta.md](proposta.md)
+
+### Requisitos:
+- [entrevista.md](entrevista.md)
+- [entrevista.mp3](entrevista.mp3)
+- [requisitos.md](requisitos.md)
+
+### Casos de uso:
+- [casosDeUso.md](casosDeUso.md)
+
+### Modelagem
+- Diagrama de classes:
