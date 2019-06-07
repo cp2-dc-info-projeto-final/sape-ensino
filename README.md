@@ -19,8 +19,7 @@ Projeto Final do Curso Técnico em Desenvolvimento de Sistemas do Colégio Pedro
 - [proposta.md](proposta.md)
 
 ### Requisitos:
-- [entrevista.md](entrevista.md)
-- [entrevista.mp3](entrevista.mp3)
+
 - [requisitos.md](requisitos.md)
 
 ### Casos de uso:
