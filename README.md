@@ -3,7 +3,7 @@ Projeto Final do Curso Técnico em Desenvolvimento de Sistemas do Colégio Pedro
 
 ## Integrantes:
 >+ Daniel Novaes Dias
->+ Issak
+>+ Isaak
 >+ Renan Castro
 >+ Pedro Hasselmann de Souza
 
