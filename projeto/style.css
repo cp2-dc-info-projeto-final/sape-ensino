@@ -1,0 +1,140 @@
+/* CSS reset */
+*, *:before, *:after { 
+  margin:0;
+  padding:0;
+  font-family: Arial,sans-serif;
+}
+/* espaçamento da pagina*/
+body{
+  margin:5%;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* esconde as ancoras da tela */
+a.links{
+  display: none;
+}
+
+/* content que contem os formulários */
+.content{
+  width: 500px;
+  margin: 0px auto;
+  position: relative;   
+}
+
+/* formatando o cabeçalho dos formulários */
+h1{
+  font-size: 48px;
+  color: #0099ff;
+  padding: 10px 0;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+p{
+  margin-bottom:15px;
+}
+
+label{
+  color: #405c60;
+  position: relative;
+}
+
+/* Estilizando os textos de dentro dos input*/
+/* placeholder */
+::-webkit-input-placeholder  {
+  color: #bebcbc; 
+  font-style: italic;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder{
+  color: #bebcbc;
+  font-style: italic;
+} 
+input {
+  outline: none;
+}
+/* ESTILIZANDO OS INPUT */
+input:not([type="checkbox"]){
+  width: 95%;
+  margin-top: 4px;
+  padding: 10px;    
+  border: 1px solid #b2b2b2;
+
+  border-radius: 3px;
+  
+  box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+}
+
+/*estilo do botão submit */
+input[type="submit"]{
+  width: 100%;
+  cursor: pointer;  
+  background:#0099ff ;
+  padding: 8px 5px;
+  color: #fff;
+  font-size: 20px;  
+  border: 1px solid #fff;   
+  margin-bottom: 10px;  
+  text-shadow: 0 1px 1px #333;
+
+  border-radius: 5px;
+}
+input[type="submit"]:hover{
+  background: #4db8ff;
+}
+
+/* ESTILO DO BOTÃO PARA TROCAR DE FORMULÁRIO */
+.link{
+  position: absolute;
+  background: #e1eaeb;
+  color: #7f7c7c;
+  left: 0px;
+  height: 20px;
+  width: 440px;
+  padding: 17px 30px 20px 30px;
+  font-size: 16px;
+  text-align: right;
+  border-top: 1px solid #dbe5e8;
+
+  border-radius: 0 0  5px 5px;
+}
+.link a {
+  font-weight: bold;
+  background: #f7f8f1;
+  padding: 6px;
+  color: #0099ff;
+  margin-left: 10px;
+  border: 1px solid #7f7c7c;
+
+  border-radius: 4px;  
+
+  transition: all 0.4s  linear;
+}
+.link a:hover {
+  color: #4db8ff;
+  background: #f7f7f7;
+  border: 1px solid #4db8ff;
+}
+
+/* estilos para para ambos os formulários */
+#cadastro, 
+#login{
+  position: absolute;
+  top: 0px;
+  width: 88%;   
+  padding: 18px 6% 60px 6%;
+  margin: 0 0 35px 0;
+  background: rgb(247, 247, 247);
+  border: 1px solid rgba(147, 184, 189,0.8);
+  
+  border-radius: 5px;
+  
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
