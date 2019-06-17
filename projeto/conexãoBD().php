@@ -10,7 +10,7 @@ $banco = mysqli_select_db("bdname",$conexao);
 if (!$banco)
 die ("Erro de conexão com banco de dados, o seguinte erro ocorreu -> ".mysqli_error());
 
-return $conexão;
+return $conexao;
 }
 
 
