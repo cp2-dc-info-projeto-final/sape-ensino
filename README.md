@@ -2,10 +2,10 @@
 Projeto Final do Curso Técnico em Desenvolvimento de Sistemas do Colégio Pedro II – Campus Duque de Caxias – 2019
 
 ## Integrantes:
->+ Daniel Novaes Dias
->+ Isaak
->+ Renan Castro
->+ Pedro Hasselmann de Souza
+>+ Daniel Novaes Dias (Cadastro - Php)
+>+ Isaak dos Santos Nogueira (Cadastro - Sql)
+>+ Renan Castro (Cadastro - Sql)
+>+ Pedro Hasselmann de Souza (Cadastro - Php)
 
 ## Sumário:
 - [Proposta](#proposta)
