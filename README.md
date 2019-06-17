@@ -5,7 +5,7 @@ Projeto Final do Curso Técnico em Desenvolvimento de Sistemas do Colégio Pedro
 >+ Daniel Novaes Dias (Cadastro - Php)
 >+ Isaak dos Santos Nogueira (Cadastro - Sql)
 >+ Renan Castro (Cadastro - Sql)
->+ Pedro Hasselmann de Souza (Cadastro - Php)
+>+ Pedro Hasselmann de Souza (Cadastro - HMTL e CSS)
 
 ## Sumário:
 - [Proposta](#proposta)
