@@ -96,7 +96,7 @@ select{
 input[type="submit"]{
   width: 100%;
   cursor: pointer;  
-  background:#0099ff ;
+  background:#0099ff;
   padding: 8px 5px;
   color: #fff;
   font-size: 20px;  
@@ -122,7 +122,6 @@ input[type="submit"]:hover{
   font-size: 16px;
   text-align: right;
   border-top: 1px solid #dbe5e8;
-
   border-radius: 0 0  5px 5px;
 }
 .link a {

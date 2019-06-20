@@ -1,4 +1,4 @@
-use Cadastro;
+use cadastro;
 
 CREATE TABLE aluno
 (
