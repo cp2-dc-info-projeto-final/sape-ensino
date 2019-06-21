@@ -5,7 +5,7 @@ CREATE TABLE aluno
 nome VARCHAR (70),
 matricula VARCHAR (9) NOT NULL,
 email VARCHAR (50),
-senha VARCHAR (30),
+senha VARCHAR (60),
 PRIMARY KEY (matricula)
 );
 
