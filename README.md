@@ -25,7 +25,7 @@ Projeto Final do Curso Técnico em Desenvolvimento de Sistemas do Colégio Pedro
 
 ### Casos de uso:
 - [casosDeUso.md](casosDeUso.md)
-- ![diagramaDeCasosDeUso.png](documentação/diagramaDeCasosDeUso.png)
+- ![diagramaDeCasosDeUso.png](documentacao/diagramaDeCasosDeUso.png)
 
 ### Modelagem
-- ![diagramaDeClasses.png](documentação/diagramaDeClasses.png)
+- ![diagramaDeClasses.png](documentacao/diagramaDeClasses.png)
