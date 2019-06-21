@@ -1,5 +1,5 @@
 # Sape-Ensino
-> Sistema de Auxilio ao Professor e ao Estudante
+> Sistema de Auxilio ao Professor e ao Estudante -
 Projeto Final do Curso Técnico em Desenvolvimento de Sistemas do Colégio Pedro II – Campus Duque de Caxias – 2019
 
 ## Integrantes:
