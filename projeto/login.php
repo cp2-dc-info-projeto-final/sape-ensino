@@ -8,7 +8,7 @@ $senha = md5($_POST["senha"]);
 
 
 
-$query_login = "SELECT * FROM aluno WHERE matricula = ? and senha = ?";
+$query_login = "SELECT * FROM login WHERE matricula = ? and senha = ?";
 $stmt = $banco->prepare($query_login);
 $stmt->bind_param("ss", $matricula, $senha);
 $stmt->execute();

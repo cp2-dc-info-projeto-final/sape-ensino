@@ -1,20 +1,30 @@
 use cadastro;
 
-CREATE TABLE aluno
+
+DROP TABLE IF EXISTS login;
+CREATE TABLE login
 (
-nome VARCHAR (70),
-matricula VARCHAR (9) NOT NULL,
-email VARCHAR (50),
-senha VARCHAR (60),
-PRIMARY KEY (matricula)
+    id int not null AUTO_INCREMENT,
+    nome VARCHAR (70),
+    matricula VARCHAR(11) NOT NULL UNIQUE,
+    email VARCHAR (50),
+    senha VARCHAR (90),
+    cargo VARCHAR (20),
+    PRIMARY KEY (id)
 );
 
+DROP TABLE IF EXISTS aluno;
+CREATE TABLE aluno
+(
+    id int not null,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id) references login (id)
+);
+
+DROP TABLE IF EXISTS docente;
 CREATE TABLE docente
 (
-nome VARCHAR (70),
-matricula INT NOT NULL,
-email VARCHAR (50),
-senha VARCHAR (30),
-cargo VARCHAR (20),
-PRIMARY KEY (matricula)
+    id int not null,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id) references login (id)
 );
