@@ -23,6 +23,20 @@ $stmt->bind_param("sssss", $nome, $matricula, $email, $senha, $cargo);
 
 if($stmt->execute() == true){
     echo 'Cadastrado com sucesso';
+    // Inserir nas respectivas tabelas
+    if ($cargo != "Aluno") {
+        $ID = $banco->insert_id;
+        $query = "INSERT INTO docente(id) VALUES (?)";
+        $prep = $banco->prepare($query);
+        $prep->bind_param("i", $ID);
+        $prep->execute();
+    } else {
+        $ID = $banco->insert_id;
+        $query = "INSERT INTO aluno(id) VALUES (?)";
+        $prep = $banco->prepare($query);
+        $prep->bind_param("i", $ID);
+        $prep->execute();
+    }
     $banco->close();
 } else {
     echo "Erro ao se comunicar com o banco de dados, erro: ".mysqli_error($banco);
