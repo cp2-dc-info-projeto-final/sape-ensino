@@ -12,7 +12,7 @@ $cargo = $_POST["cargo"];
 if (empty($cargo)){
     $cargo = "Aluno";
 }
-$senha = md5($_POST["senha_cad"]); // Nescessario verificar se as duas senhas são iguais ||AINDA NÃO IMPLEMENTADO||.
+$senha = md5($_POST["senha_cad"]);
 $senha2 = md5($_POST["consenha_cad"]);
 
 // Inserir dados no banco de dados //
