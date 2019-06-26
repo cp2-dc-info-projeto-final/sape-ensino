@@ -19,13 +19,16 @@ $stmt->store_result();
 $stmt->bind_result($nome, $matricula, $senha, $cargo);
 $stmt->fetch();
 // Verificar o resultado
-if ($stmt->num_rows > 0){
-    echo 'Logado com sucesso!';
+if ($stmt->num_rows > 0){    
     $_SESSION['nome'] = $nome;
     $_SESSION['cargo'] = $cargo;
+    $nomeLow = strtoupper($nome);
+    echo "<h1 style='color:#0099ff; font-family: Arial,sans-serif; border: 1px solid #b2b2b2;'>Logado com sucesso</h1>";
+    echo "<h2 style='color:#0099ff; font-family: Arial,sans-serif; border: 1px solid #b2b2b2;'>Bem Vindo! $nomeLow </h2>";
+
     $banco->close();
     } else {
-    echo 'Falha no login, verifique os dados.';
+    echo "<h1 style='color:#0099ff; font-family: Arial,sans-serif; border: 1px solid #b2b2b2;'>Falha no login, verifique os dados</h1>";;
     $banco->close();
 }
 
