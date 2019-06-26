@@ -34,4 +34,5 @@ if ($stmt->num_rows > 0){
 
 $stmt->close();
 
+//header("Location: login.html"); << Quando houver uma pagina inicial, redirecionar para ela
 ?>
