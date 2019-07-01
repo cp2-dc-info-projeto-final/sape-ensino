@@ -159,7 +159,7 @@ input[type="submit"]:hover{
 /* estilos para para ambos os formulários */
 #cadastro, 
 #login{
-  position: relative center center;
+  position: relative;
   margin-top: 2%;
   width: 88%;
   padding: 18px 6% 0% 6%;
