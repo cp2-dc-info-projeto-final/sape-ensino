@@ -8,7 +8,7 @@ CREATE TABLE login
     nome VARCHAR (70),
     matricula VARCHAR(11) NOT NULL UNIQUE,
     email VARCHAR (50),
-    senha VARCHAR (90),
+    senha VARCHAR (255),
     cargo VARCHAR (20),
     PRIMARY KEY (id)
 );

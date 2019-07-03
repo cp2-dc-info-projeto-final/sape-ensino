@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <html lang="pt-br">
 
@@ -36,17 +40,34 @@
 	                <li class="nav-item">
 	                        <a class="nav-link" href="#">Contatos</a>
 	                </li>
-
+					
 	            </ul>
-
-	            <ul class="navbar-nav ml-auto">
-
-	            </ul>
-
+				<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="login.html">Login</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Cadastro
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							  <a class="dropdown-item" href="cadastro_aluno.html">Aluno</a>
+							  <a class="dropdown-item" href="cadastro_docente.html">Docente</a>
+							</div>
+						</li>
+					</ul>
 	        </div>
 	    </div>
     </nav>
-
+<?php
+if(isset($_SESSION)){
+	print_r($_SESSION);
+}
+		echo '<ul class="navbar-nav ml-auto">
+		<li class="nav-item">
+				<a class="nav-link" href="sair.php">Sair</a>
+		</li> </ul'
+?>
 
     <!-- Bootstrap.js and jquer.js -->
     <script src="js/jquery-3.4.1.min.js">
