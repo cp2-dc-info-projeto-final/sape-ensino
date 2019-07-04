@@ -2,55 +2,70 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Cadastro</title> 
-  <link rel="stylesheet" type="text/css" href="style-form.css" />
+  <title>Cadastro de Aluno</title> 
+
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+
 </head>
 <!-- FIM DO HEAD-->
 
-<body>
-  <div class="container" >
+<body style="
+background-image: url(images/back.png);
+background-attachment: fixed;
+background-repeat: no-repeat;
+margin: 0%;
+width:auto;
+height: 100%;">
 
-        <div class="content">   
-    
-        <!--FORMULÁRIO DE CADASTRO-->
-        <div id="cadastro">
-                <form method="post" action="funcphp/cadastro.php"> 
-                    <h1>Cadastro</h1> 
-                    
-                    <p> 
-                        <label for="nome_cad">Seu Nome</label>
-                        <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="Nome Completo" />
-                    </p>
-                    
-                    <p> 
-                        <label for="email_cad">Seu E-mail</label>
-                        <input id="email_cad" name="email_cad" required="required" type="email" placeholder="contato@dominio.com"/> 
-                    </p>
-                    
-                    <p> 
-                        <label for="matri_cad">Sua Matrícula</label>
-                        <input id="matri_cad" name="matri_cad" required="required" type="text" placeholder="M82397523"/> 
-                    </p>
+  <div class="container" method="post" action="phpfunc/login.php">
+    <div class="row">
+      <div class="col-12 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h1 class="card-title text-center">Cadastro</h1>
 
-                    <p> 
-                        <label for="senha_cad">Senha</label>
-                        <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 12345678"/>
-                    </p>
-                    <p> 
-                        <label for="consenha_cad">Confirmar Senha</label>
-                        <input id="consenha_cad" name="consenha_cad" required="required" type="password" placeholder="ex. 12345678"/>
-                    </p>
-                    
-                    <p> 
-                        <input type="submit" value="Cadastrar-se"/> 
-                    </p>
-                    
-                    <div class="link">  
-                        <p>Já tem conta?</p>
-                        <p> <a id="botao-link" href="login.html"> Ir para Login </a></p>
-                    </div>
-                </form>
+            <form class="form-signin" method="post" action="funcphp/cadastro.php">
+                <div class="form-label-group mb-3">
+                  <label for="nome_cad">Seu Nome</label>
+                  <input class="form-control" id="nome_cad" name="nome_cad" required="required" type="text" placeholder="Nome Completo"/>
+                </div>
+
+                <div class="form-label-group mb-3">
+                  <label for="email_cad">Seu E-mail</label>
+                  <input class="form-control" id="email_cad" name="email_cad" required="required" type="email" placeholder="ex. contato@dominio.com"/>
+                </div>
+                
+                <div class="form-label-group mb-3">
+                    <label for="matri_cad">Sua Matricula</label>
+                    <input class="form-control" id="matri_cad" name="matri_cad" required="required" type="text" placeholder="ex. m2397523"/>
+                </div>
+
+                <div class="form-label-group mb-3">
+                    <label for="senha_cad">Sua Senha</label>
+                    <input class="form-control" id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 12345678"/>
+                </div>
+
+                <div class="form-label-group mb-3">
+                    <label for="consenha_cad">Confirme Sua Senha</label>
+                    <input class="form-control" id="consenha_cad" name="consenha_cad" required="required" type="password" placeholder="ex. 12345678"/>
+                </div>
+            
+              <button class="btn btn-lg btn-primary btn-block" type="submit" value="Cadastrar-se">Logar-se</button>
+          </div>
+          <div class="card-body " style="background-color:#e6e6e6">
+            </form>
+            <p class="font-weight-bold text-center ">Já tem uma conta?</p>
+            <a class="text-decoration-none" href="login.html"><button class="btn btn-outline-secondary btn-block">Ir para o Login</button></a>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+    <script src="js/jquery-3.4.1.min.js" ></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

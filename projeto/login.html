@@ -6,48 +6,52 @@
 
   <!-- Meta -->
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" type="text/css" href="style-form.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 
 </head>
 <!-- FIM DO HEAD-->
 
-<body>
-    
-    <div class="container" >
-        
-        <div class="content">      
-        <!--FORMULÁRIO DE LOGIN-->
-        <div id="login">
-                <form method="post" action="phpfunc/login.php"> 
-                    <h1>Login</h1> 
-                    <p> 
-                        <label for="matricula">Sua Matrícula</label>
-                        <input id="matricula" name="matricula" required="required" type="text" placeholder="M12345678"/> 
-                    </p>
-                    
-                    <p> 
-                        <label for="senha">Sua senha</label>
-                        <input id="senha" name="senha" required="required" type="password" placeholder="ex. 12345678"/>
-                    </p>
-                    
-                
-                    <p> 
-                        <input type="submit" value="Logar" /> 
-                    </p>
-                    
-                    <div class="link">
-                        <p>
-                            Ainda não tem conta?
-                        </p>
-                        <p>
-                            <a id="botao-link" href="cadastro_aluno.html">Cadastre-se como aluno</a>
-                            ou
-                            <a id="botao-link" href="cadastro_docente.html">Cadastre-se como docente</a>
-                        </p>
-                    </div>
-                </form>
+<body style="
+background-image: url(images/back.png);
+background-attachment: fixed;
+background-repeat: no-repeat;
+margin: 0%;
+width:auto;
+height: 100%;">
+
+  <div class="container" method="post" action="phpfunc/login.php">
+    <div class="row">
+      <div class="col-12 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h1 class="card-title text-center">Login</h1>
+
+            <form class="form-signin">
+              <div class="form-label-group mb-3">
+                  <label for="matricula">Sua Matrícula</label>
+                  <input class="form-control" id="matricula" name="matricula" required="required" type="text" placeholder="M12345678"/>
+              </div>
+
+              <div class="form-label-group mb-3">
+                  <label for="senha">Sua Senha</label>
+                  <input class="form-control" id="senha" name="senha" required="required" type="password" placeholder="ex. 12345678"/>
+              </div>
+            
+              <button class="btn btn-lg btn-primary btn-block" type="submit" value="Logar">Logar-se</button>
+          </div>
+          <div class="card-body " style="background-color:#e6e6e6">
+            </form>
+            <p class="font-weight-bold text-center ">Ainda não se cadastrou?</p>
+            <a class="text-decoration-none" href="cadastro_docente.html"><button class="btn btn-outline-secondary col-5 mr-1 ml-3">Docente</button></a>
+            <a class="text-decoration-none" href="cadastro_aluno.html"><button class="btn btn-outline-secondary col-5 ml-3">Aluno</button></a>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+    <script src="js/jquery-3.4.1.min.js" ></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
