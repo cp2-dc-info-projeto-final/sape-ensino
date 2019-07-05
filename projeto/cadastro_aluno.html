@@ -10,6 +10,8 @@
 
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 
+  <script src="js/feather.min.js"></script>
+
 </head>
 <!-- FIM DO HEAD-->
 
@@ -31,28 +33,53 @@ height: 100%;">
             <form class="form-signin" method="post" action="funcphp/cadastro.php">
                 <div class="form-label-group mb-3">
                   <label for="nome_cad">Seu Nome</label>
-                  <input class="form-control" id="nome_cad" name="nome_cad" required="required" type="text" placeholder="Nome Completo"/>
+                  <div class="input-group">
+                    <div class="input-group-pretend">
+                      <span class="input-group-text"><i data-feather="user"></i></span>
+                    </div>
+                    <input class="form-control" id="nome_cad" name="nome_cad" required="required" type="text" placeholder="Nome Completo"/>
+                  </div>
                 </div>
 
                 <div class="form-label-group mb-3">
                   <label for="email_cad">Seu E-mail</label>
-                  <input class="form-control" id="email_cad" name="email_cad" required="required" type="email" placeholder="ex. contato@dominio.com"/>
+                  <div class="input-group">
+                    <div class="input-group-pretend">
+                      <span class="input-group-text"><i data-feather="mail"></i></span>
+                    </div>
+                    <input class="form-control" id="email_cad" name="email_cad" required="required" type="email" placeholder="ex. contato@dominio.com"/>
+                  </div>
                 </div>
                 
                 <div class="form-label-group mb-3">
                     <label for="matri_cad">Sua Matricula</label>
-                    <input class="form-control" id="matri_cad" name="matri_cad" required="required" type="text" placeholder="ex. m2397523"/>
+                    <div class="input-group">
+                      <div class="input-group-pretend">
+                        <span class="input-group-text"><i data-feather="file-text"></i></span>
+                      </div>
+                      <input class="form-control" id="matri_cad" name="matri_cad" required="required" type="text" placeholder="ex. m2397523"/>
+                    </div>
                 </div>
 
                 <div class="form-label-group mb-3">
                     <label for="senha_cad">Sua Senha</label>
+                    <div class="input-group">
+                      <div class="input-group-pretend">
+                        <span class="input-group-text"><i data-feather="key"></i></span>
+                      </div>
                     <input class="form-control" id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 12345678"/>
+                  </div>
                 </div>
 
                 <div class="form-label-group mb-3">
                     <label for="consenha_cad">Confirme Sua Senha</label>
-                    <input class="form-control" id="consenha_cad" name="consenha_cad" required="required" type="password" placeholder="ex. 12345678"/>
-                </div>
+                    <div class="input-group">
+                      <div class="input-group-pretend">
+                        <span class="input-group-text"><i data-feather="key"></i></span>
+                      </div>
+                      <input class="form-control" id="consenha_cad" name="consenha_cad" required="required" type="password" placeholder="ex. 12345678"/>
+                    </div>
+                  </div>
             
               <button class="btn btn-lg btn-primary btn-block" type="submit" value="Cadastrar-se">Cadastrar-se</button>
           </div>
@@ -67,5 +94,8 @@ height: 100%;">
   </div>
     <script src="js/jquery-3.4.1.min.js" ></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
 </body>
 </html>
