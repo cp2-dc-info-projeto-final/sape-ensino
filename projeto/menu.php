@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -57,9 +60,7 @@
 	</nav>
 	
 	
-	<?php
-	session_start();
-	?>
+
 
     <!-- Bootstrap.js and jquer.js -->
     <script src="js/jquery-3.4.1.min.js">

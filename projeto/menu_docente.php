@@ -1,7 +1,7 @@
 <?php
 session_start();
  if(empty($_SESSION)){
-	header("Location:../index.html");
+	header("Location: login.html");
 	exit();
  }
 ?>
@@ -47,30 +47,10 @@ session_start();
 					
 				</ul>	
 				<?php
-					if(!empty($_SESSION)){
-						echo '
-							<ul class="navbar-nav ml-auto">
-								<li class="nav-item">
-									<a class="nav-link" href="funcphp/sair.php"><button class="btn btn-outline-light">Sair</button></a>
-								</li>
-							</ul>'
-						;
-					}
+					include('funcphp/verificacargo.php');
 				?>
 			</div><!-- fim do collapse -->
 			
-			<?php
-				if(!empty($_SESSION)){
-					echo '
-						<div class="btn-group">
-							<button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown">Criação</button>
-							<div class="dropdown-menu dropdown-menu-left">
-								<button class="dropdown-item" type="button" data-toggle="modal" data-target="#ModalEscola">Cadastrar Escola</button>
-								<button class="dropdown-item" type="button" data-toggle="modal" data-target="#ModalTurma">Criar Turma</button>
-						</div>'
-					;
-				}
-			?>
 	    </div><!-- fim do conteudo da barra-->
 	</nav><!-- fim da barra de navegação-->
 
@@ -85,7 +65,7 @@ session_start();
 					</div>
 
 					<div class="modal-body"><!-- corpo do modal da escola -->
-						<form class="form-signin" method="post" action="funcphp/login.php">
+						<form class="form-signin" method="post" action="funcphp/cadastrarEscola.php">
 							<div class="form-label-group mb-3"> 
 								<label for="NomeEscola">Nome da Escola</label>
 								<div class="input-group">
@@ -101,14 +81,14 @@ session_start();
 									<div class="input-group-pretend">
 									<span class="input-group-text"><i data-feather="message-square"></i></span>
 									</div>
-								<textarea class="form-control" id="descescola" name="descescola" required="required" placeholder="Nome completo da Escola" rows="1"></textarea>
+								<textarea class="form-control" id="descescola" name="descescola" required="required" placeholder="ex. Nome completo da Escola" rows="1"></textarea>
 								</div>
 							</div>
 							<button class="btn btn-lg btn-primary btn-block" type="submit" value="CadastrarEscola">Cadastrar Escola</button>
 						</form>
 					</div><!--fim do corpo -->
 
-					<div class="modal-footer">
+					<div class="modal-footer"> 
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 					</div>
 				</div>
@@ -132,6 +112,17 @@ session_start();
 				</div>
 			</div>
 		</div><!-- fim do modal para criar uma turma -->
+		 
+		 <!-- Erros & Sucessos -->
+		 <?php
+		 	if(isset($_SESSION['system_message'])){
+				echo '<div class="alert alert-'.$_SESSION['alert_type'].'" role="alert">'
+					.$_SESSION['system_message'].'
+					  </div>';
+				unset($_SESSION['system_message']);
+				unset($_SESSION['alert_type']);
+			 }
+		 ?>
 
 		<nav arial-label="breadcrumb" class="mt-3"><!-- barra de diretório das paginas-->
 			<ol class="breadcrumb">
@@ -141,32 +132,11 @@ session_start();
 
 		<div class="container ml-5"><!-- centralizaçao do conteúdo-->
 
-			<div class="row ml-2"><!--posiciona os cards horizontalmente-->
-
-				<div class="card col-3 m-4"><!--card de escola-->
-					<div class="card-body">
-						<h3 class="card-tite"  style="white-space:nowrap;">Título da Escola</h3>
-						<h5 class="card-subtitle text-muted mb-2">Nome do Diretor</h5>
-						<p class="card-text text-muted text-justify">Descrição da escola que deve ser limitada a um número máximo de caracteres</p>
-						<a class="text-decoration-none" href=""><button class="btn btn-primary btn-block bt-2">Entrar</button></a>
-					</div>
-				</div><!-- fim do card de escola-->
-				<div class="card col-3 m-4">
-					<div class="card-body">
-						<h3 class="card-tite"  style="white-space:nowrap;">Título da Escola</h3>
-						<h5 class="card-subtitle text-muted mb-2">Nome do Diretor</h5>
-						<p class="card-text text-muted text-justify">Descrição da escola que deve ser limitada a um número máximo de caracteres</p>
-						<a class="text-decoration-none" href=""><button class="btn btn-primary btn-block bt-2">Entrar</button></a>
-					</div>
-				</div>
-				<div class="card col-3 m-4">
-					<div class="card-body">
-						<h3 class="card-tite"  style="white-space:nowrap;">Título da Escola</h3>
-						<h5 class="card-subtitle text-muted mb-2">Nome do Diretor</h5>
-						<p class="card-text text-muted text-justify">Descrição da escola que deve ser limitada a um número máximo de caracteres</p>
-						<a class="text-decoration-none" href=""><button class="btn btn-primary btn-block bt-2">Entrar</button></a>
-					</div>
-				</div>
+				<div class="row ml-2"><!--posiciona os cards horizontalmente-->
+					 <?php
+					 	include('funcphp/mostrarescolas.php');
+					 ?>
+				</div> 
 			</div><!-- fim do alinhamento horizontal dos cards-->
 		</div><!-- fim da centralização do conteúdo-->
 	</div><!-- fim do conteudo do site-->

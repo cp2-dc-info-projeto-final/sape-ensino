@@ -36,7 +36,8 @@ DROP TABLE IF EXISTS escolas;
 CREATE TABLE escolas
 (
     id int not null AUTO_INCREMENT,
-    nome varchar(100) not null, 
+    nome varchar(100) not null,
+    descricao varchar (300),
     PRIMARY KEY(id)
 );
 
