@@ -25,8 +25,12 @@ if ($stmt->num_rows > 0 && password_verify($senha, $hash)){
     $_SESSION['cargo'] = $cargo;
     $_SESSION['email'] = $email;
     $_SESSION['matricula'] = $matricula;
- 
+    
+    if ($cargo != "Aluno"){
+    header('Location: ../menu_docente.php');
+    } else {
     header('Location: ../menu.php');
+    }
     $banco->close();
   
     } else {
