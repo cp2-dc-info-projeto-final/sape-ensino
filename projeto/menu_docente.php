@@ -1,7 +1,7 @@
 <?php
 session_start();
  if(empty($_SESSION)){
-	header("Location: login.html");
+	header("Location: login.php");
 	exit();
  }
 ?>
@@ -115,13 +115,7 @@ session_start();
 		 
 		 <!-- Erros & Sucessos -->
 		 <?php
-		 	if(isset($_SESSION['system_message'])){
-				echo '<div class="alert alert-'.$_SESSION['alert_type'].'" role="alert">'
-					.$_SESSION['system_message'].'
-					  </div>';
-				unset($_SESSION['system_message']);
-				unset($_SESSION['alert_type']);
-			 }
+		 	include('funcphp/system_message.php');
 		 ?>
 
 		<nav arial-label="breadcrumb" class="mt-3"><!-- barra de diretório das paginas-->

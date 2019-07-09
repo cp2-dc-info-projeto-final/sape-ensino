@@ -43,15 +43,15 @@
 	            </ul>
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-						<a class="nav-link" href="login.html">Login</a>
+						<a class="nav-link" href="login.php">Login</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="menudropdownnavbar" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Cadastro
 						</a>
 					<div class="dropdown-menu" aria-labelledby="menudropdownnavbar">
-						<a class="dropdown-item" href="cadastro_aluno.html">Aluno</a>
-						<a class="dropdown-item" href="cadastro_docente.html">Docente</a>
+						<a class="dropdown-item" href="cadastro_aluno.php">Aluno</a>
+						<a class="dropdown-item" href="cadastro_docente.php">Docente</a>
 					</div>
 					</li>
 				</ul>

@@ -1,9 +1,17 @@
 <?php
+session_start();
+
 include_once('/conexaoBD.php');
 
 $banco = connect_BD();
 
-
+function c_header($c) { // Redirecionar de acordo com o cargo
+    if($c != "Aluno"){
+        header('Location: ../cadastro_docente.php');
+    } else{
+        header('Location: ../cadastro_aluno.php');
+    }
+}
 
 $nome = $banco->real_escape_string($_POST["nome_cad"]);
 $email = $banco->real_escape_string($_POST["email_cad"]);
@@ -12,11 +20,19 @@ $cargo = $_POST["cargo"];
 if (empty($cargo)){
     $cargo = "Aluno";
 }
+
 $senha = $_POST["senha_cad"];
 $senha2 =$_POST["consenha_cad"];
 
+// Validar senhas
+if($senha != $senha2){
+    $_SESSION['system_message'] = "As senhas não coincidem";
+    $_SESSION['alert_type'] = "danger";
+    c_header($cargo);
+    exit();
+}
+
 // Inserir dados no banco de dados //
-if ($senha === $senha2){
 $senha = password_hash($senha, PASSWORD_DEFAULT);
 $query_cadastro = "INSERT INTO login(nome, matricula, email, senha, cargo) VALUES (?,?,?,?,?)";
 $stmt = $banco->prepare($query_cadastro);
@@ -37,18 +53,17 @@ if($stmt->execute() == true){
         $prep->bind_param("i", $ID);
         $prep->execute();
     }
-    header('Location: ../login.html');
-    $banco->close();
+    $_SESSION['system_message'] = "Cadastro concluido com sucesso!";
+    $_SESSION['alert_type'] = "success";
+    header('Location: ../login.php');
+
 } else {
-    echo "Erro ao se comunicar com o banco de dados, erro: ".mysqli_error($banco);
-    $banco->close();
+    // Notificar Erro
+    $_SESSION['system_message'] = "Erro ao se comunicar com o banco de dados, erro: ".mysqli_error($banco);
+    $_SESSION['alert_type'] = "danger";
+    c_header($cargo);
 }
 
-}else {
-    if ($cargo != "Aluno"){
-    echo "<script type='text/javascript'>alert('As duas senhas não coincidem!');javascript:window.location='../cadastro_docente.html';</script>";
-    } else {
-    echo "<script type='text/javascript'>alert('As duas senhas não coincidem!');javascript:window.location='../cadastro_aluno.html';</script>";
-    }
-}
+$banco->close();
+exit();
 ?>

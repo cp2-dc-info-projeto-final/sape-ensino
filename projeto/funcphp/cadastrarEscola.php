@@ -10,34 +10,27 @@ if(!empty($_SESSION) && $_SESSION['cargo'] == 'Diretor'){
     $escnome = $banco->real_escape_string($_POST['nomeescola']);
     $escdesc = $banco->real_escape_string($_POST['descescola']);
     //query sql
-    $query = "INSERT INTO escolas (nome, descricao) VALUES (?, ?)";
+    $query = "INSERT INTO escolas (nome, descricao, diretor) VALUES (?, ?, ?)";
     $stmt = $banco->prepare($query);
-    $stmt->bind_param('ss', $escnome, $escdesc);
+    $stmt->bind_param('ssi', $escnome, $escdesc, $_SESSION['id']);
     if($stmt->execute() == true){
         //Sucesso
         $_SESSION['system_message'] = "Escola cadastrada com sucesso!";
         $_SESSION['alert_type'] = "success";
         header('Location: ../menu_docente.php');
-        exit();
     } else {
         //Erro
         $_SESSION['system_message'] = "Cadastro da escola falhou! Tente Novamente";
         $_SESSION['alert_type'] = "danger";
         header('Location: ../menu_docente.php');
-        exit();
     }
-
-
-
 
 } else {
     header('Location: ../menu_docente.php');
-    exit();
 }
 
-
-
-
+$banco->close();
+exit();
 
 
 

@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8" />
@@ -27,7 +31,7 @@ height: 100%;">
         <div class="card card-signin my-5">
           <div class="card-body">
             <h1 class="card-title text-center">Login</h1>
-
+            <?php include('funcphp/system_message.php'); ?>
             <form class="form-signin" method="post" action="funcphp/login.php">
               <div class="form-label-group mb-3"> 
                 <label for="matricula">Sua Matrícula</label>
@@ -52,8 +56,8 @@ height: 100%;">
           </div>
           <div class="card-body " style="background-color:#e6e6e6">
             <p class="font-weight-bold text-center ">Ainda não se cadastrou?</p>
-            <a class="text-decoration-none" href="cadastro_docente.html"><button class="btn btn-outline-secondary col-5 mr-1 ml-3">Docente</button></a>
-            <a class="text-decoration-none" href="cadastro_aluno.html"><button class="btn btn-outline-secondary col-5 ml-3">Aluno</button></a>
+            <a class="text-decoration-none" href="cadastro_docente.php"><button class="btn btn-outline-secondary col-5 mr-1 ml-3">Docente</button></a>
+            <a class="text-decoration-none" href="cadastro_aluno.php"><button class="btn btn-outline-secondary col-5 ml-3">Aluno</button></a>
           </div>
         </div>
       </div>

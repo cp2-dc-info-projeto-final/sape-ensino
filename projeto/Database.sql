@@ -38,7 +38,9 @@ CREATE TABLE escolas
     id int not null AUTO_INCREMENT,
     nome varchar(100) not null,
     descricao varchar (300),
-    PRIMARY KEY(id)
+    diretor int not null,
+    PRIMARY KEY(id),
+    FOREIGN KEY(diretor) references docente(id)
 );
 
 DROP TABLE IF EXISTS turmas;
