@@ -20,5 +20,4 @@
     }
    
     $banco->close();
-    exit();
 ?>
