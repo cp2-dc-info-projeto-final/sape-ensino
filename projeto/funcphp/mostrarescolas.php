@@ -2,7 +2,7 @@
     require_once('conexaoBD.php');
     // 'Beta':  alterações nescessarias.
     $banco = connect_BD();
-    $query = "SELECT nome, descricao, diretor from escolas";
+    $query = "select escolas.nome as enome, escolas.descricao, login.nome as lnome from escolas left join login on escolas.diretor = login.id";
     $stmt = $banco->prepare($query);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -11,8 +11,8 @@
     while($row = $result->fetch_assoc()){
     echo '<div class="card col-3 m-4">';
             echo '<div class="card-body">
-						<h3 class="card-tite"  style="white-space:nowrap;">'.$row['nome'].'</h3>
-						<h5 class="card-subtitle text-muted mb-2">'.$row['diretor'].'</h5>
+						<h3 class="card-tite"  style="white-space:nowrap;">'.$row['enome'].'</h3>
+						<h5 class="card-subtitle text-muted mb-2">'.$row['lnome'].'</h5>
 						<p class="card-text text-muted text-justify">'.$row['descricao'].'</p>
 						<a class="text-decoration-none" href=""><button class="btn btn-primary btn-block bt-2">Entrar</button></a>
                 </div>'; 
@@ -20,4 +20,5 @@
     }
    
     $banco->close();
+
 ?>
