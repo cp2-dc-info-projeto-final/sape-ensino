@@ -151,13 +151,12 @@ session_start();
 		</nav><!-- fim da barra de diretório-->
 
 		<div class="container ml-5"><!-- centralizaçao do conteúdo-->
-
-				<div class="row ml-2"><!--posiciona os cards horizontalmente-->
-					 <?php
-					 	include('funcphp/mostrarescolas.php');
-					 ?>
-				</div> 
-			</div><!-- fim do alinhamento horizontal dos cards-->
+                <div class="row ml-2"><!--posiciona os cards horizontalmente-->
+                
+                    <!-- Aqui fica o código de PHP para adicionar as turmas-->
+                     
+                </div> 
+			</div><!-- fim do alinhamento horizontal dos cards -->
 		</div><!-- fim da centralização do conteúdo-->
 	</div><!-- fim do conteudo do site-->
 	
