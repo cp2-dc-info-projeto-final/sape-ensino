@@ -104,7 +104,7 @@ session_start();
 					</div>
 
 					<div class="modal-body"><!-- corpo do modal da escola -->
-						<form class="form-signin">
+						<form class="form-signin" method="post" action="funcphp/cadastroturma.php">
 							<div class="form-label-group mb-3"> 
 								<label for="NomeTurma">Nome da Turma</label>
 								<div class="input-group">
@@ -121,10 +121,13 @@ session_start();
                           				<span class="input-group-text"><i data-feather="briefcase"></i></span>
                         			</div>
                           			<select class="custom-select" id="escola-turma" name="escola-turma" required="required" placeholder="Selecione uma opção...">
-                            			<option disable selected hidden>Selecione uma opção...</option>
-                            			<option value=" "></option>
-                            			<option value=" "></option>
-                            			<option value=" "></option>
+										<option disable selected hidden>Selecione uma opção...</option>
+										<?php 
+										include('funcphp/selectescolas.php');
+                            			//<option value=" "></option>
+                            			//<option value=" "></option>
+										//<option value=" "></option>
+										?>
 									</select>
                     			</div>
                 			</div>

@@ -146,14 +146,16 @@ session_start();
 
 		<nav arial-label="breadcrumb" class="mt-3"><!-- barra de diretório das paginas-->
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item">Home</li>
+				<li class="breadcrumb-item">Home /</li>
 			</ol>
 		</nav><!-- fim da barra de diretório-->
 
 		<div class="container ml-5"><!-- centralizaçao do conteúdo-->
                 <div class="row ml-2"><!--posiciona os cards horizontalmente-->
                 
-                    <!-- Aqui fica o código de PHP para adicionar as turmas-->
+				   <?php
+				    include('funcphp/mostrarturmas.php');
+				   ?> <!-- Aqui fica o código de PHP para adicionar as turmas-->
                      
                 </div> 
 			</div><!-- fim do alinhamento horizontal dos cards -->
