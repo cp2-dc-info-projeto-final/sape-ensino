@@ -1,5 +1,5 @@
 <?php
-    require_once('conexaoBD.php');
+    require_once('../Control/conexaoBD.php');
     // 'Beta':  alterações nescessarias.
     $banco = connect_BD();
     $query = "SELECT escolas.id as eid, escolas.nome as enome, escolas.descricao, login.nome as lnome from escolas
@@ -16,7 +16,7 @@
 						<h3 class="card-tite"  style="white-space:nowrap;">'.$row['enome'].'</h3>
 						<h5 class="card-subtitle text-muted mb-2">'.$row['lnome'].'</h5>
 						<p class="card-text text-muted text-justify">'.$row['descricao'].'</p>
-						<a class="text-decoration-none" href="menu_docente_turmas.php?escolaid='.$row['eid'].'"><button class="btn btn-primary btn-block bt-2">Entrar</button></a>
+						<a class="text-decoration-none" href="../Model/menu_docente_turmas.php?escolaid='.$row['eid'].'"><button class="btn btn-primary btn-block bt-2">Entrar</button></a>
                 </div>'; 
     echo '</div>';
     }

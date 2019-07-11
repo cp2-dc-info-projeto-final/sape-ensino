@@ -7,9 +7,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap.css -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
@@ -41,7 +41,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="login.html">Login</a>
+                        <a class="nav-link" href="login.php">Login</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="menudropdownnavbar" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -49,8 +49,8 @@
                             Cadastro
                         </a>
                         <div class="dropdown-menu" aria-labelledby="menudropdownnavbar">
-                            <a class="dropdown-item" href="cadastro_aluno.html">Aluno</a>
-                            <a class="dropdown-item" href="cadastro_docente.html">Docente</a>
+                            <a class="dropdown-item" href="cadastro_aluno.php">Aluno</a>
+                            <a class="dropdown-item" href="cadastro_docente.php">Docente</a>
                         </div>
                     </li>
                 </ul>
@@ -60,11 +60,11 @@
 
     <?php
         session_start();
-        ?>
+    ?>
 <div class="container">
         <div class="container">
         <div class="mt-1 mb-1">
-                <img src="http://placehold.it/223x170" alt=""/>
+                <img src="http://placehold.it/223x170" alt="Perfil_Img"/>
             </div>
         </div>
     <div class="row">
@@ -81,9 +81,9 @@
             </div>
         </div>
     <!-- Bootstrap.js and jquer.js -->
-    <script src="js/jquery-3.4.1.min.js">
+    <script src="../js/jquery-3.4.1.min.js">
     </script>
-    <script src="js/bootstrap.min.js">
+    <script src="../js/bootstrap.min.js">
     </script>
 
 </body>

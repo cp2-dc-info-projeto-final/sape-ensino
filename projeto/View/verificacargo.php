@@ -3,7 +3,7 @@ if(!empty($_SESSION)){
     echo '
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="funcphp/sair.php"><button class="btn btn-outline-light">Sair</button></a>
+                <a class="nav-link" href="../Control/sair.php"><button class="btn btn-outline-light">Sair</button></a>
             </li>
         </ul>';
     switch($_SESSION['cargo']){

@@ -1,5 +1,5 @@
 <?php
-    require_once('conexaoBD.php');
+    require_once('../Control/conexaoBD.php');
 
     $banco = connect_BD();
     $idescola = $_GET['escolaid'];

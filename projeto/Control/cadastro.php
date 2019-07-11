@@ -7,9 +7,9 @@ $banco = connect_BD();
 
 function c_header($c) { // Redirecionar de acordo com o cargo
     if($c != "Aluno"){
-        header('Location: ../cadastro_docente.php');
+        header('Location: ../Model/cadastro_docente.php');
     } else{
-        header('Location: ../cadastro_aluno.php');
+        header('Location: ../Model/cadastro_aluno.php');
     }
 }
 
@@ -55,7 +55,7 @@ if($stmt->execute() == true){
     }
     $_SESSION['system_message'] = "Cadastro concluido com sucesso!";
     $_SESSION['alert_type'] = "success";
-    header('Location: ../login.php');
+    header('Location: ../Model/login.php');
 
 } else {
     // Notificar Erro

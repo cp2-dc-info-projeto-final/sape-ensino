@@ -17,16 +17,16 @@ if(!empty($_SESSION) && $_SESSION['cargo'] == 'Diretor'){
         //Sucesso
         $_SESSION['system_message'] = "Escola cadastrada com sucesso!";
         $_SESSION['alert_type'] = "success";
-        header('Location: ../menu_docente.php');
+        header('Location: ../Model/menu_docente.php');
     } else {
         //Erro
         $_SESSION['system_message'] = "Cadastro da escola falhou! Tente Novamente";
         $_SESSION['alert_type'] = "danger";
-        header('Location: ../menu_docente.php');
+        header('Location: ../Model/menu_docente.php');
     }
 
 } else {
-    header('Location: ../menu_docente.php');
+    header('Location: ../Model/menu_docente.php');
 }
 
 $banco->close();
