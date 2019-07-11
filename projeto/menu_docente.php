@@ -33,7 +33,7 @@ session_start();
 	            <ul class="navbar-nav mr-auto ml-3">
 
 	                <li class="nav-item">
-	                    <a class="nav-link" href="#">Início</a>
+	                    <a class="nav-link" href="menu_docente.php">Início</a>
 	                </li>
 	                <li class="nav-item">
 	                        <a class="nav-link" href="#">Notificações</a>
@@ -81,7 +81,7 @@ session_start();
 									<div class="input-group-pretend">
 									<span class="input-group-text"><i data-feather="message-square"></i></span>
 									</div>
-								<textarea class="form-control" maxlength=38 id="descescola" name="descescola" required="required" placeholder="ex. Nome completo da Escola" rows="1"></textarea>
+								<input class="form-control" maxlength=38 id="descescola" name="descescola" required="required" placeholder="ex. Nome completo da Escola"/>
 								</div>
 							</div>
 							<button class="btn btn-lg btn-primary btn-block" type="submit" value="CadastrarEscola">Cadastrar Escola</button>
@@ -103,7 +103,7 @@ session_start();
 						<h5 class="modal-title">Cadastro da Turma</h5>
 					</div>
 
-					<div class="modal-body"><!-- corpo do modal da escola -->
+					<div class="modal-body"><!-- corpo do modal da turma -->
 						<form class="form-signin" method="post" action="funcphp/cadastroturma.php">
 							<div class="form-label-group mb-3"> 
 								<label for="NomeTurma">Nome da Turma</label>
@@ -149,13 +149,13 @@ session_start();
 
 		<nav arial-label="breadcrumb" class="mt-3"><!-- barra de diretório das paginas-->
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item">Home</li>
+				<li class="breadcrumb-item active">Home</li>
 			</ol>
 		</nav><!-- fim da barra de diretório-->
 
-		<div class="container ml-5"><!-- centralizaçao do conteúdo-->
+		<div class="container ml-sm-2 ml-lg-4 ml-xl-5"><!-- centralizaçao do conteúdo-->
 
-				<div class="row ml-2"><!--posiciona os cards horizontalmente-->
+				<div class="row ml-md-2"><!--posiciona os cards horizontalmente-->
 					 <?php
 					 	include('funcphp/mostrarescolas.php');
 					 ?>

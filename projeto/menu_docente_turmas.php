@@ -33,7 +33,7 @@ session_start();
 	            <ul class="navbar-nav mr-auto ml-3">
 
 	                <li class="nav-item">
-	                    <a class="nav-link" href="#">Início</a>
+	                    <a class="nav-link" href="menu_docente.php">Início</a>
 	                </li>
 	                <li class="nav-item">
 	                        <a class="nav-link" href="#">Notificações</a>
@@ -146,12 +146,13 @@ session_start();
 
 		<nav arial-label="breadcrumb" class="mt-3"><!-- barra de diretório das paginas-->
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item">Home /</li>
+				<li class="breadcrumb-item"><a href="menu_docente.php">Home</a></li>
+				<li class="breadcrumb-item active">Nome da Escola</li>
 			</ol>
 		</nav><!-- fim da barra de diretório-->
 
-		<div class="container ml-5"><!-- centralizaçao do conteúdo-->
-                <div class="row ml-2"><!--posiciona os cards horizontalmente-->
+		<div class="container ml-sm-2 ml-lg-4 ml-xl-5"><!-- centralizaçao do conteúdo-->
+                <div class="row ml-md-2"><!--posiciona os cards horizontalmente-->
                 
 				   <?php
 				    include('funcphp/mostrarturmas.php');
