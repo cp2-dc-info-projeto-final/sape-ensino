@@ -153,10 +153,12 @@ session_start();
 		 	include('funcphp/system_message.php');
 		 ?>
 
+<<<<<<< HEAD
 		<div class="row">
 			<nav arial-label="breadcrumb" class="mt-3 mr-3 ml-3 col-8"><!-- barra de diretório das paginas-->
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item active">Home</li>
+					<?php $escolanome = $_GET['escolanome']; echo '<li class="breadcrumb-item active">'.$escolanome.'</li>'; ?>
 				</ol>
 			</nav><!-- fim da barra de diretório-->
  			<button class="btn btn-outline-danger col-3 mt-3 mb-3" type="button" data-toggle="modal" data-target="#apagarescola">Apagar escola</button>
@@ -200,6 +202,14 @@ session_start();
 
 
 
+=======
+		<nav arial-label="breadcrumb" class="mt-3"><!-- barra de diretório das paginas-->
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="menu_docente.php">Home</a></li>
+				<?php $escolanome = $_GET['escolanome']; echo '<li class="breadcrumb-item active">'.$escolanome.'</li>'; ?>
+			</ol>
+		</nav><!-- fim da barra de diretório-->
+>>>>>>> 83ee18b8b5a69eeba3987c5c43ad0d466562eb5d
 
 		<div class="container ml-sm-2 ml-lg-4 ml-xl-5"><!-- centralizaçao do conteúdo-->
                 <div class="row ml-md-2"><!--posiciona os cards horizontalmente-->
