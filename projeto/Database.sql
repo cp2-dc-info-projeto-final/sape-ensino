@@ -38,6 +38,7 @@ CREATE TABLE escolas
     id int not null AUTO_INCREMENT,
     nome varchar(100) not null,
     descricao varchar (300),
+    senha varchar(200) not null,
     diretor int not null,
     PRIMARY KEY(id),
     FOREIGN KEY(diretor) references docente(id)

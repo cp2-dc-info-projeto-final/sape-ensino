@@ -28,7 +28,7 @@ session_start();
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary pt-0 pb-0 mb-4">
     	<div class="container">
 	        <a class="navbar-brand h1 mb-0" href="#">Sape Ensino</a>
-	        <button class="navbar-toggler ml-auto mr-2" data-toggle="collapse" data-target="#collapsenavbar" href="#collapsenavbar" type="button" aria-expanded="false" aria-controls="collapsenavbar">Menu</button>
+	        <button class="navbar-toggler ml-auto mr-2" data-toggle="collapse" data-target="#collapsenavbar" href="#collapsenavbar" type="button" aria-expanded="false" aria-controls="collapsenavbar"><i data-feather="menu"></i></button>
 	        <div class="collapse navbar-collapse" id="collapsenavbar">
 	            <ul class="navbar-nav mr-auto ml-3">
 
@@ -146,13 +146,11 @@ session_start();
 		 <?php
 		 	include('funcphp/system_message.php');
 		 ?>
-
 		<nav arial-label="breadcrumb" class="mt-3"><!-- barra de diretório das paginas-->
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item active">Home</li>
 			</ol>
 		</nav><!-- fim da barra de diretório-->
-
 		<div class="container ml-sm-2 ml-lg-4 ml-xl-5"><!-- centralizaçao do conteúdo-->
 
 				<div class="row ml-md-2"><!--posiciona os cards horizontalmente-->

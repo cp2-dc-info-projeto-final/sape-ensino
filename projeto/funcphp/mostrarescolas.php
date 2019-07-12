@@ -16,7 +16,7 @@
               <div class="card-body">
                 <h3 class="card-title"  style="white-space:nowrap;">'.$row['enome'].'</h3>
                 <h5 class="card-subtitle text-muted mb-2">'.$row['lnome'].'</h5>
-                <p class="card-text text-muted text-justify">'.$row['descricao'].'</p>
+                <p class="card-text">'.$row['descricao'].'</p>
               </div>
               <div class="card-footer bg-white">
                 <a class="text-decoration-none" href="menu_docente_turmas.php?escolaid='.$row['eid'].'"><button class="btn btn-primary btn-block">Entrar</button></a>
