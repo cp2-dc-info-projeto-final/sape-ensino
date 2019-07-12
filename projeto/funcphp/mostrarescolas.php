@@ -8,8 +8,7 @@
     $stmt->bind_param('i', $_SESSION['id']);
     $stmt->execute();
     $result = $stmt->get_result();
- 
-    
+
     while($row = $result->fetch_assoc()){
     echo '<div class="card mb-3 col-12 col-sm-5 m-sm-3 col-lg-3 m-lg-4">';
             echo '
@@ -19,9 +18,13 @@
                 <p class="card-text text-muted text-justify">'.$row['descricao'].'</p>
               </div>
               <div class="card-footer bg-white">
-                <a class="text-decoration-none" href="menu_docente_turmas.php?escolaid='.$row['eid'].'"><button class="btn btn-primary btn-block">Entrar</button></a>
+                <a class="text-decoration-none" href="menu_docente_turmas.php?&escolanome='.$row['enome'].'
+                "><button class="btn btn-primary btn-block">Entrar</button></a>
               </div>'; 
     echo '</div>';
+
+    $_SESSION['currentEscola'] = $row['eid'];
+
     }
    
     $banco->close();

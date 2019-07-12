@@ -147,7 +147,7 @@ session_start();
 		<nav arial-label="breadcrumb" class="mt-3"><!-- barra de diretório das paginas-->
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="menu_docente.php">Home</a></li>
-				<li class="breadcrumb-item active">Nome da Escola</li>
+				<?php $escolanome = $_GET['escolanome']; echo '<li class="breadcrumb-item active">'.$escolanome.'</li>'; ?>
 			</ol>
 		</nav><!-- fim da barra de diretório-->
 

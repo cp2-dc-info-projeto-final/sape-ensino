@@ -2,7 +2,7 @@
     require_once('conexaoBD.php');
 
     $banco = connect_BD();
-    $idescola = $_GET['escolaid'];
+    $idescola = $_SESSION['currentEscola'];
     $query = "SELECT id, nome from turmas WHERE escola_id = ?";
     $stmt = $banco->prepare($query);
     $stmt->bind_param('i', $idescola);
