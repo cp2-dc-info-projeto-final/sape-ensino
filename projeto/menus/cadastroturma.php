@@ -2,7 +2,7 @@
 
     session_start();
 
-    require_once('conexaoBD.php');
+    require_once('../funcphp/conexaoBD.php');
 
     if(!empty($_SESSION) && $_SESSION['cargo'] == "Diretor"){
     $banco = connect_BD();
@@ -15,14 +15,14 @@
     if($stmt->execute()){
         $_SESSION['system_message'] = "Turma criada com sucesso!";
         $_SESSION['alert_type'] = "success";
-        header('Location: ../menu_docente.php');
+        header('Location: menu_docente.php');
     } else {
         $_SESSION['system_message'] = "Falha ao criar turma! Tente Novamente";
         $_SESSION['alert_type'] = "danger";
-        header('Location: ../menu_docente.php');
+        header('Location: menu_docente.php');
     }
 } else {  
-    header('Location: ../menu_docente.php'); // Caso não-logado ou não diretor seja redirecionado para página de 'prof/user'. 
+    header('Location: menu_docente.php'); // Caso não-logado ou não diretor seja redirecionado para página de 'prof/user'. 
 }
 
 

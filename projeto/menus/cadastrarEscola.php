@@ -2,7 +2,7 @@
 session_start();
 
 if(!empty($_SESSION) && $_SESSION['cargo'] == 'Diretor'){
-    require_once('conexaoBD.php');
+    require_once('../funcphp/conexaoBD.php');
     
     $banco = connect_BD();
 
@@ -20,16 +20,16 @@ if(!empty($_SESSION) && $_SESSION['cargo'] == 'Diretor'){
         //Sucesso
         $_SESSION['system_message'] = "Escola cadastrada com sucesso!";
         $_SESSION['alert_type'] = "success";
-        header('Location: ../menu_docente.php');
+        header('Location: menu_include.php');
     } else {
         //Erro
         $_SESSION['system_message'] = "Cadastro da escola falhou! Tente Novamente";
         $_SESSION['alert_type'] = "danger";
-        header('Location: ../menu_docente.php');
+        header('Location: menu_include.php');
     }
 
 } else {
-    header('Location: ../menu_docente.php');
+    header('Location: menu_include.php');
 }
 
 $banco->close();
