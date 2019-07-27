@@ -2,7 +2,14 @@
 			<nav arial-label="breadcrumb" class="mt-3 mr-3 ml-3 col-8"><!-- barra de diretório das paginas-->
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="menu_include.php">Home</a></li>
-					<?php $escolanome = $_GET['escolanome']; echo '<li class="breadcrumb-item active">'.$escolanome.'</li>'; ?>
+					<?php 
+					if(isset($_GET['escolanome'])){
+						$escolanome = $_GET['escolanome'];
+						echo '<li class="breadcrumb-item active">'.$escolanome.'</li>'; 
+					} else{
+						echo '<li class="breadcrumb-item active">Undefined</li>';
+					}
+					?>
 				</ol>
 			</nav><!-- fim da barra de diretório-->
  			<button class="btn btn-outline-danger col-3 mt-3 mb-3" type="button" data-toggle="modal" data-target="#apagarescola">Apagar escola</button>
@@ -46,7 +53,9 @@
 						require_once('../funcphp/conexaoBD.php');
 					
 						$banco = connect_BD();
-						$idescola = $_GET['eid'];
+						if(isset($_GET['eid'])){
+							$idescola = $_GET['eid'];
+						}
 						$query = "SELECT id, nome from turmas WHERE escola_id = ?";
 						$stmt = $banco->prepare($query);
 						$stmt->bind_param('i', $idescola);

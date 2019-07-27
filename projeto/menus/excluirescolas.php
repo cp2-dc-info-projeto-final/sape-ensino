@@ -11,8 +11,13 @@
     // Variaveis 
     $id = $_GET['eid'];
     $senha = $_POST['senhae'];
-
-    $query = "DELETE FROM escolas WHERE id = ? and senha = ?"; // Query
+    /////////////////APAGAR TURMAS DENTRO DA ESCOLA//////////////////////
+    $qery = "DELETE FROM turmas WHERE escola_id = ?";
+    $sttmt = $banco->prepare($qery);
+    $sttmt->bind_param('i', $id);
+    $sttmt->execute();
+    //////////////////////////APAGAR A ESCOLA/////////////////////////
+    $query = "DELETE FROM escolas WHERE id = ? and senha = ?"; // Query para apagar escola.
     $stmt = $banco->prepare($query);  //  ------------
     $stmt->bind_param('is', $id, md5($senha)); // -------------
 
@@ -29,6 +34,8 @@
         $_SESSION['alert_type'] = "danger";
         header('Location: menu_include.php');
     }
+
+
 
 
     $banco->close();

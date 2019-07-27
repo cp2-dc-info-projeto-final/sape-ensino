@@ -116,7 +116,7 @@ if(empty($_SESSION)){
 					</div>
 
 					<div class="modal-body"><!-- corpo do modal da escola -->
-						<form class="form-signin">
+						<form class="form-signin" method="post" action="cadastroturma.php">
 							<div class="form-label-group mb-3"> 
 								<label for="NomeTurma">Nome da Turma</label>
 								<div class="input-group">
