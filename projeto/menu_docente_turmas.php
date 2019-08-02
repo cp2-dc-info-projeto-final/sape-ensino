@@ -1,11 +1,9 @@
 <?php
 session_start();
-
-if(empty($_SESSION)){
-   header("Location: ../login/login.php");
-   exit();
-}
-
+ if(empty($_SESSION)){
+	header("Location: login.php");
+	exit();
+ }
 ?>
 
 <!doctype html>
@@ -17,11 +15,11 @@ if(empty($_SESSION)){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap.css -->
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
 
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="css/style.css">
 	
-	<script src="../js/feather.min.js"></script>
+	<script src="js/feather.min.js"></script>
 
 </head>
 
@@ -30,12 +28,12 @@ if(empty($_SESSION)){
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary pt-0 pb-0 mb-4">
     	<div class="container">
 	        <a class="navbar-brand h1 mb-0" href="#">Sape Ensino</a>
-	        <button class="navbar-toggler ml-auto mr-2" data-toggle="collapse" data-target="#collapsenavbar" href="#collapsenavbar" type="button" aria-expanded="false" aria-controls="collapsenavbar"><i data-feather="menu"></i></button>
+	        <button class="navbar-toggler ml-auto mr-2" data-toggle="collapse" data-target="#collapsenavbar" href="#collapsenavbar" type="button" aria-expanded="false" aria-controls="collapsenavbar">Menu</button>
 	        <div class="collapse navbar-collapse" id="collapsenavbar">
 	            <ul class="navbar-nav mr-auto ml-3">
 
 	                <li class="nav-item">
-	                    <a class="nav-link" href="menu_include.php">Início</a>
+	                    <a class="nav-link" href="menu_docente.php">Início</a>
 	                </li>
 	                <li class="nav-item">
 	                        <a class="nav-link" href="#">Notificações</a>
@@ -49,56 +47,16 @@ if(empty($_SESSION)){
 					
 				</ul>	
 				<?php
-					include('verificacargo.php');
+					include('funcphp/verificacargo.php');
 				?>
 			</div><!-- fim do collapse -->
 			
 	    </div><!-- fim do conteudo da barra-->
-    </nav><!-- fim da barra de navegação-->
-    
-    
-    <div class="container boarder"> <!-- Contéudo dá Pagina -->
+	</nav><!-- fim da barra de navegação-->
 
-
-
-
-		<!-- Modal para entrar em uma escola -->
-		<div class="modal fade" id="ModalEntrarEscolaAluno" tabindex="-1" role="dialog">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title">Entrar na Escola</h5>
-					</div>
-
-					<div class="modal-body"><!-- corpo do modal -->
-						<form class="form-signin" method="post" action="entrarTurma.php">
-							<div class="form-label-group mb-3"> 
-								<label for="CodEscola">Código da Escola</label>
-								<div class="input-group">
-									<div class="input-group-pretend">
-										<span class="input-group-text"><i data-feather="key"></i></span>
-									</div>
-									<input class="form-control" maxlength=6 id="EntrarEscola" name="EntrarEscola" required="required" type="password" placeholder="EX. 123456"/>
-								</div>
-							</div>    
-							<button class="btn btn-lg btn-primary btn-block" type="submit" value="EntrarEscola">Entrar</button>
-						</form>
-					</div><!--fim do corpo -->
-					<div class="modal-footer"> 
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-					</div>
-				</div>
-			</div>
-		</div><!-- fim do modal para a escola -->
-
-
-
-
-
-
-
-
-    	<!-- Modal para Criar uma escola -->
+	<div class="container border"> <!--conteudo do site-->
+				
+		<!-- Modal para Criar uma escola -->
 		<div class="modal fade" id="ModalEscola" tabindex="-1" role="dialog">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
@@ -107,7 +65,7 @@ if(empty($_SESSION)){
 					</div>
 
 					<div class="modal-body"><!-- corpo do modal da escola -->
-						<form class="form-signin" method="post" action="cadastrarEscola.php">
+						<form class="form-signin" method="post" action="funcphp/cadastrarEscola.php">
 							<div class="form-label-group mb-3"> 
 								<label for="NomeEscola">Nome da Escola</label>
 								<div class="input-group">
@@ -124,15 +82,6 @@ if(empty($_SESSION)){
 									<span class="input-group-text"><i data-feather="message-square"></i></span>
 									</div>
 								<textarea class="form-control" maxlength=38 id="descescola" name="descescola" required="required" placeholder="ex. Nome completo da Escola" rows="1"></textarea>
-								</div>
-							</div>
-							<div class="form-label-group mb-3"> 
-								<label for="">Senha da Escola</label>
-								<div class="input-group">
-									<div class="input-group-pretend">
-										<span class="input-group-text"><i data-feather="alert-circle"></i></span>
-									</div>
-									<input class="form-control" id="senhaescola" name="senhaescola" required="required" type="password" placeholder="EX. 12345678"/>
 								</div>
 							</div>
 							<button class="btn btn-lg btn-primary btn-block" type="submit" value="CadastrarEscola">Cadastrar Escola</button>
@@ -155,7 +104,7 @@ if(empty($_SESSION)){
 					</div>
 
 					<div class="modal-body"><!-- corpo do modal da escola -->
-						<form class="form-signin" method="post" action="cadastroturma.php">
+						<form class="form-signin">
 							<div class="form-label-group mb-3"> 
 								<label for="NomeTurma">Nome da Turma</label>
 								<div class="input-group">
@@ -171,14 +120,11 @@ if(empty($_SESSION)){
                         			<div class="input-group-pretend">
                           				<span class="input-group-text"><i data-feather="briefcase"></i></span>
                         			</div>
-                                    <select class="custom-select" id="escola-turma" name="escola-turma" required="required" placeholder="Selecione uma opção...">
-										<option disable selected hidden>Selecione uma opção...</option>
-										<?php 
-										include('selectescolas.php');
-                            			//<option value=" "></option>
-                            			//<option value=" "></option>
-										//<option value=" "></option>
-										?>
+                          			<select class="custom-select" id="escola-turma" name="escola-turma" required="required" placeholder="Selecione uma opção...">
+                            			<option disable selected hidden>Selecione uma opção...</option>
+                            			<option value=" "></option>
+                            			<option value=" "></option>
+                            			<option value=" "></option>
 									</select>
                     			</div>
                 			</div>
@@ -191,35 +137,40 @@ if(empty($_SESSION)){
 					</div>
 				</div>
 			</div>
-        </div><!-- fim do modal para criar uma turma -->
-        
-        <!-- Erros & Sucessos -->
-         <?php
-		 	include('../funcphp/system_message.php');
+		</div><!-- fim do modal para criar uma turma -->
+		 
+		 <!-- Erros & Sucessos -->
+		 <?php
+		 	include('funcphp/system_message.php');
 		 ?>
-        
-    <!-- Incluir Páginas -->
-    <?php  
-    switch (isset($_GET['url'])){
-        case 'turmas': include('menu_turmas.php');
-        break;
-        default: include('menu_escolas.php');
-        break;
-    }
-    ?>  <!-- Fim Do Conteúdo -->
 
+		<nav arial-label="breadcrumb" class="mt-3"><!-- barra de diretório das paginas-->
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="menu_docente.php">Home</a></li>
+				<?php $escolanome = $_GET['escolanome']; echo '<li class="breadcrumb-item active">'.$escolanome.'</li>'; ?>
+			</ol>
+		</nav><!-- fim da barra de diretório-->
 
-    </div>
+		<div class="container ml-sm-2 ml-lg-4 ml-xl-5"><!-- centralizaçao do conteúdo-->
+                <div class="row ml-md-2"><!--posiciona os cards horizontalmente-->
+                
+				   <?php
+				    include('funcphp/mostrarturmas.php');
+				   ?> <!-- Aqui fica o código de PHP para adicionar as turmas-->
+                     
+                </div> 
+			</div><!-- fim do alinhamento horizontal dos cards -->
+		</div><!-- fim da centralização do conteúdo-->
+	</div><!-- fim do conteudo do site-->
+
+    <!-- Bootstrap.js and jquery.js -->
+    <script src="js/jquery-3.4.1.min.js">
+    </script>
+    <script src="js/bootstrap.min.js">
+	</script>
+	<script>
+      feather.replace()
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-

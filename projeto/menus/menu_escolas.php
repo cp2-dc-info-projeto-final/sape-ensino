@@ -12,8 +12,11 @@
 						 require_once('../funcphp/conexaoBD.php');
 						 // 'Beta':  alterações nescessarias.
 						 $banco = connect_BD();
+
+						if(isset($_SESSION['cargo']) && $_SESSION['cargo'] != 'Aluno') {
 						 $query = "SELECT escolas.id as eid, escolas.nome as enome, escolas.descricao, login.nome as lnome from escolas
 						 left join login on escolas.diretor = login.id WHERE diretor = ?";
+						}
 						 $stmt = $banco->prepare($query);
 						 $stmt->bind_param('i', $_SESSION['id']);
 						 $stmt->execute();

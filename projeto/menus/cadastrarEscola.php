@@ -12,10 +12,31 @@ if(!empty($_SESSION) && $_SESSION['cargo'] == 'Diretor'){
 
     $senhae = md5($_POST['senhaescola']);
 
+
+
+    //gerar código: 
+    $valido = false;
+    $codigov = 0;
+        while($valido == false){
+            $codigov = random_int(1000, 9999);
+            $query_v = "SELECT * from escolas WHERE codigo = ?";
+            $stmt_v = $banco->prepare($query_v);
+            $stmt_v->bind_param('i', $codigo);
+            $stmt_v->execute();
+            if ($stmt_v->num_rows > 0){
+                $valido = false;
+            } else {
+                $valido = true;
+            }
+        }
+    ////////
+
+
+
     //query sql
-    $query = "INSERT INTO escolas (nome, descricao, diretor, senha) VALUES (?, ?, ?, ?)";
+    $query = "INSERT INTO escolas (nome, descricao, senha, diretor, codigo) VALUES (?, ?, ?, ?, ?)";
     $stmt = $banco->prepare($query);
-    $stmt->bind_param('ssis', $escnome, $escdesc, $_SESSION['id'], $senhae);
+    $stmt->bind_param('ssisi', $escnome, $escdesc, $_SESSION['id'], $senhae, $codigo);
     if($stmt->execute() == true){
         //Sucesso
         $_SESSION['system_message'] = "Escola cadastrada com sucesso!";
@@ -23,7 +44,7 @@ if(!empty($_SESSION) && $_SESSION['cargo'] == 'Diretor'){
         header('Location: menu_include.php');
     } else {
         //Erro
-        $_SESSION['system_message'] = "Cadastro da escola falhou! Tente Novamente";
+        $_SESSION['system_message'] = "Cadastro da escola falhou! Tente Novamente ERROR: ".msqli_error($banco);
         $_SESSION['alert_type'] = "danger";
         header('Location: menu_include.php');
     }

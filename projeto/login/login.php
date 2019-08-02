@@ -67,7 +67,7 @@ height: 100%;">
     <script src="../js/bootstrap.min.js"></script>
     
     <script>
-      feather.replace()
+      feather.replace();
     </script>
 </body>
 </html>

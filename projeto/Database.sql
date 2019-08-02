@@ -40,6 +40,7 @@ CREATE TABLE escolas
     descricao varchar (300),
     senha varchar(200) not null,
     diretor int not null,
+    codigo int not null,
     PRIMARY KEY(id),
     FOREIGN KEY(diretor) references docente(id)
 );

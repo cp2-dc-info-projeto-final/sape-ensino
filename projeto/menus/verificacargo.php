@@ -1,6 +1,9 @@
 <?php
 switch($_SESSION['cargo']){
     case 'Aluno': // Entrar em escolas e turmas.
+    echo'<div class="btn-group ml-auto">
+        <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#ModalEntrarEscolaAluno" data-toggle="modal">Entrar</button>
+        </div>';
     break;
     case 'Professor': // Entrar em escolas, turmas e criar materias.
     break;
