@@ -71,7 +71,7 @@ if(empty($_SESSION)){
 					</div>
 
 					<div class="modal-body"><!-- corpo do modal -->
-						<form class="form-signin" method="post" action="entrarTurma.php">
+						<form class="form-signin" method="post" action="Turmas/entrarTurma.php">
 							<div class="form-label-group mb-3"> 
 								<label for="CodEscola">Código da Escola</label>
 								<div class="input-group">
@@ -107,7 +107,7 @@ if(empty($_SESSION)){
 					</div>
 
 					<div class="modal-body"><!-- corpo do modal da escola -->
-						<form class="form-signin" method="post" action="cadastrarEscola.php">
+						<form class="form-signin" method="post" action="Escola/cadastrarEscola.php">
 							<div class="form-label-group mb-3"> 
 								<label for="NomeEscola">Nome da Escola</label>
 								<div class="input-group">
@@ -155,7 +155,7 @@ if(empty($_SESSION)){
 					</div>
 
 					<div class="modal-body"><!-- corpo do modal da escola -->
-						<form class="form-signin" method="post" action="cadastroturma.php">
+						<form class="form-signin" method="post" action="Turma/cadastroturma.php">
 							<div class="form-label-group mb-3"> 
 								<label for="NomeTurma">Nome da Turma</label>
 								<div class="input-group">
@@ -201,9 +201,9 @@ if(empty($_SESSION)){
     <!-- Incluir Páginas -->
     <?php  
     switch (isset($_GET['url'])){
-        case 'turmas': include('menu_turmas.php');
+        case 'turmas': include('Turmas/menu_turmas.php');
         break;
-        default: include('menu_escolas.php');
+        default: include('Escolas/menu_escolas.php');
         break;
     }
     ?>  <!-- Fim Do Conteúdo -->
