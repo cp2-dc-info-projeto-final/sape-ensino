@@ -17,8 +17,12 @@
 						 $query = "SELECT escolas.id as eid, escolas.nome as enome, escolas.descricao, login.nome as lnome from escolas
 						 left join login on escolas.diretor = login.id WHERE diretor = ?";
 						} else {
-							exit();
+						 $query = "SELECT escolas.id as eid, escolas.nome as enome, escolas.descricao, login.nome as lnome from escola_aluno
+						 left join escolas on escola_aluno.id_escola = escolas.id 
+						 left join login on escolas.diretor = login.id
+						 WHERE escola_aluno.id_aluno = ? and escolas.nome IS NOT NULL";
 						}
+						
 						 $stmt = $banco->prepare($query);
 						 $stmt->bind_param('i', $_SESSION['id']);
 						 $stmt->execute();
@@ -38,9 +42,8 @@
 								   </div>'; 
 						 echo '</div>';
 						 }
-						
+
 						 $banco->close();
-						 exit();
 					 ?>
 				</div> 
 			</div><!-- fim do alinhamento horizontal dos cards-->

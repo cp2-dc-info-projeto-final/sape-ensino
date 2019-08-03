@@ -67,11 +67,11 @@ if(empty($_SESSION)){
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title">Entrar na Escola</h5>
+						<h5 class="modal-title">Entrar em uma Escola</h5>
 					</div>
 
 					<div class="modal-body"><!-- corpo do modal -->
-						<form class="form-signin" method="post" action="Turmas/entrarTurma.php">
+						<form class="form-signin" method="post" action="Escolas/entrarEscola.php">
 							<div class="form-label-group mb-3"> 
 								<label for="CodEscola">Código da Escola</label>
 								<div class="input-group">
@@ -107,7 +107,7 @@ if(empty($_SESSION)){
 					</div>
 
 					<div class="modal-body"><!-- corpo do modal da escola -->
-						<form class="form-signin" method="post" action="Escola/cadastrarEscola.php">
+						<form class="form-signin" method="post" action="Escolas/cadastrarEscola.php">
 							<div class="form-label-group mb-3"> 
 								<label for="NomeEscola">Nome da Escola</label>
 								<div class="input-group">
@@ -155,7 +155,7 @@ if(empty($_SESSION)){
 					</div>
 
 					<div class="modal-body"><!-- corpo do modal da escola -->
-						<form class="form-signin" method="post" action="Turma/cadastroturma.php">
+						<form class="form-signin" method="post" action="Turmas/cadastroturma.php">
 							<div class="form-label-group mb-3"> 
 								<label for="NomeTurma">Nome da Turma</label>
 								<div class="input-group">

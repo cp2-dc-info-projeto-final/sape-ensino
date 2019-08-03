@@ -25,7 +25,7 @@
 
 
 					<div class="modal-body"><!-- corpo do modal -->
-					<?php $eid = $_GET['eid']; echo '<form class="form-signin" method="post" action="excluirescolas.php?eid='.$eid.'">'?>
+					<?php $eid = $_GET['eid']; echo '<form class="form-signin" method="post" action="Turmas/excluirescolas.php?eid='.$eid.'">'?>
 						<!--<form class="form-signin" method="post" action="excluirescolas.php?eid=">-->
 							<div class="form-label-group mb-3"> 
 								<label for="NomeTurma">Senha da Escola</label>
