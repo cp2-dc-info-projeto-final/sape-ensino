@@ -84,6 +84,15 @@ session_start();
 								<textarea class="form-control" maxlength=38 id="descescola" name="descescola" required="required" placeholder="ex. Nome completo da Escola" rows="1"></textarea>
 								</div>
 							</div>
+							<div class="form-label-group mb-3"> 
+								<label for="">Senha da Escola</label>
+								<div class="input-group">
+									<div class="input-group-pretend">
+										<span class="input-group-text"><i data-feather="alert-circle"></i></span>
+									</div>
+									<input class="form-control" id="senhaescola" name="senhaescola" required="required" type="password" placeholder="EX. 12345678"/>
+								</div>
+							</div>
 							<button class="btn btn-lg btn-primary btn-block" type="submit" value="CadastrarEscola">Cadastrar Escola</button>
 						</form>
 					</div><!--fim do corpo -->
@@ -144,12 +153,54 @@ session_start();
 		 	include('funcphp/system_message.php');
 		 ?>
 
-		<nav arial-label="breadcrumb" class="mt-3"><!-- barra de diretório das paginas-->
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="menu_docente.php">Home</a></li>
-				<?php $escolanome = $_GET['escolanome']; echo '<li class="breadcrumb-item active">'.$escolanome.'</li>'; ?>
-			</ol>
-		</nav><!-- fim da barra de diretório-->
+		<div class="row">
+			<nav arial-label="breadcrumb" class="mt-3 mr-3 ml-3 col-8"><!-- barra de diretório das paginas-->
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item active">Home</li>
+					<?php $escolanome = $_GET['escolanome']; echo '<li class="breadcrumb-item active">'.$escolanome.'</li>'; ?>
+				</ol>
+			</nav><!-- fim da barra de diretório-->
+ 			<button class="btn btn-outline-danger col-3 mt-3 mb-3" type="button" data-toggle="modal" data-target="#apagarescola">Apagar escola</button>
+ 		</div>
+
+
+
+
+
+		<!-- Modal para apagar escola -->
+		<div class="modal fade" id="apagarescola" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Apagar Escola</h5>
+					</div>
+
+					<div class="modal-body"><!-- corpo do modal -->
+						<form class="form-signin" method="post">
+							<div class="form-label-group mb-3"> 
+								<label for="NomeTurma">Senha da Escola</label>
+								<div class="input-group">
+									<div class="input-group-pretend">
+										<span class="input-group-text"><i data-feather="alert-circle"></i></span>
+									</div>
+									<input class="form-control" id="apagarescola" name="apagarescola" required="required" type="password" placeholder="EX. 12345678"/>
+								</div>
+							</div>
+							<button class="btn btn-lg btn-primary btn-block" type="submit" value="apagarescola">Apagar</button>
+						</form>
+					</div><!--fim do corpo -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
 
 		<div class="container ml-sm-2 ml-lg-4 ml-xl-5"><!-- centralizaçao do conteúdo-->
                 <div class="row ml-md-2"><!--posiciona os cards horizontalmente-->
@@ -162,8 +213,11 @@ session_start();
 			</div><!-- fim do alinhamento horizontal dos cards -->
 		</div><!-- fim da centralização do conteúdo-->
 	</div><!-- fim do conteudo do site-->
+	
+	
 
-    <!-- Bootstrap.js and jquery.js -->
+
+    <!-- Bootstrap.js and jquer.js -->
     <script src="js/jquery-3.4.1.min.js">
     </script>
     <script src="js/bootstrap.min.js">
