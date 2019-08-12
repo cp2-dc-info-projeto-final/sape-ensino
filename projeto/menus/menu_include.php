@@ -27,7 +27,7 @@ if(empty($_SESSION)){
 
 <body>
 	<!-- barra de navegação -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary pt-0 pb-0 mb-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary pt-0 pb-0">
     	<div class="container">
 	        <a class="navbar-brand h1 mb-0" href="#">Sape Ensino</a>
 	        <button class="navbar-toggler ml-auto mr-2" data-toggle="collapse" data-target="#collapsenavbar" href="#collapsenavbar" type="button" aria-expanded="false" aria-controls="collapsenavbar"><i data-feather="menu"></i></button>
@@ -55,14 +55,13 @@ if(empty($_SESSION)){
 			
 	    </div><!-- fim do conteudo da barra-->
     </nav><!-- fim da barra de navegação-->
-    
-    
-    <div class="container boarder"> <!-- Contéudo dá Pagina -->
+
+    <div class="container"> <!-- Contéudo dá Pagina -->
 
 
 
 
-		<!-- Modal para entrar em uma escola -->
+		<!-- Modal para entrar em uma escola --> 
 		<div class="modal fade" id="ModalEntrarEscolaAluno" tabindex="-1" role="dialog">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
@@ -197,19 +196,17 @@ if(empty($_SESSION)){
          <?php
 		 	include('../funcphp/system_message.php');
 		 ?>
-        
-    <!-- Incluir Páginas -->
-    <?php  
-    switch (isset($_GET['url'])){
-        case 'turmas': include('Turmas/menu_turmas.php');
-        break;
-        default: include('Escolas/menu_escolas.php');
-        break;
-    }
-    ?>  <!-- Fim Do Conteúdo -->
 
-
-    </div>
+		<!-- Incluir Páginas -->
+		<?php  
+		switch (isset($_GET['url'])){
+			case 'turmas': include('Turmas/menu_turmas.php');
+			break;
+			default: include('Escolas/menu_escolas.php');
+			break;
+		}
+		?>  <!-- Fim Do Conteúdo -->
+	</div>
 </body>
 </html>
 

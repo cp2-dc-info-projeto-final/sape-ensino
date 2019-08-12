@@ -54,6 +54,7 @@ session_start();
 	    </div><!-- fim do conteudo da barra-->
 	</nav><!-- fim da barra de navegação-->
 
+
 	<div class="container border"> <!--conteudo do site-->
 				
 		<!-- Modal para Criar uma escola -->
@@ -195,13 +196,17 @@ session_start();
 				</div>
 			</div>
 		</div>
+ 		<div class="row">
 
+		
+		<div class="sidebar-sticky">
+			<ul class="nav flex-column">
+				<li class="nav-item">Calma</li>
+				<li class="nav-item"><i data-feather="key"></i>Takagiiiiiiiiiiiiiiiiiiiii<li>
+			</ul>
 
-
-
-
-
-
+		</div>
+	
 		<div class="container ml-sm-2 ml-lg-4 ml-xl-5"><!-- centralizaçao do conteúdo-->
                 <div class="row ml-md-2"><!--posiciona os cards horizontalmente-->
                 
@@ -212,6 +217,7 @@ session_start();
                 </div> 
 			</div><!-- fim do alinhamento horizontal dos cards -->
 		</div><!-- fim da centralização do conteúdo-->
+ 		</div>
 	</div><!-- fim do conteudo do site-->
 	
 	
