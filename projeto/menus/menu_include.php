@@ -56,7 +56,7 @@ if(empty($_SESSION)){
 	    </div><!-- fim do conteudo da barra-->
     </nav><!-- fim da barra de navegação-->
 
-    <div class="container"> <!-- Contéudo dá Pagina -->
+    <div> <!-- Contéudo dá Pagina -->
 
 
 
@@ -191,21 +191,91 @@ if(empty($_SESSION)){
 				</div>
 			</div>
         </div><!-- fim do modal para criar uma turma -->
-        
-        <!-- Erros & Sucessos -->
-         <?php
-		 	include('../funcphp/system_message.php');
-		 ?>
+	
+		<div class="container-fluid row">
+			
+			<nav id="sidebar col-3">
+				<div class="sidebar-header border-bottom bg-secondary">
+					<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><h3 class="m-3 navbar-brand text-white border-right pr-3">Painel de Controle</h3><i class="mr-3 mb-1" data-feather="settings"></i></button>
+						
+						<div class="dropdown-menu" aria-labelledby="dropdownMenubutton">
+							<a class="dropdown-item" href="#">Alguma ação</a>
+							<a class="dropdown-item" href="#">Outra ação</a>
+							<a class="dropdown-item" href="#">Alguma coisa aqui</a>
+						</div>
+					</div>
+				</div>
 
-		<!-- Incluir Páginas -->
-		<?php  
-		switch (isset($_GET['url'])){
-			case 'turmas': include('Turmas/menu_turmas.php');
-			break;
-			default: include('Escolas/menu_escolas.php');
-			break;
-		}
-		?>  <!-- Fim Do Conteúdo -->
+				<ul class="list-unstyled components">
+				<p>Dummy Heading</p>
+				<li class="active">
+					<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+					<ul class="collapse list-unstyled" id="homeSubmenu">
+						<li>
+							<a href="#">Home 1</a>
+						</li>
+						<li>
+							<a href="#">Home 2</a>
+						</li>
+						<li>
+							<a href="#">Home 3</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">About</a>
+				</li>
+				<li>
+					<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+					<ul class="collapse list-unstyled" id="pageSubmenu">
+						<li>
+							<a href="#">Page 1</a>
+						</li>
+						<li>
+							<a href="#">Page 2</a>
+						</li>
+						<li>
+							<a href="#">Page 3</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Portfolio</a>
+				</li>
+				<li>
+					<a href="#">Contact</a>
+				</li>
+			</ul>
+			</nav>
+
+
+
+
+
+
+
+
+
+
+
+			<div class="content col-9 mx-auto">
+				<!-- Erros & Sucessos -->
+				<?php
+					include('../funcphp/system_message.php');
+				?>
+
+				<!-- Incluir Páginas -->
+				<?php  
+				switch (isset($_GET['url'])){
+					case 'turmas': include('Turmas/menu_turmas.php');
+					break;
+					default: include('Escolas/menu_escolas.php');
+					break;
+				}
+				?>  <!-- Fim Do Conteúdo -->
+			</div>
+		</div>
 	</div>
 </body>
 </html>
