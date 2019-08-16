@@ -194,53 +194,55 @@ if(empty($_SESSION)){
 	
 		<div class="container-fluid row">
 			
-			<nav id="sidebar col-3 bg-secondary">
-				<div class="sidebar-header border-bottom">
-					<button class="btn btn-secondary" data-toggle="collapse" data-target="#CollapseSidebar"><h3 class="m-3 navbar-brand text-white border-right pr-3">Painel de Controle</h3><i class="mr-3 mb-1" data-feather="settings"></i></button>
-					<div class="collapse bg-light p-2" id ="CollapseSidebar">
-						<a class="btn btn-danger btn-block font-weight-bold text-white" data-toggle="modal" data-target="#apagarescola">Apagar escola</a>
-					</div>
-				</div>
+			<nav class="sidebar col-2 bg-light">
+			<div class="sidebar-sticky">
+				<ul class="list-unstyled components bg-light nav flex-column">
 
-				<ul class="list-unstyled components bg-light p-3">
-					<a class="text-decoration-none btn btn-outline-primary btn-block" href="menu_include.php?url=turmas&eid='.$row['eid'].'&escolanome='.$row['enome'].'">Entre em uma Turma</a>
+					<h4 class="text-center text-secondary my-2">Painel</h4>
 					
-					<h4 class="text-center text-secondary my-3 border-top">Professores</h4>
+					<button class="btn btn-outline-primary btn-block my-2" data-toggle="collapse" data-target="#CollapseSidebar">Configurações</button>
+						<div class="collapse bg-light p-2" id ="CollapseSidebar">
+							<a class="btn btn-danger btn-block font-weight-bold text-white" data-toggle="modal" data-target="#apagarescola">Apagar escola</a>
+						</div>
+
+					<a class="text-decoration-none btn btn-outline-primary btn-block my-2" href="menu_include.php?url=turmas&eid='.$row['eid'].'&escolanome='.$row['enome'].'">Suas Turmas</a>
+					
+					<div class="dropdown-divider"></div>
+
+					<h4 class="text-center text-secondary my-2">Docentes</h4>
 
 					<li class="row ml-2">
-						<i data-feather="user" ></i><p class="text-secondary"> Nome dos Professores</p>
+						<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Professores</p>
 					</li>
 
-					<li class="row">
-						<i data-feather="user"></i><p class="text-secondary"> Nome dos Professores</p>
+					<li class="row ml-2">
+						<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Professores</p>
 					</li>
 
+					<li class="row ml-2">
+						<i data-feather="circle" class="text-danger"></i><p class="text-secondary ml-1"> Nome dos Professores</p>
+					</li>
+
+					<li class="row ml-2">
+						<i data-feather="circle" class="text-danger"></i><p class="text-secondary ml-1"> Nome dos Professores</p>
+					</li>
+
+					<div class="dropdown-divider"></div>
+
+					<h4 class="text-center text-secondary my-2">Alunos</h4>
 
 
-				<li>
-					<a href="#">About</a>
-				</li>
-				<li>
-					<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-					<ul class="collapse list-unstyled" id="pageSubmenu">
-						<li>
-							<a href="#">Page 1</a>
-						</li>
-						<li>
-							<a href="#">Page 2</a>
-						</li>
-						<li>
-							<a href="#">Page 3</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">Portfolio</a>
-				</li>
-				<li>
-					<a href="#">Contact</a>
-				</li>
-			</ul>
+					<li class="row ml-2">
+						<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+					</li>
+					<li class="row ml-2">
+						<i data-feather="circle" class="text-danger" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+					</li>
+					<li class="row ml-2">
+						<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+					</li>
+				</ul>
+			</div>
 			</nav>
 
 
