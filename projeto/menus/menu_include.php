@@ -194,35 +194,29 @@ if(empty($_SESSION)){
 	
 		<div class="container-fluid row">
 			
-			<nav id="sidebar col-3">
-				<div class="sidebar-header border-bottom bg-secondary">
-					<div class="dropdown">
-					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><h3 class="m-3 navbar-brand text-white border-right pr-3">Painel de Controle</h3><i class="mr-3 mb-1" data-feather="settings"></i></button>
-						
-						<div class="dropdown-menu" aria-labelledby="dropdownMenubutton">
-							<a class="dropdown-item" href="#">Alguma ação</a>
-							<a class="dropdown-item" href="#">Outra ação</a>
-							<a class="dropdown-item" href="#">Alguma coisa aqui</a>
-						</div>
+			<nav id="sidebar col-3 bg-secondary">
+				<div class="sidebar-header border-bottom">
+					<button class="btn btn-secondary" data-toggle="collapse" data-target="#CollapseSidebar"><h3 class="m-3 navbar-brand text-white border-right pr-3">Painel de Controle</h3><i class="mr-3 mb-1" data-feather="settings"></i></button>
+					<div class="collapse bg-light p-2" id ="CollapseSidebar">
+						<a class="btn btn-danger btn-block font-weight-bold text-white" data-toggle="modal" data-target="#apagarescola">Apagar escola</a>
 					</div>
 				</div>
 
-				<ul class="list-unstyled components">
-				<p>Dummy Heading</p>
-				<li class="active">
-					<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-					<ul class="collapse list-unstyled" id="homeSubmenu">
-						<li>
-							<a href="#">Home 1</a>
-						</li>
-						<li>
-							<a href="#">Home 2</a>
-						</li>
-						<li>
-							<a href="#">Home 3</a>
-						</li>
-					</ul>
-				</li>
+				<ul class="list-unstyled components bg-light p-3">
+					<a class="text-decoration-none btn btn-outline-primary btn-block" href="menu_include.php?url=turmas&eid='.$row['eid'].'&escolanome='.$row['enome'].'">Entre em uma Turma</a>
+					
+					<h4 class="text-center text-secondary my-3 border-top">Professores</h4>
+
+					<li class="row ml-2">
+						<i data-feather="user" ></i><p class="text-secondary"> Nome dos Professores</p>
+					</li>
+
+					<li class="row">
+						<i data-feather="user"></i><p class="text-secondary"> Nome dos Professores</p>
+					</li>
+
+
+
 				<li>
 					<a href="#">About</a>
 				</li>
