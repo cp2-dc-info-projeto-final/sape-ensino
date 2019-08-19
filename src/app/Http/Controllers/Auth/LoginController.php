@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/index';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -47,4 +47,8 @@ class LoginController extends Controller
         Auth::logout();
         return redirect('/login');
       }
+
+    public function username(){
+        return 'matricula';
+    }
 }
