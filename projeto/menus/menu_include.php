@@ -199,25 +199,22 @@ if(empty($_SESSION)){
         </div><!-- fim do modal para criar uma turma -->
 	
 	<div class="container-fluid">
-      	<div class="row">
-			<div class="content col-9 mx-auto">
-					<!-- Erros & Sucessos -->
-					<?php
-						include('../funcphp/system_message.php');
-					?>
+		<div>
+			<!-- Erros & Sucessos -->
+			<?php
+				include('../funcphp/system_message.php');
+			?>
 
-					<!-- Incluir Páginas -->
-					<?php  
-					switch (isset($_GET['url'])){
-						case 'turmas': include('Turmas/menu_turmas.php');
-						break;
-						default: include('Escolas/menu_escolas.php');
-						break;
-					}
-					?>  <!-- Fim Do Conteúdo -->
-			</div>
-        
-      	</div>
+			<!-- Incluir Páginas -->
+			<?php  
+			switch (isset($_GET['url'])){
+				case 'turmas': include('Turmas/menu_turmas.php');
+				break;
+				default: include('Escolas/menu_escolas.php');
+				break;
+			}
+			?>  <!-- Fim Do Conteúdo -->
+		</div>
     </div>
 </body>
 </html>

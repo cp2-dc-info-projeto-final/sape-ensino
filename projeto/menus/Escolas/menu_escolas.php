@@ -1,4 +1,5 @@
 	
+	<div class=" col-9 mx-auto">
 		<nav arial-label="breadcrumb" class="mt-3"><!-- barra de diretório das paginas-->
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item active">Home</li>
@@ -48,7 +49,7 @@
 				</div> 
 			</div><!-- fim do alinhamento horizontal dos cards-->
 		</div><!-- fim da centralização do conteúdo-->
-
+	</div>
 
     <!-- Bootstrap.js and jquer.js -->
     <script src="../js/jquery-3.4.1.min.js">
