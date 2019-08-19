@@ -1,5 +1,5 @@
-		<div class="row">
-			<nav arial-label="breadcrumb" class="mt-3 mr-3 ml-3 col-8"><!-- barra de diretório das paginas-->
+
+			<nav arial-label="breadcrumb" class="mt-3"><!-- barra de diretório das paginas-->
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="menu_include.php">Home</a></li>
 					<?php 
@@ -12,8 +12,7 @@
 					?>
 				</ol>
 			</nav><!-- fim da barra de diretório-->
- 			<button class="btn btn-outline-danger col-3 mt-3 mb-3" type="button" data-toggle="modal" data-target="#apagarescola">Apagar escola</button>
- 		</div>
+
 
 		<!-- Modal para apagar escola -->
 		<div class="modal fade" id="apagarescola" tabindex="-1" role="dialog">

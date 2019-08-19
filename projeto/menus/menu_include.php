@@ -33,7 +33,7 @@ if(empty($_SESSION)){
     	<div class="container">
 			<a class="navbar-brand h1 mb-0" href="#">Sape Ensino</a>
 			<div class="flex-row-reverse">
-				<button class="btn btn-primary   mr-2" data-toggle="collapse" data-target="#collapsenavbar" href="#collapsenavbar" type="button" aria-expanded="false" aria-controls="collapsenavbar"><i data-feather="menu"></i></button>
+				<button class="btn btn-primary d-lg-none  mr-2" data-toggle="collapse" data-target="#collapsenavbar" href="#collapsenavbar" type="button" aria-expanded="false" aria-controls="collapsenavbar"><i data-feather="menu"></i></button>
 				<button class="btn btn-primary d-md-none  mr-2" data-toggle="collapse" data-target="#collapsesidebar" href="#colapsesidebar" type="button" aria-expanded="false" aria-controls="collapsenavbar"><i data-feather="settings"></i></button>
 			</div>
 			<div class="collapse navbar-collapse" id="collapsenavbar">
@@ -200,6 +200,7 @@ if(empty($_SESSION)){
 	
 	<div class="container-fluid">
       	<div class="row">
+
 			<nav class="col-md-3 col-lg-2 d-fixed d-md-block bg-light sidebar collapse " id="collapsesidebar">
 			<div class="sidebar-sticky scrollbar scrollbar-pink bordered-pink thin ">
 				<ul class="nav flex-column mr-3 ">
@@ -217,19 +218,11 @@ if(empty($_SESSION)){
 						<h4 class="text-center text-secondary my-2">Docentes</h4>
 
 						<li class="row ml-2">
-							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Professores</p>
+							<p class="text-secondary ml-1"> Nome dos Professores</p>
 						</li>
 
 						<li class="row ml-2">
-							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Professores</p>
-						</li>
-
-						<li class="row ml-2">
-							<i data-feather="circle" class="text-danger"></i><p class="text-secondary ml-1"> Nome dos Professores</p>
-						</li>
-
-						<li class="row ml-2">
-							<i data-feather="circle" class="text-danger"></i><p class="text-secondary ml-1"> Nome dos Professores</p>
+							<p class="text-secondary ml-1"> Nome dos Professores</p>
 						</li>
 
 						<div class="dropdown-divider"></div>
@@ -238,56 +231,10 @@ if(empty($_SESSION)){
 
 
 						<li class="row ml-2">
-							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+							<p class="text-secondary ml-1"> Nome dos Alunos</p>
 						</li>
 						<li class="row ml-2">
-							<i data-feather="circle" class="text-danger" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-						</li>
-						<li class="row ml-2">
-							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-						</li>
-
-
-						<li class="row ml-2">
-							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-						</li>
-						<li class="row ml-2">
-							<i data-feather="circle" class="text-danger" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-						</li>
-						<li class="row ml-2">
-							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-						</li><li class="row ml-2">
-							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-						</li>
-						<li class="row ml-2">
-							<i data-feather="circle" class="text-danger" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-						</li>
-						<li class="row ml-2">
-							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-						</li><li class="row ml-2">
-							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-						</li>
-						<li class="row ml-2">
-							<i data-feather="circle" class="text-danger" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-						</li>
-						<li class="row ml-2">
-							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-						</li><li class="row ml-2">
-							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-						</li>
-						<li class="row ml-2">
-							<i data-feather="circle" class="text-danger" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-						</li>
-						<li class="row ml-2">
-							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-						</li><li class="row ml-2">
-							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-						</li>
-						<li class="row ml-2">
-							<i data-feather="circle" class="text-danger" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-						</li>
-						<li class="row ml-2">
-							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+							<p class="text-secondary ml-1"> Nome dos Alunos</p>
 						</li>
 				</ul>
 			</div>
