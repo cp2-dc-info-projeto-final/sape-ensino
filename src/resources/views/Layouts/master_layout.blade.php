@@ -19,6 +19,9 @@
 
     
     @include('Layouts.navbar_layout')
+
+    @yield('errors')
+    
     @yield('content')
 
 
