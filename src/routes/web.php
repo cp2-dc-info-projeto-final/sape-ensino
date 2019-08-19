@@ -12,15 +12,15 @@
 */
 //Pages
 
-Route::get('index', 'ControladorPage@index');
+Route::get('/', 'ControladorPage@index')->name('index');
 
 //Authentication
-
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('Slogin');
 Route::post('login', 'Auth\LoginController@login')->name('login');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('register/{tipo}', 'Auth\RegisterController@showRegistrationForm')->name('Sregister');
 Route::post('register', 'Auth\RegisterController@register')->name('register');
+
 // !!!!--------------------      RESET PASSWORD        -----------------------!!!!// 
 //Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 //Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');

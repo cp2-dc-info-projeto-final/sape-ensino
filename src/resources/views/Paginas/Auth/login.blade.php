@@ -4,7 +4,7 @@
 
 <style>
 body{
-    background-image: url(../images/back.png);
+    background-image: url({{asset('images/back.png')}});
     background-attachment: fixed;
     margin: 0%;
     height: 100%;
