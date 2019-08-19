@@ -16,10 +16,12 @@ if(empty($_SESSION)){
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap.css -->
-    <link rel="stylesheet" href="../css/bootstrap.css">
+	<!-- Bootstrap.css -->
+	
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/sidebar.css">
 
-	<link rel="stylesheet" href="../css/style.css">
+	
 	
 	<script src="../js/feather.min.js"></script>
 
@@ -29,9 +31,13 @@ if(empty($_SESSION)){
 	<!-- barra de navegação -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary pt-0 pb-0">
     	<div class="container">
-	        <a class="navbar-brand h1 mb-0" href="#">Sape Ensino</a>
-	        <button class="navbar-toggler ml-auto mr-2" data-toggle="collapse" data-target="#collapsenavbar" href="#collapsenavbar" type="button" aria-expanded="false" aria-controls="collapsenavbar"><i data-feather="menu"></i></button>
-	        <div class="collapse navbar-collapse" id="collapsenavbar">
+			<a class="navbar-brand h1 mb-0" href="#">Sape Ensino</a>
+			<div class="flex-row-reverse">
+				<button class="btn btn-primary   mr-2" data-toggle="collapse" data-target="#collapsenavbar" href="#collapsenavbar" type="button" aria-expanded="false" aria-controls="collapsenavbar"><i data-feather="menu"></i></button>
+				<button class="btn btn-primary d-md-none  mr-2" data-toggle="collapse" data-target="#collapsesidebar" href="#colapsesidebar" type="button" aria-expanded="false" aria-controls="collapsenavbar"><i data-feather="settings"></i></button>
+			</div>
+			<div class="collapse navbar-collapse" id="collapsenavbar">
+				
 	            <ul class="navbar-nav mr-auto ml-3">
 
 	                <li class="nav-item">
@@ -192,97 +198,118 @@ if(empty($_SESSION)){
 			</div>
         </div><!-- fim do modal para criar uma turma -->
 	
-		<div class="container-fluid row">
-			
-			<nav class="sidebar col-2 bg-light">
-			<div class="sidebar-sticky">
-				<ul class="list-unstyled components bg-light nav flex-column">
-
+	<div class="container-fluid">
+      	<div class="row">
+			<nav class="col-md-3 col-lg-2 d-fixed d-md-block bg-light sidebar collapse " id="collapsesidebar">
+			<div class="sidebar-sticky scrollbar scrollbar-pink bordered-pink thin ">
+				<ul class="nav flex-column mr-3 ">
 					<h4 class="text-center text-secondary my-2">Painel</h4>
-					
-					<button class="btn btn-outline-primary btn-block my-2" data-toggle="collapse" data-target="#CollapseSidebar">Configurações</button>
-						<div class="collapse bg-light p-2" id ="CollapseSidebar">
-							<a class="btn btn-danger btn-block font-weight-bold text-white" data-toggle="modal" data-target="#apagarescola">Apagar escola</a>
-						</div>
+						
+						<button class="btn btn-outline-primary btn-block my-2" data-toggle="collapse" data-target="#CollapseSidebar">Configurações</button>
+							<div class="collapse bg-light p-2" id ="CollapseSidebar">
+								<a class="btn btn-danger btn-block font-weight-bold text-white" data-toggle="modal" data-target="#apagarescola">Apagar escola</a>
+							</div>
 
-					<a class="text-decoration-none btn btn-outline-primary btn-block my-2" href="menu_include.php?url=turmas&eid='.$row['eid'].'&escolanome='.$row['enome'].'">Suas Turmas</a>
-					
-					<div class="dropdown-divider"></div>
+						<a class="text-decoration-none btn btn-outline-primary btn-block my-2" href="menu_include.php?url=turmas&eid='.$row['eid'].'&escolanome='.$row['enome'].'">Suas Turmas</a>
+						
+						<div class="dropdown-divider"></div>
 
-					<h4 class="text-center text-secondary my-2">Docentes</h4>
+						<h4 class="text-center text-secondary my-2">Docentes</h4>
 
-					<li class="row ml-2">
-						<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Professores</p>
-					</li>
+						<li class="row ml-2">
+							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Professores</p>
+						</li>
 
-					<li class="row ml-2">
-						<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Professores</p>
-					</li>
+						<li class="row ml-2">
+							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Professores</p>
+						</li>
 
-					<li class="row ml-2">
-						<i data-feather="circle" class="text-danger"></i><p class="text-secondary ml-1"> Nome dos Professores</p>
-					</li>
+						<li class="row ml-2">
+							<i data-feather="circle" class="text-danger"></i><p class="text-secondary ml-1"> Nome dos Professores</p>
+						</li>
 
-					<li class="row ml-2">
-						<i data-feather="circle" class="text-danger"></i><p class="text-secondary ml-1"> Nome dos Professores</p>
-					</li>
+						<li class="row ml-2">
+							<i data-feather="circle" class="text-danger"></i><p class="text-secondary ml-1"> Nome dos Professores</p>
+						</li>
 
-					<div class="dropdown-divider"></div>
+						<div class="dropdown-divider"></div>
 
-					<h4 class="text-center text-secondary my-2">Alunos</h4>
+						<h4 class="text-center text-secondary my-2">Alunos</h4>
 
 
-					<li class="row ml-2">
-						<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-					</li>
-					<li class="row ml-2">
-						<i data-feather="circle" class="text-danger" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-					</li>
-					<li class="row ml-2">
-						<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
-					</li>
+						<li class="row ml-2">
+							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+						</li>
+						<li class="row ml-2">
+							<i data-feather="circle" class="text-danger" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+						</li>
+						<li class="row ml-2">
+							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+						</li>
+
+
+						<li class="row ml-2">
+							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+						</li>
+						<li class="row ml-2">
+							<i data-feather="circle" class="text-danger" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+						</li>
+						<li class="row ml-2">
+							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+						</li><li class="row ml-2">
+							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+						</li>
+						<li class="row ml-2">
+							<i data-feather="circle" class="text-danger" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+						</li>
+						<li class="row ml-2">
+							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+						</li><li class="row ml-2">
+							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+						</li>
+						<li class="row ml-2">
+							<i data-feather="circle" class="text-danger" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+						</li>
+						<li class="row ml-2">
+							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+						</li><li class="row ml-2">
+							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+						</li>
+						<li class="row ml-2">
+							<i data-feather="circle" class="text-danger" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+						</li>
+						<li class="row ml-2">
+							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+						</li><li class="row ml-2">
+							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+						</li>
+						<li class="row ml-2">
+							<i data-feather="circle" class="text-danger" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+						</li>
+						<li class="row ml-2">
+							<i data-feather="circle" class="text-success" ></i><p class="text-secondary ml-1"> Nome dos Alunos</p>
+						</li>
 				</ul>
 			</div>
 			</nav>
-
-
-
-
-
-
-
-
-
-
-
 			<div class="content col-9 mx-auto">
-				<!-- Erros & Sucessos -->
-				<?php
-					include('../funcphp/system_message.php');
-				?>
+					<!-- Erros & Sucessos -->
+					<?php
+						include('../funcphp/system_message.php');
+					?>
 
-				<!-- Incluir Páginas -->
-				<?php  
-				switch (isset($_GET['url'])){
-					case 'turmas': include('Turmas/menu_turmas.php');
-					break;
-					default: include('Escolas/menu_escolas.php');
-					break;
-				}
-				?>  <!-- Fim Do Conteúdo -->
+					<!-- Incluir Páginas -->
+					<?php  
+					switch (isset($_GET['url'])){
+						case 'turmas': include('Turmas/menu_turmas.php');
+						break;
+						default: include('Escolas/menu_escolas.php');
+						break;
+					}
+					?>  <!-- Fim Do Conteúdo -->
 			</div>
-		</div>
-	</div>
+        
+      	</div>
+    </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

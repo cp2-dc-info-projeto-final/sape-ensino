@@ -1,0 +1,22 @@
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: relative;
+
+  z-index: 2; /* Behind the navbar */
+
+}
+
+.sidebar-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  height: calc(100vh - 7.7vh);
+  margin-right:-2vh;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+::-webkit-scrollbar {
+    width: 0px;
+  } 
