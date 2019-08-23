@@ -38,49 +38,10 @@
 	
 
 <div class="row">
-	<nav class="col-md-3 col-lg-2 d-fixed d-md-block bg-light sidebar collapse " id="collapsesidebar">
-		<div class="sidebar-sticky scrollbar scrollbar-pink bordered-pink thin ">
-			<ul class="nav flex-column mr-3">
-				<h4 class="text-center text-secondary my-2">Painel</h4>
-					
-				<button class="btn btn-outline-primary btn-block my-2" data-toggle="collapse" data-target="#CollapseSidebar">Configurações</button>
-					<div class="collapse bg-light p-2" id ="CollapseSidebar">
-						<a class="btn btn-danger btn-block font-weight-bold text-white" data-toggle="modal" data-target="#apagarescola">Apagar escola</a>
-					</div>
-
-				<?php 
-				echo '<a class="text-decoration-none btn btn-outline-primary btn-block my-2" href="../menus/menu_include.php?url=turmas&eid='.$_GET['eid'].'">Suas Turmas</a>';
-				?>
-				
-				<div class="dropdown-divider"></div>
-
-				<h4 class="text-center text-secondary my-2">Docentes</h4>
-
-				<li class="row mx-auto ml-2">
-					<p class="text-secondary ml-1"> Nome dos Professores</p>
-				</li>
-
-				<li class="row mx-auto ml-2">
-					<p class="text-secondary ml-1"> Nome dos Professores</p>
-				</li>
-
-				<div class="dropdown-divider"></div>
-
-				<h4 class="text-center text-secondary my-2">Alunos</h4>
-
-
-				<li class="row mx-auto ml-2">
-					<p class="text-secondary ml-1"> Nome dos Alunos</p>
-				</li>
-				<li class="row mx-auto ml-2">
-					<p class="text-secondary ml-1"> Nome dos Alunos</p>
-				</li>
-			</ul>
-		</div>
-	</nav>
+	<?php include('mostrarSidebar.php')?>
 	
 
-	<div class="container ml-sm-2 ml-lg-4 ml-xl-5"><!-- centralizaçao do conteúdo-->
+		<div class="container ml-sm-2 ml-lg-4 ml-xl-5"><!-- centralizaçao do conteúdo-->
 		<nav arial-label="breadcrumb" class="mt-3 mx-auto"><!-- barra de diretório das paginas-->
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="menu_include.php">Home</a></li>
@@ -118,7 +79,7 @@
 				while($row = $result->fetch_assoc()){
 				echo '<div class="card mb-3 col-12 col-sm-5 m-sm-3 col-lg-3 m-lg-4">';
 						echo '<div class="card-body">
-						<h3 class="card-tite text-center"  style="white-space:nowrap;">'.$row['nome'].'</h3>
+						<h3 class="card-title text-center"  style="white-space:nowrap;">'.$row['nome'].'</h3>
 						<div class="card-footer bg-white">
 						<a class="text-decoration-none" href="#"><button class="btn btn-primary btn-block bt-2">Entrar</button></a>
 						</div>
@@ -131,6 +92,24 @@
 				
 			?>  <!-- Aqui fica o código de PHP para adicionar as turmas-->
 			
+			<div>
+				<ul class="nav nav-tabs" id="turmaTab" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active  text-secondary" data-toggle="tab" href="#TabDocente" role="tab" aria-controls="TabDocente" aria-selected="true">Avisos dos Docentes</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link  text-secondary" data-toggle="tab" href="#TabAluno" role="tab" aria-controls="TabAlunos" aria-selected="false">Profile</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane fade show active" id="TabDocente">
+						Mural para os docentes
+					</div>
+					<div class="tab-pane fade" id="TabAluno">
+						Mural para os Alunos
+					</div>
+				</div>
+			</div>
 		</div> 
 	</div><!-- fim do alinhamento horizontal dos cards -->
 </div>
