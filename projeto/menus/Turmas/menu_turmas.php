@@ -9,7 +9,10 @@
 
 
 			<div class="modal-body"><!-- corpo do modal -->
-			<?php $eid = $_GET['eid']; echo '<form class="form-signin" method="post" action="Turmas/excluirescolas.php?eid='.$eid.'">'?>
+			<?php 
+			$eid = $_GET['escolanome'];	
+			echo '<form class="form-signin" method="post" action="Turmas/excluirescolas.php?eid='.$eid.'">';
+			?>
 				<!--<form class="form-signin" method="post" action="excluirescolas.php?eid=">-->
 					<div class="form-label-group mb-3"> 
 						<label for="NomeTurma">Senha da Escola</label>
@@ -45,7 +48,9 @@
 						<a class="btn btn-danger btn-block font-weight-bold text-white" data-toggle="modal" data-target="#apagarescola">Apagar escola</a>
 					</div>
 
-				<a class="text-decoration-none btn btn-outline-primary btn-block my-2" href="#">Suas Turmas</a>
+				<?php 
+				echo '<a class="text-decoration-none btn btn-outline-primary btn-block my-2" href="../menus/menu_include.php?url=turmas&eid='.$_GET['eid'].'">Suas Turmas</a>';
+				?>
 				
 				<div class="dropdown-divider"></div>
 
@@ -98,6 +103,7 @@
 			<?php
 				require_once('../funcphp/conexaoBD.php');
 			
+				if(isset($_GET['escolanome'])){ 
 				$banco = connect_BD();
 				if(isset($_GET['eid'])){
 					$idescola = $_GET['eid'];
@@ -121,6 +127,7 @@
 				}
 			
 				$banco->close();
+			}
 				
 			?>  <!-- Aqui fica o código de PHP para adicionar as turmas-->
 			
