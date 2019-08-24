@@ -56,7 +56,7 @@ if(empty($_SESSION)){
 	    </div><!-- fim do conteudo da barra-->
     </nav><!-- fim da barra de navegação-->
 
-    <div class="container"> <!-- Contéudo dá Pagina -->
+    <div> <!-- Contéudo dá Pagina -->
 
 
 
@@ -192,20 +192,30 @@ if(empty($_SESSION)){
 			</div>
         </div><!-- fim do modal para criar uma turma -->
         
-        <!-- Erros & Sucessos -->
-         <?php
-		 	include('../funcphp/system_message.php');
-		 ?>
+		<div class="row">
+			<div class="sidebar border col-2 mr-5">
+				<h3 class="text-secondary bg-color border" style="white-space:nowrap;">Painel de Controle</h3>
+				<ul class="sidebar navbar-nav flex-column">
+					<li class="nav-item border"><i data-feather="user"></i><span>Nome do Aluno</span></li>
+				</ul>
+			</div>
+			<div class="col-9">
+				<!-- Erros & Sucessos -->
+				<?php
+					include('../funcphp/system_message.php');
+				?>
 
-		<!-- Incluir Páginas -->
-		<?php  
-		switch (isset($_GET['url'])){
-			case 'turmas': include('Turmas/menu_turmas.php');
-			break;
-			default: include('Escolas/menu_escolas.php');
-			break;
-		}
-		?>  <!-- Fim Do Conteúdo -->
+				<!-- Incluir Páginas -->
+				<?php  
+				switch (isset($_GET['url'])){
+					case 'turmas': include('Turmas/menu_turmas.php');
+					break;
+					default: include('Escolas/menu_escolas.php');
+					break;
+				}
+				?>  <!-- Fim Do Conteúdo -->
+			<div>
+		</div>
 	</div>
 </body>
 </html>
