@@ -17,11 +17,8 @@
 <body>
     <!-- Includes, Yields, Paginas -->
 
-    
     @include('Layouts.navbar_layout')
-
-    @yield('errors')
-    
+    @yield('modals')
     @yield('content')
 
 

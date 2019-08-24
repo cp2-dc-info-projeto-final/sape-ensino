@@ -10,21 +10,28 @@ body{
 }
 </style>
 <div class="container">
+
         <div class="row">
           <div class="col-12 col-md-7 col-lg-5 mx-auto">
             <div class="card card-signin my-5">
               <div class="card-body">
                 <h1 class="card-title text-center">Cadastro</h1>
                 <!-- MESSAGES -->
+             
                 <form class="form-signin" method="post" action="{{route('register')}}">
-                        {{ csrf_field() }}
-                    <div class="form-label-group mb-3">
+                    {{ csrf_field() }}
+
+                    <!-- Errors -->
+                    @include('Includes.errors')
+                    
+                  
+                    <div>
                       <label for="name">Seu Nome</label>
                       <div class="input-group">
                         <div class="input-group-pretend">
                           <span class="input-group-text"><i data-feather="user"></i></span>
                         </div>
-                        <input class="form-control" id="name" name="name" required="required" type="text" placeholder="Nome Completo"/>
+                        <input class="form-control @error('name') is-invalid @enderror" id="name" name="name" required="required" type="text" placeholder="Nome Completo"/>
                       </div>
                     </div>
     
@@ -34,7 +41,7 @@ body{
                         <div class="input-group-pretend">
                           <span class="input-group-text"><i data-feather="mail"></i></span>
                         </div>
-                        <input class="form-control" id="email" name="email" required="required" type="email" placeholder="ex. contato@dominio.com"/>
+                        <input class="form-control @error('email') is-invalid @enderror" id="email" name="email" required="required" type="email" placeholder="ex. contato@dominio.com"/>
                       </div>
                     </div>
                     
@@ -44,7 +51,7 @@ body{
                           <div class="input-group-pretend">
                             <span class="input-group-text"><i data-feather="file-text"></i></span>
                           </div>
-                          <input class="form-control" id="matricula" name="matricula" required="required" type="text" placeholder="ex. m2397523"/>
+                          <input class="form-control @error('matricula') is-invalid @enderror" id="matricula" name="matricula" required="required" type="text" placeholder="ex. m2397523"/>
                         </div>
                     </div>
     
@@ -54,7 +61,7 @@ body{
                           <div class="input-group-pretend">
                             <span class="input-group-text"><i data-feather="key"></i></span>
                           </div>
-                        <input class="form-control" id="password" name="password" required="required" type="password" placeholder="ex. 12345678"/>
+                        <input class="form-control @error('password') is-invalid @enderror" id="password" name="password" required="required" type="password" placeholder="ex. 12345678"/>                
                       </div>
                     </div>
     
@@ -64,7 +71,7 @@ body{
                           <div class="input-group-pretend">
                             <span class="input-group-text"><i data-feather="key"></i></span>
                           </div>
-                          <input class="form-control" id="consenha_cad" name="password_confirmation" required="required" type="password" placeholder="ex. 12345678"/>
+                          <input class="form-control @error('password_confirmation') is-invalid @enderror" id="consenha_cad" name="password_confirmation" required="required" type="password" placeholder="ex. 12345678"/>
                         </div>
                       </div>
 

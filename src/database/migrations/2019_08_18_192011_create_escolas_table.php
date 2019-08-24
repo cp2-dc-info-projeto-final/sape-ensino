@@ -20,7 +20,7 @@ class CreateEscolasTable extends Migration
             $table->string('password');
             $table->integer('diretor')->unsigned();
             $table->integer('codigo');
-            $table->foreign('diretor')->references('id')->on('users');
+            $table->foreign('diretor')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

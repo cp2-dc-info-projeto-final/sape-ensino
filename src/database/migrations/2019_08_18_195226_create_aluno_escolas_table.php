@@ -17,10 +17,10 @@ class CreateAlunoEscolasTable extends Migration
             $table->increments('id');
 
             $table->integer('id_aluno')->unsigned();
-            $table->foreign('id_aluno')->references('id')->on('users');
+            $table->foreign('id_aluno')->references('id')->on('users')->onDelete('cascade');
             
             $table->integer('id_escolas')->unsigned();
-            $table->foreign('id_escolas')->references('id')->on('escolas');
+            $table->foreign('id_escolas')->references('id')->on('escolas')->onDelete('cascade');
 
             $table->timestamps();
         });

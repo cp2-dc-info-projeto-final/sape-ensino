@@ -16,11 +16,21 @@
 		</ul>
 </ul>
 @elseif(Auth::check())
+	@if(Auth::User()->cargo == 'Diretor')
 
-<ul class="navbar-nav">
-		<li class="nav-item">
-			<a class="nav-link" href="{{route('logout')}}"><button class="btn btn-outline-light">Sair</button></a>
-		</li>
-</ul>
+	<div class="btn-group ml-auto">
+        <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown">Criação</button>
+        <div class="dropdown-menu dropdown-menu-left">
+            <button class="dropdown-item" type="button" data-toggle="modal" data-target="#ModalEscola">Cadastrar Escola</button>
+            <button class="dropdown-item" type="button" data-toggle="modal" data-target="#ModalTurma">Criar Turma</button>
+        </div>
+    </div>
+
+	@endif
+	<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link" href="{{route('logout')}}"><button class="btn btn-outline-light">Sair</button></a>
+			</li>
+	</ul>
 
 @endif

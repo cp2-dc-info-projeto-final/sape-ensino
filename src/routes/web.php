@@ -10,9 +10,24 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Pages
 
+/*Rotas especificas de cargo*/
+Route::group(['middleware' => 'App\Http\Middleware\AlunoMiddleware'], function(){
+
+});
+
+Route::group(['middleware' => 'App\Http\Middleware\ProfessorMiddleware'], function(){
+
+});
+
+Route::group(['middleware' => 'App\Http\Middleware\DiretorMiddleware'], function(){
+    
+});
+
+
+//Paginas
 Route::get('/', 'ControladorPage@index')->name('index');
+
 
 //Authentication
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('Slogin');

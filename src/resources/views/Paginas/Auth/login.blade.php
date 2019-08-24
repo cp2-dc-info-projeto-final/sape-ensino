@@ -19,13 +19,16 @@ body{
         
                 <form class="form-signin" method="post" action="{{route('login')}}">
                   {{ csrf_field() }}
+                  
+                  @include('Includes.errors')
+                  
                   <div class="form-label-group mb-3"> 
                     <label for="matricula">Sua Matrícula</label>
                       <div class="input-group">
                           <div class="input-group-pretend">
                             <span class="input-group-text"><i data-feather="user"></i></span>
                           </div>
-                        <input class="form-control" id="matricula" name="matricula" required="required" type="text" placeholder="M12345678"/>
+                        <input class="form-control @error('matricula') is-invalid @enderror" id="matricula" name="matricula" required="required" type="text" placeholder="M12345678"/>
                       </div>
                      </div>    
                   <div class="form-label-group mb-3">
@@ -34,7 +37,7 @@ body{
                         <div class="input-group-pretend">
                           <span class="input-group-text"><i data-feather="key"></i></span>
                         </div>
-                      <input class="form-control" id="password" name="password" required="required" type="password" placeholder="ex. 12345678"/>
+                      <input class="form-control @error('password') is-invalid @enderror" id="password" name="password" required="required" type="password" placeholder="ex. 12345678"/>
                       </div>
                   </div>
                   <div class="form-group">

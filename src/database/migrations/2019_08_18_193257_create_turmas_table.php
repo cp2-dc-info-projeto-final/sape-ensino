@@ -17,7 +17,7 @@ class CreateTurmasTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->integer('escola_id')->unsigned();
-            $table->foreign('escola_id')->references('id')->on('escolas');
+            $table->foreign('escola_id')->references('id')->on('escolas')->onDelete('cascade');
             $table->timestamps();
         });
     }

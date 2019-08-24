@@ -27,5 +27,21 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    #Um pra um
+
     
+
+    #Muitos pra um
+
+
+    
+    #Muitos pra Muitos
+
+    public function Escolas(){
+        return $this->hasMany('App\Escolas', 'aluno_escolas');
+    }
+
+    public function Turmas(){
+        return $this->hasMany('App\Turmas', 'aluno_turmas');
+    }
 }
