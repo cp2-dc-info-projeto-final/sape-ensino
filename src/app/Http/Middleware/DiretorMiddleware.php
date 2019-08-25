@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
+use Illuminate\Http\Response;
 
 use Closure;
 
@@ -17,7 +18,7 @@ class DiretorMiddleware
     {
         if ($request->user() && $request->user()->cargo != 'Diretor')
         {
-            return new Response(view('unauthorized')->with('cargo', 'Diretor'));
+            return new Response(abort(403, 'Acesso não autorizado'));
         }
         
         return $next($request);

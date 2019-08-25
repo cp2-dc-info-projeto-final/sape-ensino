@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Http\Response;
 use Closure;
 
 class ProfessorMiddleware
@@ -17,7 +18,7 @@ class ProfessorMiddleware
     {
         if ($request->user() && $request->user()->cargo != 'Professor')
         {
-            return new Response(view('unauthorized')->with('cargo', 'Professor'));
+            return new Response(abort(403, 'Acesso não autorizado'));
         }
         
         return $next($request);

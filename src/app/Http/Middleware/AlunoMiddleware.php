@@ -17,7 +17,7 @@ class AlunoMiddleware
     {
         if ($request->user() && $request->user()->cargo != 'Aluno')
         {
-            return new Response(view('unauthorized')->with('cargo', 'Aluno'));
+            return new Response(abort(403, 'Acesso não autorizado'));
         }
         
         return $next($request);

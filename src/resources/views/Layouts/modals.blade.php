@@ -16,6 +16,7 @@
 
 					<div class="modal-body"><!-- corpo do modal -->
 						<form class="form-signin" method="post" action="Escolas/entrarEscola.php">
+							{{ csrf_field() }}
 							<div class="form-label-group mb-3"> 
 								<label for="CodEscola">Código da Escola</label>
 								<div class="input-group">
@@ -45,32 +46,33 @@
 					</div>
 
 					<div class="modal-body"><!-- corpo do modal da escola -->
-						<form class="form-signin" method="post" action="Escolas/cadastrarEscola.php">
+						<form class="form-signin" method="post" action="{{route('regEscola')}}">
+							{{ csrf_field() }}
 							<div class="form-label-group mb-3"> 
-								<label for="NomeEscola">Nome da Escola</label>
+								<label for="nome">Nome da Escola</label>
 								<div class="input-group">
 									<div class="input-group-pretend">
 										<span class="input-group-text"><i data-feather="file-text"></i></span>
 									</div>
-									<input class="form-control" maxlength=10 id="nomeescola" name="nomeescola" required="required" type="text" placeholder="CP2"/>
+									<input class="form-control" maxlength=10 id="nomeescola" name="nome" required="required" type="text" placeholder="CP2"/>
 								</div>
 							</div>    
 							<div class="form-label-group mb-3">
-								<label for="DescricaoEscola">Descrição</label>
+								<label for="descricao">Descrição</label>
 								<div class="input-group">
 									<div class="input-group-pretend">
 									<span class="input-group-text"><i data-feather="message-square"></i></span>
 									</div>
-								<textarea class="form-control" maxlength=38 id="descescola" name="descescola" required="required" placeholder="ex. Nome completo da Escola" rows="1"></textarea>
+								<textarea class="form-control" maxlength=38 id="descescola" name="descricao" required="required" placeholder="ex. Nome completo da Escola" rows="1"></textarea>
 								</div>
 							</div>
 							<div class="form-label-group mb-3"> 
-								<label for="">Senha da Escola</label>
+								<label for="password">Senha da Escola</label>
 								<div class="input-group">
 									<div class="input-group-pretend">
 										<span class="input-group-text"><i data-feather="alert-circle"></i></span>
 									</div>
-									<input class="form-control" id="senhaescola" name="senhaescola" required="required" type="password" placeholder="EX. 12345678"/>
+									<input class="form-control" id="senhaescola" name="password" required="required" type="password" placeholder="EX. 12345678"/>
 								</div>
 							</div>
 							<button class="btn btn-lg btn-primary btn-block" type="submit" value="CadastrarEscola">Cadastrar Escola</button>
@@ -94,6 +96,7 @@
 
 					<div class="modal-body"><!-- corpo do modal da escola -->
 						<form class="form-signin" method="post" action="Turmas/cadastroturma.php">
+							{{ csrf_field() }}
 							<div class="form-label-group mb-3"> 
 								<label for="NomeTurma">Nome da Turma</label>
 								<div class="input-group">

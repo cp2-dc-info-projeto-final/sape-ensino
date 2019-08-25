@@ -21,7 +21,7 @@ Route::group(['middleware' => 'App\Http\Middleware\ProfessorMiddleware'], functi
 });
 
 Route::group(['middleware' => 'App\Http\Middleware\DiretorMiddleware'], function(){
-    
+    Route::post('regEscola', 'ControladorEscola@getInsert')->name('regEscola');
 });
 
 

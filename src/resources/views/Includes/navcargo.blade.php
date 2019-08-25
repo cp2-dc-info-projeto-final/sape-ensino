@@ -16,7 +16,7 @@
 		</ul>
 </ul>
 @elseif(Auth::check())
-	@if(Auth::User()->cargo == 'Diretor')
+	@if(Auth::User()->cargo != 'Diretor')
 
 	<div class="btn-group ml-auto">
         <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown">Criação</button>

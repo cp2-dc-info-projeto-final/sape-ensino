@@ -14,4 +14,5 @@ class ControladorPage extends Controller
         return view('Paginas.index');
         }
     }
+    
 }

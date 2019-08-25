@@ -37,11 +37,11 @@ class User extends Authenticatable
     
     #Muitos pra Muitos
 
-    public function Escolas(){
+    public function escolas(){
         return $this->hasMany('App\Escolas', 'aluno_escolas');
     }
 
-    public function Turmas(){
+    public function turmas(){
         return $this->hasMany('App\Turmas', 'aluno_turmas');
     }
 }
