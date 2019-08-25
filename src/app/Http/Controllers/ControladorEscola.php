@@ -9,6 +9,11 @@ use Auth;
 
 class ControladorEscola extends Controller
 {
+    
+
+    protected function getDiretor(){
+        return Auth::user()->id;
+    }
     protected function insert()
     {   
         $escolas = new Escolas;
@@ -16,19 +21,18 @@ class ControladorEscola extends Controller
         $escolas->nome = request('nome');
         $escolas->descricao = request('descricao');
         $escolas->password = md5(request('password'));
-        $escolas->diretor = $escolas->diretor();
+        $escolas->diretor = $this->getDiretor();
         $escolas->codigo = $escolas->gerarCodigo();
         
         $escolas->save();
 
     }
-
     public function getInsert(){
         $this->insert();
         return redirect('/');
     }
 
     public function showescolas(){
-        //Fazer Codigo de mostrar escolas;
+        // Fazer codigo de mostrar escolas
     }
 }
