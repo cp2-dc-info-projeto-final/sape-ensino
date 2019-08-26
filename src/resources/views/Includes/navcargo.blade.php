@@ -1,4 +1,4 @@
-@if(Auth::Guest())
+@guest
 <ul class="navbar-nav ml-auto">
          <ul class="navbar-nav ml-auto">
 			<li class="nav-item">
@@ -15,8 +15,9 @@
 			</li>
 		</ul>
 </ul>
-@elseif(Auth::check())
-	@if(Auth::User()->cargo != 'Diretor')
+@endguest
+@auth
+	@if(Auth::User()->cargo == 'Diretor')
 
 	<div class="btn-group ml-auto">
         <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown">Criação</button>
@@ -27,10 +28,11 @@
     </div>
 
 	@endif
+	
 	<ul class="navbar-nav">
 			<li class="nav-item">
 				<a class="nav-link" href="{{route('logout')}}"><button class="btn btn-outline-light">Sair</button></a>
 			</li>
 	</ul>
 
-@endif
+@endauth

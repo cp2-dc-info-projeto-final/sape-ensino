@@ -11,18 +11,7 @@ class Escolas extends Model
     protected $hidden = [
         'password', 'codigo',
     ];
-    #Um pra um
-
-
-    #Um pra muitos
-    public function diretor(){
-        return $this->belongsTo('App\Diretor'); //Escola só tem 1 diretor
-    }
-    #Muitos pra muitos
-    public function users(){
-        return $this->hasMany('App\Escolas', 'aluno_escolas'); // Escola tem Varios Alunos
-    }
-
+    
     public function gerarCodigo(){
         $valido = false;
         $codigo = 0;
@@ -36,4 +25,17 @@ class Escolas extends Model
         }
         return $codigo;
     }
+    #Um pra um
+
+
+    #Um pra muitos
+    public function diretor(){
+        return $this->belongsTo('App\Diretor', 'diretor'); //Escola só tem 1 diretor
+    }
+    #Muitos pra muitos
+    public function users(){
+        return $this->belongsToMany('App\User', 'aluno_escolas', 'users', 'escolas'); // Escola tem Varios Alunos
+    }
+
+    
 }

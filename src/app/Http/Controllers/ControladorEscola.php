@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Escolas;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class ControladorEscola extends Controller
 {
@@ -29,10 +29,8 @@ class ControladorEscola extends Controller
     }
     public function getInsert(){
         $this->insert();
-        return redirect('/');
+        return redirect(route('escolas'));
     }
 
-    public function showescolas(){
-        // Fazer codigo de mostrar escolas
-    }
+
 }

@@ -12,6 +12,6 @@ class Turmas extends Model
     
 
     public function users(){
-        return $this->hasMany('App\Turmas', 'aluno_turmas');
+        return $this->belongsToMany('App\Turmas', 'aluno_turmas', 'aluno_id', 'turma_id');
     }
 }

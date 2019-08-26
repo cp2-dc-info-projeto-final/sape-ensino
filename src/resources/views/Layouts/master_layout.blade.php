@@ -16,7 +16,7 @@
 </head>
 <body>
     <!-- Includes, Yields, Paginas -->
-
+    
     @include('Layouts.navbar_layout')
     @yield('modals')
     @yield('content')

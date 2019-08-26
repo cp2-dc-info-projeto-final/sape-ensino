@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a1df9956d16fd7dd74900948ca4c101",
+    "content-hash": "c00f73d80ebc49d7af7cc7d81035af55",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2731,6 +2731,46 @@
                 "dump"
             ],
             "time": "2019-07-27T06:42:46+00:00"
+        },
+        {
+            "name": "tightenco/parental",
+            "version": "v0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tightenco/parental.git",
+                "reference": "bb7d1bc80048ef001ee30c02c895d65b455c9a4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tightenco/parental/zipball/bb7d1bc80048ef001ee30c02c895d65b455c9a4d",
+                "reference": "bb7d1bc80048ef001ee30c02c895d65b455c9a4d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "~5.6.0|~5.7.0|~5.8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "3.8.*",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tightenco\\Parental\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Caleb Porzio",
+                    "email": "calebporzio@gmail.com"
+                }
+            ],
+            "description": "A simple eloquent trait that allows relationships to be accessed through child models.",
+            "time": "2019-03-18T15:24:37+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

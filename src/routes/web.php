@@ -21,12 +21,16 @@ Route::group(['middleware' => 'App\Http\Middleware\ProfessorMiddleware'], functi
 });
 
 Route::group(['middleware' => 'App\Http\Middleware\DiretorMiddleware'], function(){
-    Route::post('regEscola', 'ControladorEscola@getInsert')->name('regEscola');
+   Route::post('regEscola', 'ControladorEscola@getInsert')->name('regEscola');
 });
 
 
 //Paginas
-Route::get('/', 'ControladorPage@index')->name('index');
+Route::get('/', 'ControladorPage@index')->name('index')->middleware('guest');
+Route::get('escolas', 'ControladorPage@escolas')->name('Sescolas');
+ 
+
+
 
 
 //Authentication

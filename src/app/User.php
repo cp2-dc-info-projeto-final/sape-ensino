@@ -6,8 +6,10 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
-{
+{ 
+    
     use Notifiable;
+    use \Tightenco\Parental\HasChildren;
 
     /**
      * The attributes that are mass assignable.
@@ -16,6 +18,13 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name', 'email', 'password', 'matricula', 'cargo'
+    ];
+    protected $childColumn = 'cargo';
+
+    protected $childTypes = [
+        'Diretor' => \App\Diretor::class,
+        'Professor' => \App\User::class,
+        'Aluno' => \App\User::class,
     ];
 
     /**
@@ -38,10 +47,10 @@ class User extends Authenticatable
     #Muitos pra Muitos
 
     public function escolas(){
-        return $this->hasMany('App\Escolas', 'aluno_escolas');
+        return $this->belongsToMany('App\Escolas', 'aluno_escolas', 'escolas', 'users');
     }
 
     public function turmas(){
-        return $this->hasMany('App\Turmas', 'aluno_turmas');
+        return $this->belongsToMany('App\Turmas', 'aluno_turmas', 'turma_id', 'aluno_id');;
     }
 }
