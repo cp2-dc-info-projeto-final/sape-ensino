@@ -132,5 +132,12 @@
 					</div>
 				</div>
 			</div>
-        </div><!-- fim do modal para criar uma turma -->
+		</div><!-- fim do modal para criar uma turma -->
+		
+		<nav arial-label="breadcrumb" class="mt-3"><!-- barra de diretório das paginas-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active">Home</li>
+            </ol>
+        </nav><!-- fim da barra de diretório-->
+
 @stop

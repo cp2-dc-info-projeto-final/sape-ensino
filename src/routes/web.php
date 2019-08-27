@@ -28,10 +28,6 @@ Route::group(['middleware' => 'App\Http\Middleware\DiretorMiddleware'], function
 //Paginas
 Route::get('/', 'ControladorPage@index')->name('index')->middleware('guest');
 Route::get('escolas', 'ControladorPage@escolas')->name('Sescolas');
- 
-
-
-
 
 //Authentication
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('Slogin');

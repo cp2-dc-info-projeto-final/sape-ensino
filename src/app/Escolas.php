@@ -34,7 +34,7 @@ class Escolas extends Model
     }
     #Muitos pra muitos
     public function users(){
-        return $this->belongsToMany('App\User', 'aluno_escolas', 'users', 'escolas'); // Escola tem Varios Alunos
+        return $this->belongsToMany('App\User', 'aluno_escolas', 'aluno_id', 'escola_id'); // Escola tem Varios Alunos
     }
 
     
