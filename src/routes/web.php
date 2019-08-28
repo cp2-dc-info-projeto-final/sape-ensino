@@ -12,22 +12,29 @@
 */
 
 /*Rotas especificas de cargo*/
+
+
+/*Route::group(['middleware' => 'App\Http\Middleware\ProfessorMiddleware'], function(){
+
+        Route::post('entrarEscola', 'ControladorEscola@entrarEscola')->name('entrarEscola');
+
+});*/ //VER COMO FAZER PARA TER DUAS ROTAS IGUAIS.
+
+
 Route::group(['middleware' => 'App\Http\Middleware\AlunoMiddleware'], function(){
 
-});
-
-Route::group(['middleware' => 'App\Http\Middleware\ProfessorMiddleware'], function(){
+        Route::post('entrarEscola', 'ControladorEscola@entrarEscola')->name('entrarEscola');
 
 });
 
 Route::group(['middleware' => 'App\Http\Middleware\DiretorMiddleware'], function(){
-   Route::post('regEscola', 'ControladorEscola@getInsert')->name('regEscola');
+        Route::post('regEscola', 'ControladorEscola@getInsert')->name('regEscola');
 });
 
 
 //Paginas
 Route::get('/', 'ControladorPage@index')->name('index')->middleware('guest');
-Route::get('escolas', 'ControladorPage@escolas')->name('Sescolas');
+Route::get('escolas', 'ControladorEscola@showescolas')->name('Sescolas');
 
 //Authentication
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('Slogin');

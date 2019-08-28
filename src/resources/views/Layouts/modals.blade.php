@@ -15,7 +15,7 @@
 					</div>
 
 					<div class="modal-body"><!-- corpo do modal -->
-						<form class="form-signin" method="post" action="Escolas/entrarEscola.php">
+						<form class="form-signin" method="post" action="{{route('entrarEscola')}}">
 							{{ csrf_field() }}
 							<div class="form-label-group mb-3"> 
 								<label for="CodEscola">Código da Escola</label>
@@ -23,7 +23,7 @@
 									<div class="input-group-pretend">
 										<span class="input-group-text"><i data-feather="key"></i></span>
 									</div>
-									<input class="form-control" maxlength=6 id="EntrarEscola" name="EntrarEscola" required="required" type="password" placeholder="EX. 123456"/>
+									<input class="form-control" maxlength=6 id="CodEscola" name="CodEscola" required="required" type="password" placeholder="EX. 123456"/>
 								</div>
 							</div>    
 							<button class="btn btn-lg btn-primary btn-block" type="submit" value="EntrarEscola">Entrar</button>

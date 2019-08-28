@@ -27,7 +27,6 @@ class Escolas extends Model
     }
     #Um pra um
 
-
     #Um pra muitos
     public function diretor(){
         return $this->belongsTo('App\Diretor', 'diretor'); //Escola só tem 1 diretor

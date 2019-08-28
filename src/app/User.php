@@ -9,8 +9,18 @@ class User extends Authenticatable
 { 
     
     use Notifiable;
-    use \Tightenco\Parental\HasChildren;
+    //use \Tightenco\Parental\HasChildren;
 
+   
+    /*
+    protected $childColumn = 'cargo';
+
+    protected $childTypes = [
+        'Diretor' => \App\Diretor::class,
+        'Professor' => \App\User::class,
+        'Aluno' => \App\User::class,
+    ];*/
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -19,14 +29,6 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password', 'matricula', 'cargo'
     ];
-    protected $childColumn = 'cargo';
-
-    protected $childTypes = [
-        'Diretor' => \App\Diretor::class,
-        'Professor' => \App\User::class,
-        'Aluno' => \App\User::class,
-    ];
-
     /**
      * The attributes that should be hidden for arrays.
      *

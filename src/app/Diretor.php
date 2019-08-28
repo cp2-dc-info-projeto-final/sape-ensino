@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Diretor extends User
 {
-    use \Tightenco\Parental\HasParent;
+    //use \Tightenco\Parental\HasParent;
     
 
     public function escolas(){

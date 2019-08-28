@@ -27,12 +27,20 @@
         </div>
     </div>
 
-	@endif
+	@elseif(Auth::User()->cargo != 'Diretor')
+
+	<div class="btn-group ml-auto">
+        <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#ModalEntrarEscolaAluno" data-toggle="modal">Entrar</button>
+	</div>
 	
+	@endif
+
 	<ul class="navbar-nav">
 			<li class="nav-item">
 				<a class="nav-link" href="{{route('logout')}}"><button class="btn btn-outline-light">Sair</button></a>
 			</li>
 	</ul>
+
+	
 
 @endauth
