@@ -7,9 +7,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap.css -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
@@ -17,37 +17,37 @@
 
     <!-- barra de navegação -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand h1 mb-0 " href="#">Sape Ensino</a>
-            <button class="navbar-toggler" data-toggle="collapse" href="#collapsenavbar" type="button" aria-expanded="false" aria-controls="collapsenavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsenavbar">
-                <ul class="navbar-nav mr-auto ml-3">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Início</a>
-                    </li>
-
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">Login</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="menudropdownnavbar" role="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            Cadastro
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="menudropdownnavbar">
-                            <a class="dropdown-item" href="cadastro_aluno.html">Aluno</a>
-                            <a class="dropdown-item" href="cadastro_docente.html">Docente</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+            <div class="container">
+                <a class="navbar-brand h1 mb-0" href="#">Sape Ensino</a>
+                <div class="flex-row-reverse">
+                    <button class="btn btn-primary d-lg-none  mr-2" data-toggle="collapse" data-target="#collapsenavbar" href="#collapsenavbar" type="button" aria-expanded="false" aria-controls="collapsenavbar"><i data-feather="menu"></i></button>
+                    <button class="btn btn-primary d-md-none  mr-2" data-toggle="collapse" data-target="#collapsesidebar" href="#colapsesidebar" type="button" aria-expanded="false" aria-controls="collapsenavbar"><i data-feather="settings"></i></button>
+                </div>
+                <div class="collapse navbar-collapse" id="collapsenavbar">
+                    
+                    <ul class="navbar-nav mr-auto ml-3">
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="../menus/menu_include.php">Início</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="#">Notificações</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="../perfil/perfil.html">Perfil</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="#">Grade Horária</a>
+                        </li>
+                        
+                    </ul>	
+                    <?php
+                        include('verificacargo.php');
+                    ?>
+                </div><!-- fim do collapse -->
+                
+            </div><!-- fim do conteudo da barra-->
+        </nav><!-- fim da barra de navegação-->
 
         <header class="py-5 bg-image-full" style="background-image: url('https://unsplash.it/1900/1080?image=1076');">
             <img class="img-fluid d-block mx-auto bd-placeholder-img rounded-circle" src="images/isaak.jpg" alt="Generic placeholder image" width="200" height="200">
@@ -59,9 +59,9 @@
         <div class="row">
             <div class="col-3">
                 <div class="nav flex-column nav-pills">
-                    <a class="nav-link active" id="v-pills-home-tab" href="#"
+                    <a class="nav-link active" id="v-pills-home-tab" href="perfil.html"
                         aria-selected="flase">Início</a>
-                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#" role="tab" aria-controls="v-pills-profile"
+                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="Edit_perfil.html" role="tab" aria-controls="v-pills-profile"
                         aria-selected="false">Editar Perfil</a>
                     <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#" role="tab" aria-controls="v-pills-messages"
                         aria-selected="false">Mensagem</a>

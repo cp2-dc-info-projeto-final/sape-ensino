@@ -47,7 +47,7 @@ if(empty($_SESSION)){
 	                        <a class="nav-link" href="#">Notificações</a>
 	                </li>
 	                <li class="nav-item">
-	                        <a class="nav-link" href="#">Perfil</a>
+	                        <a class="nav-link" href="../perfil/perfil.html">Perfil</a>
 	                </li>
 	                <li class="nav-item">
 	                        <a class="nav-link" href="#">Grade Horária</a>
