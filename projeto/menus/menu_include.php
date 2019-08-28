@@ -16,10 +16,12 @@ if(empty($_SESSION)){
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap.css -->
-    <link rel="stylesheet" href="../css/bootstrap.css">
+	<!-- Bootstrap.css -->
+	
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/sidebar.css">
 
-	<link rel="stylesheet" href="../css/style.css">
+	
 	
 	<script src="../js/feather.min.js"></script>
 
@@ -29,9 +31,13 @@ if(empty($_SESSION)){
 	<!-- barra de navegação -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary pt-0 pb-0">
     	<div class="container">
-	        <a class="navbar-brand h1 mb-0" href="#">Sape Ensino</a>
-	        <button class="navbar-toggler ml-auto mr-2" data-toggle="collapse" data-target="#collapsenavbar" href="#collapsenavbar" type="button" aria-expanded="false" aria-controls="collapsenavbar"><i data-feather="menu"></i></button>
-	        <div class="collapse navbar-collapse" id="collapsenavbar">
+			<a class="navbar-brand h1 mb-0" href="#">Sape Ensino</a>
+			<div class="flex-row-reverse">
+				<button class="btn btn-primary d-lg-none  mr-2" data-toggle="collapse" data-target="#collapsenavbar" href="#collapsenavbar" type="button" aria-expanded="false" aria-controls="collapsenavbar"><i data-feather="menu"></i></button>
+				<button class="btn btn-primary d-md-none  mr-2" data-toggle="collapse" data-target="#collapsesidebar" href="#colapsesidebar" type="button" aria-expanded="false" aria-controls="collapsenavbar"><i data-feather="settings"></i></button>
+			</div>
+			<div class="collapse navbar-collapse" id="collapsenavbar">
+				
 	            <ul class="navbar-nav mr-auto ml-3">
 
 	                <li class="nav-item">
@@ -191,42 +197,24 @@ if(empty($_SESSION)){
 				</div>
 			</div>
         </div><!-- fim do modal para criar uma turma -->
-        
-		<div class="row">
-			<div class="sidebar border col-2 mr-5">
-				<h3 class="text-secondary bg-color border" style="white-space:nowrap;">Painel de Controle</h3>
-				<ul class="sidebar navbar-nav flex-column">
-					<li class="nav-item border"><i data-feather="user"></i><span>Nome do Aluno</span></li>
-				</ul>
-			</div>
-			<div class="col-9">
-				<!-- Erros & Sucessos -->
-				<?php
-					include('../funcphp/system_message.php');
-				?>
+	
+	<div class="container-fluid">
+		<div>
+			<!-- Erros & Sucessos -->
+			<?php
+				include('../funcphp/system_message.php');
+			?>
 
-				<!-- Incluir Páginas -->
-				<?php  
-				switch (isset($_GET['url'])){
-					case 'turmas': include('Turmas/menu_turmas.php');
-					break;
-					default: include('Escolas/menu_escolas.php');
-					break;
-				}
-				?>  <!-- Fim Do Conteúdo -->
-			<div>
+			<!-- Incluir Páginas -->
+			<?php  
+			switch (isset($_GET['url'])){
+				case 'turmas': include('Turmas/menu_turmas.php');
+				break;
+				default: include('Escolas/menu_escolas.php');
+				break;
+			}
+			?>  <!-- Fim Do Conteúdo -->
 		</div>
-	</div>
+    </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
