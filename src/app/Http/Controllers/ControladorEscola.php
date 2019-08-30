@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\DB;
 class ControladorEscola extends Controller
 {
     
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     protected function getUserId(){
         return Auth::user()->id;
@@ -33,7 +37,7 @@ class ControladorEscola extends Controller
     }
     public function getInsert(){
         $this->insert();
-        return $this->redirect();
+        return redirect()->route('Sescolas');
     }
 
     public function showescolas(){
@@ -63,7 +67,7 @@ class ControladorEscola extends Controller
             $alunoescolas->id_escolas = $escolas->id;
             $alunoescolas->save();
 
-            return redirect(route('Sescolas'));
+            return redirect()->route('Sescolas');
 
         } else {
             return abort(404); // COLOCAR ERROR DE ESCOLA NÃO ENCONTRADA

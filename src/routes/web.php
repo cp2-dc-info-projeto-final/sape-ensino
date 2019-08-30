@@ -21,15 +21,22 @@
 });*/ //VER COMO FAZER PARA TER DUAS ROTAS IGUAIS.
 
 
-Route::group(['middleware' => 'App\Http\Middleware\AlunoMiddleware'], function(){
 
-        Route::post('entrarEscola', 'ControladorEscola@entrarEscola')->name('entrarEscola');
+       
+//PROFESSOR ROUTES
+
+//DIRETOR ROUTES
+Route::post('regEscola', 'ControladorEscola@getInsert')->name('regEscola');
+
+//PROFESSOR & ALUNO ROUTES
+Route::group(['middleware' => 'roles:Professor,Aluno'], function(){
+
+Route::post('entrarEscola', 'ControladorEscola@entrarEscola')->name('entrarEscola');
 
 });
 
-Route::group(['middleware' => 'App\Http\Middleware\DiretorMiddleware'], function(){
-        Route::post('regEscola', 'ControladorEscola@getInsert')->name('regEscola');
-});
+
+
 
 
 //Paginas
