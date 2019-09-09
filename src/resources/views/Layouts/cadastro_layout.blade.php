@@ -6,7 +6,7 @@ body{
     background-image: url({{asset('images/back.png')}});
     background-attachment: fixed;
     margin: 0%;
-    height: 100%;
+    min-height: 100%;
 }
 </style>
 <div class="container">

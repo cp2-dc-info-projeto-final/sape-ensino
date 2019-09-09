@@ -11,17 +11,13 @@ use Illuminate\Support\Facades\DB;
 
 class ControladorEscola extends Controller
 {
-    
-    public function __construct()
-    {
+    public function __construct(){
         $this->middleware('auth');
     }
 
     protected function getUserId(){
         return Auth::user()->id;
     }
-
-
     protected function insert()
     {   
         $escolas = new Escolas;
@@ -35,9 +31,10 @@ class ControladorEscola extends Controller
         $escolas->save();
 
     }
+
     public function getInsert(){
         $this->insert();
-        return redirect()->route('Sescolas');
+        return redirect(route('Sescolas'));
     }
 
     public function showescolas(){
@@ -59,20 +56,9 @@ class ControladorEscola extends Controller
     }
 
     public function entrarEscola(){
-        $escolas = Escolas::select('codigo', 'id')->where('codigo', request('CodEscola'))->first();
-        if ($escolas && $escolas->exists()){
-
-            $alunoescolas = new aluno_escolas;
-            $alunoescolas->id_aluno =  $this->getUserId();
-            $alunoescolas->id_escolas = $escolas->id;
-            $alunoescolas->save();
-
-            return redirect()->route('Sescolas');
-
-        } else {
-            return abort(404); // COLOCAR ERROR DE ESCOLA NÃO ENCONTRADA
-        }
-
-        
+        /*$alunoescolas = new aluno_escolas;
+        $alunoescolas->aluno_id =  $this->getUserId();
+        $alunoescolas->escola_id = request('schoolID');
+        $alunoescolas->save();*/
     }
 }

@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('matricula')->unique();
             $table->enum('cargo', ['Diretor', 'Professor', 'Aluno'])->default('Aluno');
+            $table->string('profile_picture')->default('default.jpg');
             $table->rememberToken();
             $table->timestamps();
         });

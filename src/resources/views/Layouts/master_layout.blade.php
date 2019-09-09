@@ -7,7 +7,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Bootstrap.css -->
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.min.css')}}" type="text/css" rel="stylesheet">
+    <link href="{{asset('css/custom.css')}}" type="text/css" rel="stylesheet">
+
     <script src="{{asset('js/feather.min.js')}}"></script>
     
     <title>{{config('app.name')}}</title>
@@ -22,6 +24,24 @@
     @yield('content')
 
 
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="py-4 bg-primary" style="position:absolute;bottom:0;width:100%">
+        <div class="container">
+          <p class="m-0 text-center text-white">Copyright © Sape-Ensino 2019</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
     <!-------------------------------->
     <!-- Bootstrap.js and jquery.js --> 
     <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
@@ -29,6 +49,6 @@
     <script>
         feather.replace()
     </script>
-   
+
 </body>
 </html>

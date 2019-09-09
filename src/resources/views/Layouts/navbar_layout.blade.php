@@ -6,13 +6,13 @@
             <ul class="navbar-nav mr-auto ml-3">
             @auth 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Início</a>
+                    <a class="nav-link" href="{{route('index')}}">Início</a>
                 </li>
                 <li class="nav-item">
                         <a class="nav-link" href="#">Notificações</a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link" href="#">Perfil</a>
+                <a class="nav-link" href="{{route('perfil')}}">Perfil</a>
                 </li>
                 <li class="nav-item">
                         <a class="nav-link" href="#">Grade Horária</a>
