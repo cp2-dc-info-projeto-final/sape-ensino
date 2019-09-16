@@ -3,7 +3,7 @@
 @section('content')
     
     <header class="py-5 bg-image-full" style="background-image: url('https://unsplash.it/1900/1080?image=1076');">
-        <img class="img-fluid d-block mx-auto bd-placeholder-img rounded-circle" src="{{asset('storage/images/'.$user->profile_picture)}}" alt="Generic placeholder image" width="300" height="300">
+        <img class="img-fluid d-block mx-auto bd-placeholder-img rounded-circle" src="{{asset('storage/images/'.$user->profile_picture)}}" alt="Generic placeholder image" width="200" height="200">
     </header>
 <div class="container">
    

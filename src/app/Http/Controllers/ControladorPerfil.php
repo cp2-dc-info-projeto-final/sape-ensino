@@ -36,7 +36,7 @@ class ControladorPerfil extends Controller
             $uploadpath = time().'.'.$profileImage->guessExtension();
 
             $img = Image::make($profileImage->getRealPath());
-            $img->resize(300, 300)->save(public_path('storage/images').'/'.$uploadpath); 
+            $img->resize(200, 200)->save(public_path('storage/images').'/'.$uploadpath); 
             //$request->profile_picture->storeAs('images', $uploadpath);
 
 
