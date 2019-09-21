@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once('../funcphp/conexaoBD.php');
+include_once('../funcphp/conexaoBD.php');// função para se conectar ao banco de dados, ou avisar de um erro -->
 
 $banco = connect_BD();
 

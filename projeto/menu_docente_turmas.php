@@ -13,12 +13,14 @@ session_start();
     <title>Menu</title>
     <!-- Meta -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- area visivel no site -->
+
     <!-- Bootstrap.css -->
     <link rel="stylesheet" href="css/bootstrap.css">
 
 	<link rel="stylesheet" href="css/style.css">
 	
+	<!-- js para icones no site -->
 	<script src="js/feather.min.js"></script>
 
 </head>
@@ -26,30 +28,33 @@ session_start();
 <body>
 	<!-- barra de navegação -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary pt-0 pb-0 mb-4">
-    	<div class="container">
+    	<div class="container"> <!--centralização do conteudo na pagina-->
 	        <a class="navbar-brand h1 mb-0" href="#">Sape Ensino</a>
 	        <button class="navbar-toggler ml-auto mr-2" data-toggle="collapse" data-target="#collapsenavbar" href="#collapsenavbar" type="button" aria-expanded="false" aria-controls="collapsenavbar">Menu</button>
-	        <div class="collapse navbar-collapse" id="collapsenavbar">
-	            <ul class="navbar-nav mr-auto ml-3">
+	        <div class="collapse navbar-collapse" id="collapsenavbar"> <!-- div com colapse para um fazer um dropdown da barra de navegação--> 
+	            <ul class="navbar-nav mr-auto ml-3"><!--linha-->
 
-	                <li class="nav-item">
+	                <li class="nav-item"> <!--coluna-->
 	                    <a class="nav-link" href="menu_docente.php">Início</a>
 	                </li>
-	                <li class="nav-item">
+	                <li class="nav-item"> <!--coluna-->
 	                        <a class="nav-link" href="#">Notificações</a>
 	                </li>
-	                <li class="nav-item">
+	                <li class="nav-item"> <!--coluna-->
 	                        <a class="nav-link" href="#">Perfil</a>
 	                </li>
-	                <li class="nav-item">
+	                <li class="nav-item"> <!--coluna-->
 	                        <a class="nav-link" href="#">Grade Horária</a>
 	                </li>
 					
-				</ul>	
+				</ul> <!--fim da linha da barra de navegação-->
+
+ 				<!-- inclui o botão de criação de turma e sair para -->
 				<?php
 					include('funcphp/verificacargo.php');
 				?>
-			</div><!-- fim do collapse -->
+
+			</div> <!-- fim do collapse -->
 			
 	    </div><!-- fim do conteudo da barra-->
 	</nav><!-- fim da barra de navegação-->
@@ -197,26 +202,24 @@ session_start();
 			</div>
 		</div>
  		<div class="row">
+			<div class="sidebar-sticky">
+				<ul class="nav flex-column">
+					<li class="nav-item">Calma</li>
+					<li class="nav-item"><i data-feather="key"></i>Takagiiiiiiiiiiiiiiiiiiiii<li>
+				</ul>
 
+			</div>
 		
-		<div class="sidebar-sticky">
-			<ul class="nav flex-column">
-				<li class="nav-item">Calma</li>
-				<li class="nav-item"><i data-feather="key"></i>Takagiiiiiiiiiiiiiiiiiiiii<li>
-			</ul>
-
-		</div>
-	
-		<div class="container ml-sm-2 ml-lg-4 ml-xl-5"><!-- centralizaçao do conteúdo-->
-                <div class="row ml-md-2"><!--posiciona os cards horizontalmente-->
-                
-				   <?php
-				    include('funcphp/mostrarturmas.php');
-				   ?> <!-- Aqui fica o código de PHP para adicionar as turmas-->
-                     
-                </div> 
-			</div><!-- fim do alinhamento horizontal dos cards -->
-		</div><!-- fim da centralização do conteúdo-->
+			<div class="container ml-sm-2 ml-lg-4 ml-xl-5"><!-- centralizaçao do conteúdo-->
+					<div class="row ml-md-2"><!--posiciona os cards horizontalmente-->
+					
+					<?php
+						include('funcphp/mostrarturmas.php');
+					?> <!-- Aqui fica o código de PHP para adicionar as turmas-->
+						
+					</div> 
+				</div><!-- fim do alinhamento horizontal dos cards -->
+			</div><!-- fim da centralização do conteúdo-->
  		</div>
 	</div><!-- fim do conteudo do site-->
 	

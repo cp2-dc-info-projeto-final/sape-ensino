@@ -23,6 +23,7 @@ $stmt->execute();
 $stmt->store_result();
 $stmt->bind_result($id, $nome, $email, $matricula, $hash, $cargo);
 $stmt->fetch();
+
 // Verificar o resultado
 if ($stmt->num_rows > 0 && password_verify($senha, $hash)){ 
 
