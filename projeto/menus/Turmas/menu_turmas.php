@@ -10,10 +10,9 @@
 
 			<div class="modal-body"><!-- corpo do modal -->
 			<?php 
-			$eid = $_GET['escolanome'];	
+			$eid = $_GET['eid'];	
 			echo '<form class="form-signin" method="post" action="Turmas/excluirescolas.php?eid='.$eid.'">';
 			?>
-				<!--<form class="form-signin" method="post" action="excluirescolas.php?eid=">-->
 					<div class="form-label-group mb-3"> 
 						<label for="NomeTurma">Senha da Escola</label>
 						<div class="input-group">
@@ -38,6 +37,7 @@
 	
 
 <div class="row">
+	<!-- Insere a Sidebar -->
 	<?php include('mostrarSidebar.php')?>
 	
 
@@ -62,54 +62,40 @@
 		<div class="row ml-md-2"><!--posiciona os cards horizontalmente-->
 			
 			<?php
+				//Verifica se é para mostrar o mural ou as turmas
 				require_once('../funcphp/conexaoBD.php');
-			
-				if(isset($_GET['escolanome'])){ 
+				if(isset($_GET['show'])){
 				$banco = connect_BD();
 				if(isset($_GET['eid'])){
 					$idescola = $_GET['eid'];
 				}
+				// Seleciona as turmas daquela escola
 				$query = "SELECT id, nome from turmas WHERE escola_id = ?";
 				$stmt = $banco->prepare($query);
 				$stmt->bind_param('i', $idescola);
 				$stmt->execute();
 				$result = $stmt->get_result();
 			
-				
+				// Imprime as turmas na tela
 				while($row = $result->fetch_assoc()){
-				echo '<div class="card mb-3 col-12 col-sm-5 m-sm-3 col-lg-3 m-lg-4">';
-						echo '<div class="card-body">
+				echo '<div class="card mb-3 col-12 col-sm-5 m-sm-3 col-lg-3 m-lg-4">
+						<div class="card-body">
 						<h3 class="card-title text-center"  style="white-space:nowrap;">'.$row['nome'].'</h3>
 						<div class="card-footer bg-white">
 						<a class="text-decoration-none" href="#"><button class="btn btn-primary btn-block bt-2">Entrar</button></a>
 						</div>
-							</div>'; 
-				echo '</div>';
+							</div>
+				</div>';
 				}
 			
 				$banco->close();
+			} else {
+				include('mural.php');
 			}
-				
+	
 			?>  <!-- Aqui fica o código de PHP para adicionar as turmas-->
 			
-			<div>
-				<ul class="nav nav-tabs" id="turmaTab" role="tablist">
-					<li class="nav-item">
-						<a class="nav-link active  text-secondary" data-toggle="tab" href="#TabDocente" role="tab" aria-controls="TabDocente" aria-selected="true">Avisos dos Docentes</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link  text-secondary" data-toggle="tab" href="#TabAluno" role="tab" aria-controls="TabAlunos" aria-selected="false">Profile</a>
-					</li>
-				</ul>
-				<div class="tab-content">
-					<div class="tab-pane fade show active" id="TabDocente">
-						Mural para os docentes
-					</div>
-					<div class="tab-pane fade" id="TabAluno">
-						Mural para os Alunos
-					</div>
-				</div>
-			</div>
+			
 		</div> 
 	</div><!-- fim do alinhamento horizontal dos cards -->
 </div>

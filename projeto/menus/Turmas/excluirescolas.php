@@ -12,7 +12,7 @@
     $id = $_GET['eid'];
     $senha = $_POST['senhae'];
     /////////////////APAGAR TURMAS, Alunos DENTRO DA ESCOLA//////////////////////
-    ////////////////GENEREALIZAÇÃO//////////
+    ////////////////Evitar Repitição de Código//////////
     $qery[0] = "DELETE FROM turmas WHERE escola_id = ?";
     $qery[1] = "DELETE FROM escola_aluno WHERE id_escola = ?";
     for($i = 0; $i <= 1; $i++){

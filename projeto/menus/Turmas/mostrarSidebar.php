@@ -3,8 +3,11 @@
 			<ul class="nav flex-column mr-3">
 				<h4 class="text-center text-secondary my-2">Painel</h4>
 
-				<?php 
-				echo '<a class="text-decoration-none btn btn-outline-primary btn-block my-2" href="../menus/menu_include.php?url=turmas&eid='.$_GET['eid'].'">Suas Turmas</a>';
+				<?php
+				// Passa um parametro na url para mostrar as turmas
+				$id = $_GET['eid'];
+				$enome = $_GET['escolanome'];
+				echo '<a class="text-decoration-none btn btn-outline-primary btn-block my-2" href="../menus/menu_include.php?url=turmas&eid='.$id.'&escolanome='.$enome.'&show=yes">Suas Turmas</a>';
 				?>
 					
 				<button class="btn btn-outline-primary btn-block my-2" data-toggle="collapse" data-target="#CollapseSidebar">Configurações</button>
