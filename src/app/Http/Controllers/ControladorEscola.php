@@ -8,6 +8,7 @@ use App\Escolas;
 use App\aluno_escolas;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\EscolaRequest;
 
 class ControladorEscola extends Controller
 {
@@ -18,13 +19,14 @@ class ControladorEscola extends Controller
     protected function getUserId(){
         return Auth::user()->id;
     }
-    protected function insert()
+    protected function insert(EscolaRequest $request)
     {   
+    
         $escolas = new Escolas;
 
-        $escolas->nome = request('nome');
-        $escolas->descricao = request('descricao');
-        $escolas->password = md5(request('password'));
+        $escolas->nome = $request['nome'];
+        $escolas->descricao = $request['descricao'];
+        $escolas->password = md5($request['password']);
         $escolas->diretor = $this->getUserId();
         $escolas->codigo = $escolas->gerarCodigo();
         
@@ -32,8 +34,8 @@ class ControladorEscola extends Controller
 
     }
 
-    public function getInsert(){
-        $this->insert();
+    public function getInsert(EscolaRequest $request){
+        $this->insert($request);
         return redirect(route('Sescolas'));
     }
 

@@ -25,7 +25,7 @@
 									</div>
 									<input class="form-control" maxlength=6 id="CodEscola" name="CodEscola" required="required" type="password" placeholder="EX. 123456"/>
 								</div>
-							</div>    
+							</div>
 							<button class="btn btn-lg btn-primary btn-block" type="submit" value="EntrarEscola">Entrar</button>
 						</form>
 					</div><!--fim do corpo -->
@@ -48,6 +48,7 @@
 					<div class="modal-body"><!-- corpo do modal da escola -->
 						<form class="form-signin" method="post" action="{{route('regEscola')}}">
 							{{ csrf_field() }}
+
 							<div class="form-label-group mb-3"> 
 								<label for="nome">Nome da Escola</label>
 								<div class="input-group">
@@ -73,6 +74,15 @@
 										<span class="input-group-text"><i data-feather="alert-circle"></i></span>
 									</div>
 									<input class="form-control" id="senhaescola" name="password" required="required" type="password" placeholder="EX. 12345678"/>
+								</div>
+							</div>
+							<div class="form-label-group mb-3"> 
+								<label for="password">Confirmar Senha</label>
+								<div class="input-group">
+									<div class="input-group-pretend">
+										<span class="input-group-text"><i data-feather="alert-circle"></i></span>
+									</div>
+									<input class="form-control" id="senhaescola" name="password_confirmation" required="required" type="password" placeholder="EX. 12345678"/>
 								</div>
 							</div>
 							<button class="btn btn-lg btn-primary btn-block" type="submit" value="CadastrarEscola">Cadastrar Escola</button>

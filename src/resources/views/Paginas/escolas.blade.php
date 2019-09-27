@@ -2,7 +2,7 @@
 
 
 @section('content')
-
+    @include('Includes.errors')
         <div class="container ml-sm-2 ml-lg-4 ml-xl-5"><!-- centralizaçao do conteúdo-->
             <div class="row ml-md-2">
                 
