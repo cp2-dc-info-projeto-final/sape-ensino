@@ -35,7 +35,7 @@
 
 
 
-    <footer class="py-4 bg-primary" style="position:absolute;bottom:0;width:100%">
+    <footer class="py-4 bg-primary" style="position:relative;bottom:0;width:100%">
         <div class="container">
           <p class="m-0 text-center text-white">Copyright © Sape-Ensino 2019</p>
         </div>
