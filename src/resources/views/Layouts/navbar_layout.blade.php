@@ -18,13 +18,13 @@
                         <a class="nav-link" href="#">Grade Horária</a>
                 </li>
                 
-            </ul>
             @endauth
+            </ul>
 
             @guest
                 <!-- Guest Navbar --> 
             @endguest
-
+            
             @include('Includes.navcargo')
         </div><!-- fim do collapse -->
         

@@ -144,10 +144,11 @@
 			</div>
 		</div><!-- fim do modal para criar uma turma -->
 		
-		<nav arial-label="breadcrumb" class="mt-3"><!-- barra de diretório das paginas-->
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item active">Home</li>
-            </ol>
-        </nav><!-- fim da barra de diretório-->
+		
+                    <div arial-label="breadcrumb" class=" container mt-3"><!-- barra de diretório das paginas-->
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active">Home</li>
+                        </ol>
+        			</div><!-- fim da barra de diretório-->
 
 @stop

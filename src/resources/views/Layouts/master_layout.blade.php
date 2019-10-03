@@ -18,10 +18,10 @@
 </head>
 <body>
     <!-- Includes, Yields, Paginas -->
-    
-    @include('Layouts.navbar_layout')
-    @yield('modals')
-    @yield('content')
+    <section style="min-height:100%">
+        @include('Layouts.navbar_layout')
+        @yield('modals')
+        @yield('content')
 
 
 
@@ -34,10 +34,10 @@
 
 
 
-
-    <footer class="py-4 bg-primary" style="position:relative;bottom:0;width:100%">
+    </section>
+    <footer class="py-4 mt-5 bg-primary" style="position:absolute;bottom:0;width:100%">
         <div class="container">
-          <p class="m-0 text-center text-white">Copyright © Sape-Ensino 2019</p>
+          <p class="m-0 text-center text-white">Copyleft Sape-Ensino 2019</p>
         </div>
         <!-- /.container -->
     </footer>

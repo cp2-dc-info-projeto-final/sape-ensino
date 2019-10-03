@@ -101,7 +101,7 @@
         <h1 class="font-weight-light">Guia Rápido</h1>
         <p>Nosso guia vai te mostrar como nossa plataforma apresenta seus recurso de formas simples e abrangete.</p>
       </div>
-  <header class="jumbotron my-4">
+  <div class="jumbotron my-4">
     <div class="card-deck">
         <div class="card border-light text-center row no-gutters">
             <img class="card-img-top" src="{{asset('images/guia/g1.png')}}" height="90" alt="Imagem de capa do card">
@@ -116,39 +116,38 @@
             </div>
           </div>
     </div>
-  </header>
+  </div>
 </div>
 
-<br>
-<div class="container " id="desenvolvedores">
-    <header class="jumbotron my-4">
-        <h1 class="font-weight-light text-center">Desenvolvedores</h1>
-        <p class="lead text-center">Alunos do Colégio Pedro II cursando o Ensino Médio integrado ao técnico em desenvolvimento de sistemas.</p>
-        
-       <div class="row text-center">
+<div class="jumbotron container">
+    <h1 class="font-weight-light text-center">Desenvolvedores</h1>
+    <p class="lead text-center">Alunos do Colégio Pedro II cursando o Ensino Médio integrado ao técnico em desenvolvimento de sistemas.</p>
+    
+    <div class="row text-center">
+      <div class="col-lg-3">
+        <a href="https://www.facebook.com/daniel.novaesdias/" target="_blank">
+          <img class="rounded-circle" src="{{asset('images/daniel.jpg')}}" alt="Imagem Desenvolvedor" width="140" height="140">
+          </a>
+          <h5>Daniel Dias</h2>
+        </div>
+        <div class="col-lg-3">
+          <a href="https://www.instagram.com/isaak_cpii/" target="_blank">
+            <img class="rounded-circle" src="{{asset('images/isaak.jpg')}}" alt="Imagem Desenvolvedor" width="140" height="140">
+            </a>
+            <h5>Isaak Santos</h2>
+          </div>
           <div class="col-lg-3">
-            <a href="https://www.facebook.com/daniel.novaesdias/" target="_blank">
-              <img class="rounded-circle" src="{{asset('images/daniel.jpg')}}" alt="Imagem Desenvolvedor" width="140" height="140">
-              </a>
-              <h5>Daniel Dias</h2>
-            </div>
+            <a href="https://www.instagram.com/_pedrohass/" target="_blank"><img class="rounded-circle" src="{{asset('images/pedro.jpg')}}" alt="Imagem Desenvolvedor" width="140" height="140"></a>
+              <h5>Pedro Hasselmann</h2>
+          </div>
             <div class="col-lg-3">
-              <a href="https://www.instagram.com/isaak_cpii/" target="_blank">
-                <img class="rounded-circle" src="{{asset('images/isaak.jpg')}}" alt="Imagem Desenvolvedor" width="140" height="140">
-                </a>
-                <h5>Isaak Santos</h2>
-              </div>
-              <div class="col-lg-3">
-                <a href="https://www.instagram.com/_pedrohass/" target="_blank"><img class="rounded-circle" src="{{asset('images/pedro.jpg')}}" alt="Imagem Desenvolvedor" width="140" height="140"></a>
-                  <h5>Pedro Hasselmann</h2>
-                </div>
-                <div class="col-lg-3">
-                   <a href="https://www.instagram.com/0renancastro0/" target="_blank"><img class="rounded-circle" src="{{asset('images/renan.jpg')}}" href="" alt="Imagem Desenvolvedor" width="140" height="140"></a>
-                    <h5>Renan Castro</h5>
-                    </div>
-       </div>
+                <a href="https://www.instagram.com/0renancastro0/" target="_blank"><img class="rounded-circle" src="{{asset('images/renan.jpg')}}" href="" alt="Imagem Desenvolvedor" width="140" height="140"></a>
+                <h5>Renan Castro</h5>
+            </div>
+    </div>
 
-      </header>    
-</div>
+  </div> 
+<br>   
+<br>
 
 @stop

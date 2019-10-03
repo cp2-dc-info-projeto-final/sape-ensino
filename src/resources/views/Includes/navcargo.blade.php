@@ -1,5 +1,5 @@
 @guest
-<ul class="navbar-nav ml-auto">
+<ul class="navbar-nav my-2">
          <ul class="navbar-nav ml-auto">
 			<li class="nav-item">
 				<a class="nav-link" href="{{route('Slogin')}}">Login</a>
@@ -19,7 +19,7 @@
 @auth
 	@if(Auth::User()->cargo == 'Diretor')
 
-	<div class="btn-group ml-auto">
+	<div class="btn-group ml-auto ">
         <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown">Criação</button>
         <div class="dropdown-menu dropdown-menu-left">
             <button class="dropdown-item" type="button" data-toggle="modal" data-target="#ModalEscola">Cadastrar Escola</button>
