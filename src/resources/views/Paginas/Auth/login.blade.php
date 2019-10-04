@@ -44,11 +44,12 @@ body{
                     <div class="col-md-6 col-md-offset-4">
                          <div class="checkbox">
                              <label>
-                                  <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Manter-se logado
+                                  <a href="{{route('password.request')}}">Esqueceu sua senha?</a>
                             </label>
                           </div>
                     </div>
                  </div>
+                  
                   <button class="btn btn-lg btn-primary btn-block" type="submit" value="Logar">Logar-se</button>
                 </form>
               </div>

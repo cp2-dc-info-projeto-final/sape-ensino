@@ -10,26 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-/*Rotas especificas de cargo*/
-
-
-/*Route::group(['middleware' => 'App\Http\Middleware\ProfessorMiddleware'], function(){
-
-        Route::post('entrarEscola', 'ControladorEscola@entrarEscola')->name('entrarEscola');
-
-});*/ //VER COMO FAZER PARA TER DUAS ROTAS IGUAIS.
-
-
-
-       
         //PROFESSOR ROUTES
         //DIRETOR ROUTES
-        Route::post('regEscola', 'ControladorEscola@getInsert')->name('regEscola');
+        Route::post('regEscola', 'ControladorCadEscola@getInsert')->name('regEscola')->middleware('roles:Diretor');
         //PROFESSOR & ALUNO ROUTES
         Route::group(['middleware' => 'roles:Professor,Aluno'], function(){
 
-                Route::post('entrarEscola', 'ControladorEscola@entrarEscola')->name('entrarEscola');
+                Route::post('entrarEscola', 'ControladorCadEscola@entrarEscola')->name('entrarEscola');
 
         });
 
@@ -42,7 +29,7 @@
 
 
         //Home Logada
-        Route::get('escolas', 'ControladorEscola@showescolas')->name('Sescolas');
+        Route::get('escolas', 'ControladorCadEscola@showescolas')->name('Sescolas');
 
 
         //Authentication
@@ -53,10 +40,10 @@
         Route::post('register', 'Auth\RegisterController@register')->name('register');
 
         // !!!!--------------------      RESET PASSWORD        -----------------------!!!!// 
-        //Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-        //Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-        //Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-        //Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+        Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+        Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+        Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+        Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 
         //Others
