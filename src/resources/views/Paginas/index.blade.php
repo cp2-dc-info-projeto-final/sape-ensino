@@ -119,29 +119,30 @@
   </div>
 </div>
 
+<div class="container" id="desenvolvedores">
 <div class="jumbotron container">
     <h1 class="font-weight-light text-center">Desenvolvedores</h1>
     <p class="lead text-center">Alunos do Colégio Pedro II cursando o Ensino Médio integrado ao técnico em desenvolvimento de sistemas.</p>
     
     <div class="row text-center">
       <div class="col-lg-3">
-        <a href="https://www.facebook.com/daniel.novaesdias/" target="_blank">
+        <a href="https://github.com/LeinadAsid" target="_blank">
           <img class="rounded-circle" src="{{asset('images/daniel.jpg')}}" alt="Imagem Desenvolvedor" width="140" height="140">
           </a>
           <h5>Daniel Dias</h2>
         </div>
         <div class="col-lg-3">
-          <a href="https://www.instagram.com/isaak_cpii/" target="_blank">
+          <a href="https://github.com/IsaakCPII" target="_blank">
             <img class="rounded-circle" src="{{asset('images/isaak.jpg')}}" alt="Imagem Desenvolvedor" width="140" height="140">
             </a>
             <h5>Isaak Santos</h2>
           </div>
           <div class="col-lg-3">
-            <a href="https://www.instagram.com/_pedrohass/" target="_blank"><img class="rounded-circle" src="{{asset('images/pedro.jpg')}}" alt="Imagem Desenvolvedor" width="140" height="140"></a>
+            <a href="https://github.com/PHasselmann" target="_blank"><img class="rounded-circle" src="{{asset('images/pedro.jpg')}}" alt="Imagem Desenvolvedor" width="140" height="140"></a>
               <h5>Pedro Hasselmann</h2>
           </div>
             <div class="col-lg-3">
-                <a href="https://www.instagram.com/0renancastro0/" target="_blank"><img class="rounded-circle" src="{{asset('images/renan.jpg')}}" href="" alt="Imagem Desenvolvedor" width="140" height="140"></a>
+                <a href="https://github.com/renancastro23" target="_blank"><img class="rounded-circle" src="{{asset('images/renan.jpg')}}" href="" alt="Imagem Desenvolvedor" width="140" height="140"></a>
                 <h5>Renan Castro</h5>
             </div>
     </div>
@@ -149,5 +150,6 @@
   </div> 
 <br>   
 <br>
+</div>
 
 @stop

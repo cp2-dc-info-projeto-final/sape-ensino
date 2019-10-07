@@ -1,4 +1,30 @@
 @guest
+
+			<button class="navbar-toggler" data-toggle="collapse" href="#collapsenavbar" type="button" aria-expanded="false" aria-controls="collapsenavbar">
+	            <span class="navbar-toggler-icon"></span>
+	        </button>
+	        <div class="collapse navbar-collapse" id="collapsenavbar">
+	            <ul class="navbar-nav mr-auto ml-3">
+
+	                <li class="nav-item">
+	                    <a class="nav-link" href="#apresentação">Apresentação</a>
+	                </li>
+	                <li class="nav-item">
+	                        <a class="nav-link" href="#objetivos">Objetivo</a>
+	                </li>
+	                <li class="nav-item">
+	                        <a class="nav-link" href="#recursos">Recursos</a>
+	                </li>
+	                <li class="nav-item">
+	                        <a class="nav-link" href="#guiarapido">Guia Rápido</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#desenvolvedores">Desenvolvedores</a>
+                </li>
+					
+	            </ul>
+	        </div>
+
 <ul class="navbar-nav my-2">
          <ul class="navbar-nav ml-auto">
 			<li class="nav-item">
