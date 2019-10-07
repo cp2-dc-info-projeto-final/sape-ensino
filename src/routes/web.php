@@ -20,17 +20,13 @@
 
         });
 
-        //PERFIL
-        Route::patch('perfil', 'ControladorPerfil@update')->name('editar');
-        Route::get('perfil', 'ControladorPerfil@showperfil')->name('perfil');
 
-        //index
+        //View Paginas
         Route::get('/', 'ControladorIndex@index')->name('index')->middleware('guest');
-
-
-        //Home Logada
         Route::get('escolas', 'ControladorCadEscola@showescolas')->name('Sescolas');
-
+        Route::get('perfil', 'ControladorPerfil@showperfil')->name('perfil');
+        Route::patch('perfil', 'ControladorPerfil@update')->name('editar'); //EDITAR PERFIL
+        Route::get('mural/{eid}', 'ControladorCadEscola@showmural')->name('Smural');
 
         //Authentication
         Route::get('login', 'Auth\LoginController@showLoginForm')->name('Slogin');

@@ -9,8 +9,6 @@
     <!-- Bootstrap.css -->
     <link href="{{asset('css/bootstrap.min.css')}}" type="text/css" rel="stylesheet">
     <link href="{{asset('css/custom.css')}}" type="text/css" rel="stylesheet">
-
-    <script src="{{asset('js/feather.min.js')}}"></script>
     
     <title>{{config('app.name')}}</title>
 
@@ -44,6 +42,7 @@
 
     <!-------------------------------->
     <!-- Bootstrap.js and jquery.js --> 
+    <script src="{{asset('js/feather.min.js')}}"></script>
     <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js') }}"></script>  
     <script>

@@ -37,7 +37,7 @@
                 <input class="form-control @error('email') is-invalid @enderror" id="email" name="email" required="required" type="email" placeholder="seuemail@provedor.com"/>
               </div>
               <br>
-              <button class="btn btn-lg btn-primary btn-block" type="submit" value="Cadastrar-se">Cadastrar-se</button>
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Recuperar senha</button>
             </div>
            
         </form>
