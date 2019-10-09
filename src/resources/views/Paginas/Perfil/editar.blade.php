@@ -1,5 +1,5 @@
 
-    <div id="edit" class="tab-pane fade in active">
+    <div id="edit" class="tab-pane fade">
       <h3>EDITAR</h3>
       <form method="POST" enctype="multipart/form-data" action="{{ route('editar') }}">                      
         @csrf

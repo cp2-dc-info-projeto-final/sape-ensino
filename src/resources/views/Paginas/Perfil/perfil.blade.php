@@ -4,6 +4,7 @@
 @section('pills')
 @include('Includes.errors')
 <div class="tab-content">
+    @include('Paginas.perfil.inicio')
     @include('Paginas.perfil.editar')
     @include('Paginas.perfil.messages')
     @include('Paginas.perfil.conf')

@@ -12,8 +12,8 @@
         <div class="row">
             <div class="col-3">
                 <div class="nav flex-column nav-pills">
-                    <a class="nav-link active" id="v-pills-home-tab" href="{{route('perfil')}}"
-                        aria-selected="false">Início</a>
+                    <a class="nav-link active" id="v-pills-home-tab" href="#inicio" data-toggle="pill" href="#edit" role="tab" aria-controls="v-pills-inicio"
+                        aria-selected="true">Início</a>
                     <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#edit" role="tab" aria-controls="v-pills-profile"
                         aria-selected="false">Editar Perfil</a>
                     <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#msg" role="tab" aria-controls="v-pills-messages"
