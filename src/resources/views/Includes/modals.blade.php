@@ -1,6 +1,3 @@
-@extends('Layouts.master_layout')
-
-@section('modals')
 
     <!-- Modals -->
 
@@ -105,7 +102,7 @@
 					</div>
 
 					<div class="modal-body"><!-- corpo do modal da escola -->
-						<form class="form-signin" method="post" action="Turmas/cadastroturma.php">
+						<form class="form-signin" method="post" action="#">
 							{{ csrf_field() }}
 							<div class="form-label-group mb-3"> 
 								<label for="NomeTurma">Nome da Turma</label>
@@ -124,13 +121,10 @@
                         			</div>
                                     <select class="custom-select" id="escola-turma" name="escola-turma" required="required" placeholder="Selecione uma opção...">
 										<option disable selected hidden>Selecione uma opção...</option>
-										<?php 
-										//include('selectescolas.php');
-                            			//<option value=" "></option>
-                            			//<option value=" "></option>
-										//<option value=" "></option>
-										
-										?>
+										@foreach ($escolas as $escola)
+											<option value="{{$escola->id}}">{{$escola->nome}}</option>
+										@endforeach
+
 									</select>
                     			</div>
                 			</div>
@@ -144,12 +138,3 @@
 				</div>
 			</div>
 		</div><!-- fim do modal para criar uma turma -->
-		
-		
-                    <div arial-label="breadcrumb" class=" container mt-3"><!-- barra de diretório das paginas-->
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item active">Home</li>
-                        </ol>
-        			</div><!-- fim da barra de diretório-->
-
-@stop

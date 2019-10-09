@@ -1,5 +1,14 @@
-@extends('Layouts.modals')
+@extends('Layouts.master_layout')
 
+@section('diretorio')
+
+<div arial-label="breadcrumb" class=" container mt-3"><!-- barra de diretório das paginas-->
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active">Home</li>
+                        </ol>
+</div><!-- fim da barra de diretório-->
+
+@stop
 
 @section('content')
     @include('Includes.errors')
@@ -10,7 +19,7 @@
 				<h4 class="text-center text-secondary my-2">Painel</h4>
 
 		
-				<a class="text-decoration-none btn btn-outline-primary btn-block my-2" href="">Suas Turmas</a>
+				<a class="text-decoration-none btn btn-outline-primary btn-block my-2" href="#">Suas Turmas</a>
 			
 					
 				<button class="btn btn-outline-primary btn-block my-2" data-toggle="collapse" data-target="#CollapseSidebar">Configurações</button>

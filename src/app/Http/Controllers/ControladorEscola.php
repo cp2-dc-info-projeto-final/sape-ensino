@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\EscolaRequest;
 
-class ControladorCadEscola extends Controller
+class ControladorEscola extends Controller
 {
     private $escolas;
     
@@ -19,9 +19,6 @@ class ControladorCadEscola extends Controller
         $this->escolas = Escolas::all();
     }
 
-    protected function getUserId(){
-        return Auth::user()->id;
-    }
 
     protected function insert(EscolaRequest $request)
     {   
@@ -31,7 +28,7 @@ class ControladorCadEscola extends Controller
         $Nescolas->nome = $request['nome'];
         $Nescolas->descricao = $request['descricao'];
         $Nescolas->password = md5($request['password']);
-        $Nescolas->diretor = $this->getUserId();
+        $Nescolas->diretor = Auth::user()->id;
         $Nescolas->codigo = $Nescolas->gerarCodigo();
         
         $Nescolas->save();
@@ -48,14 +45,14 @@ class ControladorCadEscola extends Controller
         $escolas = DB::table('escolas')
         ->select('escolas.nome', 'escolas.descricao', 'users.name', 'escolas.id')
         ->join('users', 'users.id', '=', 'escolas.diretor')
-        ->where('escolas.diretor','=', $this->getUserId())
+        ->where('escolas.diretor','=', Auth::user()->id)
         ->get('name', 'diretor');
         } else {
         $escolas = DB::table('escolas')
         ->select('escolas.nome', 'escolas.descricao', 'users.name', 'escolas.id')
         ->join('users', 'users.id', '=', 'escolas.diretor')
         ->join('aluno_escolas', 'escolas.id', '=', 'id_escolas')
-        ->where('aluno_escolas.id_aluno', '=', $this->getUserId())
+        ->where('aluno_escolas.id_aluno', '=', Auth::user()->id)
         ->get('name', 'diretor');
         }
         return view('Paginas.Escolas.escolas')->with(array('escolas' => $escolas));

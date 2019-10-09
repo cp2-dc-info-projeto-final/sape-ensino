@@ -1,9 +1,45 @@
-@extends('Layouts.modals')
+@extends('Layouts.master_layout')
 
 
-@section('content')
-    @include('Includes.errors')
-        <div class="container"><!-- centralizaçao do conteúdo-->
+@section('diretorio')
+<div class="container">
+    <div class="row">
+    <div arial-label="breadcrumb" class=" col-11 mt-3"><!-- barra de diretório das paginas-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active">Home</li>
+            </ol>
+    </div><!-- fim da barra de diretório-->
+@stop
+
+
+@section('buttons')
+    @include('Includes.modals')
+
+        @if(Auth::User()->cargo == 'Diretor')
+
+        <div class="btn-group my-3">
+            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">Criação</button>
+            <div class="dropdown-menu dropdown-menu-left">
+                <button class="dropdown-item" type="button" data-toggle="modal" data-target="#ModalEscola">Cadastrar Escola</button>
+                <button class="dropdown-item" type="button" data-toggle="modal" data-target="#ModalTurma">Criar Turma</button>
+            </div>
+        </div>
+
+        @elseif(Auth::User()->cargo != 'Diretor')
+
+        <div class="btn-group ml-auto">
+            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#ModalEntrarEscolaAluno" data-toggle="modal">Entrar</button>
+        </div>
+        
+        @endif
+
+    </div>
+@stop
+
+
+@section('content') 
+      <!-- centralizaçao do conteúdo-->    
+            @include('Includes.errors')
             <div class="row ml-md-2">
                     @foreach ($escolas as $escola)
                         <div class="card my-4 mx-5 col-10 col-sm-10 col-lg-3 ">
@@ -20,6 +56,6 @@
 
 
             </div> <!-- fim do alinhamento horizontal dos cards-->
-        </div>
+        </div> 
 
 @stop

@@ -18,7 +18,8 @@
     <!-- Includes, Yields, Paginas -->
     <section style="min-height:100%">
         @include('Layouts.navbar_layout')
-        @yield('modals')
+        @yield('diretorio')
+        @yield('buttons')
         @yield('content')
 
 

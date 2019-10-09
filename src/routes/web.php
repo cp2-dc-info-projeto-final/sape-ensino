@@ -11,22 +11,48 @@
 |
 */
         //PROFESSOR ROUTES
+
         //DIRETOR ROUTES
-        Route::post('regEscola', 'ControladorCadEscola@getInsert')->name('regEscola')->middleware('roles:Diretor');
+        Route::group(['middleware' => 'roles:Diretor'], function(){
+
+                Route::post('regEscola', 'ControladorEscola@getInsert')->name('regEscola')->middleware('roles:Diretor');
+
+        });
+       
+
         //PROFESSOR & ALUNO ROUTES
         Route::group(['middleware' => 'roles:Professor,Aluno'], function(){
 
-                Route::post('entrarEscola', 'ControladorCadEscola@entrarEscola')->name('entrarEscola');
+                Route::post('entrarEscola', 'ControladorEscola@entrarEscola')->name('entrarEscola');
 
         });
 
 
-        //View Paginas
+        //ControladorIndex
         Route::get('/', 'ControladorIndex@index')->name('index')->middleware('guest');
-        Route::get('escolas', 'ControladorCadEscola@showescolas')->name('Sescolas');
+        
+        //ControladorEscola
+        Route::get('mural/{eid}', 'ControladorEscola@showmural')->name('Smural');
+        Route::get('escolas', 'ControladorEscola@showescolas')->name('Sescolas');
+
+
+        //ControladorPerfil
         Route::get('perfil', 'ControladorPerfil@showperfil')->name('perfil');
         Route::patch('perfil', 'ControladorPerfil@update')->name('editar'); //EDITAR PERFIL
-        Route::get('mural/{eid}', 'ControladorCadEscola@showmural')->name('Smural');
+        
+        //ControladorTurmas
+        
+
+
+
+
+
+
+
+
+
+
+
 
         //Authentication
         Route::get('login', 'Auth\LoginController@showLoginForm')->name('Slogin');
