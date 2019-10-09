@@ -33,12 +33,7 @@
 
 
     </section>
-    <footer class="py-4 mt-5 bg-primary" style="position:absolute;bottom:0;width:100%">
-        <div class="container">
-          <p class="m-0 text-center text-white">Copyleft Sape-Ensino 2019</p>
-        </div>
-        <!-- /.container -->
-    </footer>
+    
 
     <!-------------------------------->
     <!-- Bootstrap.js and jquery.js --> 
