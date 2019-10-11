@@ -28,16 +28,20 @@
         });
 
 
-        //ControladorIndex
-        Route::get('/', 'ControladorIndex@index')->name('index')->middleware('guest');
+        //ControladorPaginas && Não-Autenticado
+        Route::get('/', 'ControladorPaginas@index')->name('index')->middleware('guest');
         
-        //ControladorEscola
-        Route::get('mural/{eid}', 'ControladorEscola@showmural')->name('Smural');
-        Route::get('escolas', 'ControladorEscola@showescolas')->name('Sescolas');
+        //ControladorPaginas && Autenticado
 
+        Route::group(['middleware' => 'auth'], function() {
+                
+                Route::get('escolas/mural/{eid}/{Sturmas?}', 'ControladorPaginas@showmural')->name('SmuralE');
+                Route::get('escolas', 'ControladorPaginas@showescolas')->name('Sescolas');
+                Route::get('perfil', 'ControladorPaginas@showperfil')->name('perfil');
+
+        });
 
         //ControladorPerfil
-        Route::get('perfil', 'ControladorPerfil@showperfil')->name('perfil');
         Route::patch('perfil', 'ControladorPerfil@update')->name('editar'); //EDITAR PERFIL
         
         //ControladorTurmas

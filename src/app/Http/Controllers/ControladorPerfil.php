@@ -17,10 +17,6 @@ class ControladorPerfil extends Controller
         $this->middleware('auth');
     }
 
-    public function showperfil(){
-        return view('Paginas.Perfil.perfil')->with('user', Auth::user()); 
-    }
-
     private function apagarfotoantiga(User $user){
         $oldPath = $user->profile_picture;
         if($oldPath != 'default.jpg'){

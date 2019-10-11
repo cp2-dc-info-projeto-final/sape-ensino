@@ -17,21 +17,9 @@
 <body>
     <!-- Includes, Yields, Paginas -->
     <section style="min-height:100%">
-        @include('Layouts.navbar_layout')
-        @yield('diretorio')
-        @yield('buttons')
+        @include('Includes.navbar_layout')
+        @include('Includes.diretorio')
         @yield('content')
-
-
-
-
-
-
-
-
-
-
-
 
     </section>
     

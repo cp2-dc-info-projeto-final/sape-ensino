@@ -32,30 +32,7 @@ class ControladorEscola extends Controller
         $Nescolas->codigo = $Nescolas->gerarCodigo();
         
         $Nescolas->save();
-
-    }
-
-    public function getInsert(EscolaRequest $request){
-        $this->insert($request);
         return redirect(route('Sescolas'));
-    }
-
-    public function showescolas(){
-        if (Auth::User()->cargo == "Diretor"){
-        $escolas = DB::table('escolas')
-        ->select('escolas.nome', 'escolas.descricao', 'users.name', 'escolas.id')
-        ->join('users', 'users.id', '=', 'escolas.diretor')
-        ->where('escolas.diretor','=', Auth::user()->id)
-        ->get('name', 'diretor');
-        } else {
-        $escolas = DB::table('escolas')
-        ->select('escolas.nome', 'escolas.descricao', 'users.name', 'escolas.id')
-        ->join('users', 'users.id', '=', 'escolas.diretor')
-        ->join('aluno_escolas', 'escolas.id', '=', 'id_escolas')
-        ->where('aluno_escolas.id_aluno', '=', Auth::user()->id)
-        ->get('name', 'diretor');
-        }
-        return view('Paginas.Escolas.escolas')->with(array('escolas' => $escolas));
     }
 
     public function entrarEscola(Request $request){
@@ -89,9 +66,5 @@ class ControladorEscola extends Controller
             return true;
         }
         return false;
-    }
-
-    public function showmural(){
-        return view('Paginas.Escolas.mural');
     }
 }

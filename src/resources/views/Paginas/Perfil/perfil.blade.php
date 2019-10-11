@@ -1,4 +1,4 @@
-@extends('Layouts.perfil_layout')
+@extends('Layouts.ext_M.perfil')
 
 
 @section('pills')

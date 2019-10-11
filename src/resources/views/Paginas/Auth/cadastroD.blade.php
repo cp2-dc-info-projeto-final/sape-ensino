@@ -1,4 +1,4 @@
-@extends('Layouts.cadastro_layout')
+@extends('Layouts.ext_M.cadastro')
 
 @section('cargo')
 
