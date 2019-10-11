@@ -15,7 +15,7 @@
         //DIRETOR ROUTES
         Route::group(['middleware' => 'roles:Diretor'], function(){
 
-                Route::post('regEscola', 'ControladorEscola@getInsert')->name('regEscola')->middleware('roles:Diretor');
+                Route::post('regEscola', 'ControladorEscola@insert')->name('regEscola')->middleware('roles:Diretor');
 
         });
        
