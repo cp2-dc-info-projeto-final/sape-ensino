@@ -18,7 +18,6 @@
     <!-- Includes, Yields, Paginas -->
     <section style="min-height:100%">
         @include('Includes.navbar_layout')
-        @include('Includes.diretorio')
         @yield('content')
 
     </section>

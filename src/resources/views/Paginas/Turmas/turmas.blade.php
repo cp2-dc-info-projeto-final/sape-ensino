@@ -1,8 +1,8 @@
 @extends(Layouts.ext_M.mural)
 
 
-
 @section('sub_content')
+    @include('Includes.diretorio')
     @include('Includes.errors')
             <div class="row ml-md-2">
                     @foreach ($turmas as $turma)
