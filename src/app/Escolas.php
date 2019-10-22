@@ -31,10 +31,15 @@ class Escolas extends Model
     public function diretor(){
         return $this->belongsTo('App\Diretor', 'diretor'); //Escola só tem 1 diretor
     }
+
+    public function Turmas(){
+        return $this->hasMany('App\Turmas', 'escola_id');
+    }
     #Muitos pra muitos
     public function users(){
         return $this->belongsToMany('App\User', 'aluno_escolas', 'aluno_id', 'escola_id'); // Escola tem Varios Alunos
     }
+
 
     
 }

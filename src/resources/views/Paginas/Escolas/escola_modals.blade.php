@@ -55,3 +55,51 @@
 				</div>
 			</div>
 </div><!-- fim do modal para a escola -->
+
+
+
+<!-- Modal para criar uma Turma -->
+<div class="modal fade" id="ModalTurma" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Cadastro da Turma</h5>
+				</div>
+
+				<div class="modal-body"><!-- corpo do modal da escola -->
+					<form class="form-signin" method="post" action="#">
+						{{ csrf_field() }}
+						<div class="form-label-group mb-3"> 
+							<label for="NomeTurma">Nome da Turma</label>
+							<div class="input-group">
+								<div class="input-group-pretend">
+									<span class="input-group-text"><i data-feather="file-text"></i></span>
+								</div>
+								<input class="form-control" maxlength=10 id="nometurma" name="nometurma" required="required" type="text" placeholder="1306"/>
+							</div>
+						</div>    
+						<div class="form-label-group mb-3">
+							<label for="escola-turma">Escola</label>
+							<div class="input-group">
+								<div class="input-group-pretend">
+									  <span class="input-group-text"><i data-feather="briefcase"></i></span>
+								</div>
+								<select class="custom-select" id="escola-turma" name="escola-turma" required="required" placeholder="Selecione uma opção...">
+									<option disable selected hidden>Selecione uma opção...</option>
+									@foreach ($escolas as $escola)
+										<option value="{{$escola->id}}">{{$escola->nome}}</option>
+									@endforeach
+
+								</select>
+							</div>
+						</div>
+						<button class="btn btn-lg btn-primary btn-block" type="submit" value="CriarTurma">Criar Turma</button>
+					</form>
+				</div><!--fim do corpo -->
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div><!-- fim do modal para criar uma turma -->

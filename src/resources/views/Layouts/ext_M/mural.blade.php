@@ -2,6 +2,8 @@
 
 
 @section('content')
+	<!--Diretorio -->
+	@include('Includes.diretorio')
 <!-- SideBar -->
     <nav class="col-md-3 col-lg-2 d-fixed d-md-block bg-light sidebar collapse " id="collapsesidebar">
 		<div class="sidebar-sticky scrollbar scrollbar-pink bordered-pink thin ">
@@ -20,7 +22,10 @@
 					
 				<button class="btn btn-outline-primary btn-block my-2" data-toggle="collapse" data-target="#CollapseSidebar">Configurações</button>
 					<div class="collapse bg-light p-2" id ="CollapseSidebar">
+						<button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#ModalTurma">Cadastrar Turmas</button>
 						<a class="btn btn-danger btn-block font-weight-bold text-white" data-toggle="modal" data-target="#apagarescola">Apagar escola</a>
+						
+						
 					</div>
 				
 				<div class="dropdown-divider"></div>
