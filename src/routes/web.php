@@ -46,8 +46,8 @@
         
         //ControladorTurmas
         
-
-
+        Route::post('escolas/mural/createclass', 'ControladorTurmas@insert')->name('criaturma');
+        Route::get('turmas/mural', 'ControladorPaginas@visuturmas')->name('visuturmas');
 
 
 

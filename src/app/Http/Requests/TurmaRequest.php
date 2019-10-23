@@ -24,8 +24,8 @@ class TurmaRequest extends FormRequest
     public function rules()
     {
         return [
-            'nometurma' => 'required|string|min:3|',
-            'escola-turma' => 'required'
+            'nome' => 'required|string|min:3|unique:turmas',
+            'escola_id' => 'required',
         ];
     }
 }
