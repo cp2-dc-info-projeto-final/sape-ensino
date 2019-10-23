@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\TurmaRequest;
+use App\Turmas;
 
-class ControllerTurmas extends Controller
+class ControladorTurmas extends Controller
 {
     public function __construct(){
         $this->middleware('auth');
@@ -15,11 +17,10 @@ class ControllerTurmas extends Controller
     {   
     
         $Nturmas = new Turmas;
-
-        $Nturmas->nome = $request['nometurma'];
-        $Nturmas->escola_id = $request['escola-turma'];
-        
+        $Nturmas->nome = $request['nome'];
+        $Nturmas->escola_id = $request['escola_id'];
         $Nturmas->save();
-
+        
+        return back();
     }
 }

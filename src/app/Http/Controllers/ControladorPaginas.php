@@ -63,4 +63,9 @@ class ControladorPaginas extends Controller
         $escolas = $this->getEscolas();
         return view('Paginas.Escolas.muralE')->with(array('Sturmas' => $Sturmas, 'eid' => $eid, 'turmas' => $turmas, 'escolas' => $escolas));
     }
+
+    public function visuturmas()
+    {
+        return view('Paginas.Turmas.turmas')->with(array('Sturmas' => "true"));
+    }
 }

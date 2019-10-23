@@ -11,22 +11,8 @@
 				<h4 class="text-center text-secondary my-2">Painel</h4>
 
 			
-
-					@if($Sturmas == "true")
-					<a class="text-decoration-none btn btn-outline-primary btn-block my-2" href='{{route("SmuralE", ["Sturmas" => "false", "eid" => "$eid"])}}'>Mural</a>
-					@elseif($Sturmas == "false"|| $Sturmas == null)
-					<a class="text-decoration-none btn btn-outline-primary btn-block my-2" href='{{route("SmuralE", ["Sturmas" => "true", "eid" => "$eid"])}}'>Suas Turmas</a>
-					@endif
-					
-			
-					
-				<button class="btn btn-outline-primary btn-block my-2" data-toggle="collapse" data-target="#CollapseSidebar">Configurações</button>
-					<div class="collapse bg-light p-2" id ="CollapseSidebar">
-						<button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#ModalTurma">Cadastrar Turmas</button>
-						<a class="btn btn-danger btn-block font-weight-bold text-white" data-toggle="modal" data-target="#apagarescola">Apagar escola</a>
-						
-						
-					</div>
+				@yield('turma.escola.materia')
+				
 				
 				<div class="dropdown-divider"></div>
 

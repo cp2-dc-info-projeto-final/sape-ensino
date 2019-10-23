@@ -67,7 +67,7 @@
 				</div>
 
 				<div class="modal-body"><!-- corpo do modal da escola -->
-					<form class="form-signin" method="post" action="#">
+					<form class="form-signin" method="post" action="{{route('criaturma')}}">
 						{{ csrf_field() }}
 						<div class="form-label-group mb-3"> 
 							<label for="NomeTurma">Nome da Turma</label>
@@ -75,24 +75,12 @@
 								<div class="input-group-pretend">
 									<span class="input-group-text"><i data-feather="file-text"></i></span>
 								</div>
-								<input class="form-control" maxlength=10 id="nometurma" name="nometurma" required="required" type="text" placeholder="1306"/>
-							</div>
-						</div>    
-						<div class="form-label-group mb-3">
-							<label for="escola-turma">Escola</label>
-							<div class="input-group">
-								<div class="input-group-pretend">
-									  <span class="input-group-text"><i data-feather="briefcase"></i></span>
-								</div>
-								<select class="custom-select" id="escola-turma" name="escola-turma" required="required" placeholder="Selecione uma opção...">
-									<option disable selected hidden>Selecione uma opção...</option>
-									@foreach ($escolas as $escola)
-										<option value="{{$escola->id}}">{{$escola->nome}}</option>
-									@endforeach
-
-								</select>
+								<input class="form-control" maxlength=10 id="nometurma" name="nome" required="required" type="text" placeholder="1306"/>
 							</div>
 						</div>
+						@isset($eid)
+							<input type="hidden" name="escola_id" value="{{$eid}}">
+						@endisset
 						<button class="btn btn-lg btn-primary btn-block" type="submit" value="CriarTurma">Criar Turma</button>
 					</form>
 				</div><!--fim do corpo -->
