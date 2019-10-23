@@ -2,7 +2,9 @@
     <div class="container">
         <a class="navbar-brand h1 mb-0" href="{{route('index')}}">Sape Ensino</a>
         <button class="navbar-toggler ml-auto mr-2" data-toggle="collapse" data-target="#collapsenavbar" href="#collapsenavbar" type="button" aria-expanded="false" aria-controls="collapsenavbar"><i data-feather="menu"></i></button>
-
+        @isset($eid)
+        <button class="btn btn-primary d-md-none  mr-2" data-toggle="collapse" data-target="#collapsesidebar" href="#colapsesidebar" type="button" aria-expanded="false" aria-controls="collapsenavbar"><i data-feather="settings"></i></button>
+        @endisset
         <div class="collapse navbar-collapse" id="collapsenavbar">
             <ul class="navbar-nav mr-auto ml-3">
             @auth 
@@ -71,13 +73,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('logout')}}"><button class="btn btn-outline-light">Sair</button></a>
                 </li>
+
         </ul>
 
         
 
     @endauth
 
-        </div><!-- fim do collapse -->
+    </div><!-- fim do collapse -->
         
     </div><!-- fim do conteudo da barra-->
 </nav><!-- fim da barra de navegação-->
