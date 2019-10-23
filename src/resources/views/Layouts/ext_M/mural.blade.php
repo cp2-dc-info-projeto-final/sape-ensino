@@ -2,8 +2,8 @@
 
 
 @section('content')
-	<!--Diretorio -->
-	@include('Includes.diretorio')
+<div class="row">
+	
 <!-- SideBar -->
     <nav class="col-md-3 col-lg-2 d-fixed d-md-block bg-light sidebar collapse " id="collapsesidebar">
 		<div class="sidebar-sticky scrollbar scrollbar-pink bordered-pink thin ">
@@ -22,7 +22,7 @@
 					
 				<button class="btn btn-outline-primary btn-block my-2" data-toggle="collapse" data-target="#CollapseSidebar">Configurações</button>
 					<div class="collapse bg-light p-2" id ="CollapseSidebar">
-						<button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#ModalTurma">Cadastrar Turmas</button>
+						<button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#ModalTurma">Cadastrar Turmas</button>
 						<a class="btn btn-danger btn-block font-weight-bold text-white" data-toggle="modal" data-target="#apagarescola">Apagar escola</a>
 						
 						
@@ -54,8 +54,13 @@
 			</ul>
 		</div>
 	</nav>
+	<div class="col-9 mx-auto">
+	<!--Diretorio -->
+	@include('Includes.diretorio')
+
 <!-- Fim da sidebar & e começo do conteudo da página--> 
 
     @yield('sub_content')
-
+	</div>
+</div>
 @stop

@@ -3,12 +3,14 @@
 
 @section('sub_content')
     @include('Paginas.Escolas.escola_modals')
+
+    
     @if($Sturmas == 'true')
 
 
     <div class="row ml-md-2">
         @foreach ($turmas as $turma)
-            <div class="card my-4 mx-5 col-10 col-sm-10 col-lg-3 ">
+            <div class="card my-4 mx-4 col-10 col-sm-10 col-lg-3 ">
                 <div class="card-body">
                     <h3 class="card-title"  style="white-space:nowrap;">{{$turma->nome}}</h3>
                 </div>
