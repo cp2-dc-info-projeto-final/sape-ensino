@@ -7,7 +7,7 @@
 <!-- SideBar -->
     <nav class="col-md-3 col-lg-2 d-fixed d-md-block bg-light sidebar collapse " id="collapsesidebar">
 		<div class="sidebar-sticky scrollbar scrollbar-pink bordered-pink thin ">
-			<ul class="nav flex-column mr-3">
+			<ul class="nav flex-column mr-3 pl-2">
 				<h4 class="text-center text-secondary my-2">Painel</h4>
 
 			
