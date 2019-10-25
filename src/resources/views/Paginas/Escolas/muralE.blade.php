@@ -101,8 +101,8 @@
                             <!--Fim do conteudo do post -->
                         </div>
                         <!--Fim do card de um post -->
-
-					<div class="tab-pane fade" id="TabAluno">
+                    </div>
+					<div class="tab-pane fade" id="TabAluno"> <!-- Mural pra Alunos -->
 						Mural para os Alunos
 					</div>
 				</div>

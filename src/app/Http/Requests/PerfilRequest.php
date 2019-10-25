@@ -25,6 +25,7 @@ class PerfilRequest extends FormRequest
     {
         return [
             'profile_picture' => 'image|mimes:jpeg,jpg,png|max:2048',
+            ''
         ];
     }
 }

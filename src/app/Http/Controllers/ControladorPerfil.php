@@ -47,6 +47,7 @@ class ControladorPerfil extends Controller
     public function update(PerfilRequest $request){
         $user = Auth::user();
         $this->updatePic($user, $request);
+        
 
         return back();
     }
