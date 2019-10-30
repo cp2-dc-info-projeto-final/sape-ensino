@@ -9,10 +9,10 @@
                 @csrf
                 @method('PATCH')
                 
-                            <div class="container">
+                <div class="container">
                     <span class="row"><i class="mr-2" data-feather="user"></i>
                         <h5>Seu nome:</h5>
-                        <input class="ml-3 col-10 form-control" placeholder="Nome Completo">
+                        <input class="ml-3 col-10 form-control" type="text" id="name" name="name" placeholder="Nome Completo" >
                     </span>
                     <br>
 
@@ -41,6 +41,5 @@
                     <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
         </div>
-
     
 </div>

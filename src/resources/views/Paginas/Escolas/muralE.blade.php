@@ -11,21 +11,40 @@
 
 
     @if(Auth::user()->cargo == "Diretor")
-		<button class="btn btn-outline-primary btn-block my-2" data-toggle="collapse" data-target="#CollapseSidebar">Configurações</button>
+        
+		<button class="btn btn-outline-primary btn-block my-2" data-toggle="collapse" data-target="#CollapseSidebar">Opções</button>
 			<div class="collapse bg-light p-2" id ="CollapseSidebar">
+                <button class="btn btn-outline-primary btn-block my-2"  type="button" data-toggle="modal" data-target="#ModalCod">Código de Acesso</button>
 				<button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#ModalTurma">Cadastrar Turmas</button>
-					<a class="btn btn-danger btn-block font-weight-bold text-white" data-toggle="modal" data-target="#apagarescola">Apagar escola</a>
+				<a class="btn btn-danger btn-block font-weight-bold text-white" data-toggle="modal" data-target="#apagarescola">Apagar escola</a>
 			</div>
 	@endif
 
-
+	
 
 @stop
 
 
 @section('sub_content')
     @include('Paginas.Escolas.escola_modals')
+    <!-- Modal para mostrar codigo de acesso--> 
+	<div class="modal fade" id="ModalCod" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Código de Acesso</h5>
+					</div>
 
+					<div class="modal-body"><!-- corpo do modal -->
+						<h1 class="text-success text-center">{{App\Escolas::find($eid)->codigo}}</h1>
+					</div><!--fim do corpo -->
+					<div class="modal-footer"> 
+						<button type="button" class="btn btn-outline-danger" >Gerar Novo Código</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+					</div>
+				</div>
+			</div>
+		</div><!-- fim do modal para a escola -->
     
     @if($Sturmas == 'true')
 
