@@ -67,4 +67,14 @@ class ControladorEscola extends Controller
         }
         return false;
     }
+    
+    public function newCode($eid){
+        $Nescolas = Escolas::all();
+        $CurrentEscola = Escolas::find($eid);
+
+        $CurrentEscola->codigo = $Nescolas->gerarCodigo();
+        $CurrentEscola->save();
+
+        return back();
+    }
 }

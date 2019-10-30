@@ -39,7 +39,7 @@
 						<h1 class="text-success text-center">{{App\Escolas::find($eid)->codigo}}</h1>
 					</div><!--fim do corpo -->
 					<div class="modal-footer"> 
-						<button type="button" class="btn btn-outline-danger" >Gerar Novo Código</button>
+						<button type="button" class="btn btn-outline-danger">Gerar Novo Código</button>
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 					</div>
 				</div>
@@ -126,12 +126,8 @@
                         </div>
                         <!--Fim do card de um post -->
                     </div>
-<<<<<<< HEAD
+
 					<div class="tab-pane fade" id="TabAluno"> <!-- Mural pra Alunos -->
-=======
-                
-					<div class="tab-pane fade" id="TabAluno">
->>>>>>> 645a74251aa1b547c4a8e3af4aa4d2b43b60358c
 						Mural para os Alunos
 					</div>
 				</div>
