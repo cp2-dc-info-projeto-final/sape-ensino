@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use App\Escolas;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,6 +19,12 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Schema::defaultStringLength(191);
+
+        //View Composers
+        //Data das escolas
+        view()->composer(['Paginas.Escolas.escolas', 'Paginas.Escolas.muralE'], function ($view) {
+            $view->with('escolas',  Escolas::showescolas());
+        });
     }
 
     /**
