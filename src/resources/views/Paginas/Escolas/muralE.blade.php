@@ -48,14 +48,19 @@
 
     
             <div>
-				<ul class="nav nav-tabs" id="turmaTab" role="tablist">
-					<li class="nav-item">
-						<a class="nav-link active primary text-secondary" data-toggle="tab" href="#TabDocente" role="tab" aria-controls="TabDocente" aria-selected="true">Avisos dos Docentes</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link  text-secondary" data-toggle="tab" href="#TabAluno" role="tab" aria-controls="TabAlunos" aria-selected="false">Avisos dos Alunos</a>
-					</li>
-				</ul>
+                <div class="row col-11">
+                    <ul class="nav nav-tabs col-10" id="turmaTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active primary text-secondary" data-toggle="tab" href="#TabDocente" role="tab" aria-controls="TabDocente" aria-selected="true">Avisos dos Docentes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-secondary" data-toggle="tab" href="#TabAluno" role="tab" aria-controls="TabAlunos" aria-selected="false">Avisos dos Alunos</a>
+                        </li>
+                    </ul>
+                
+                    <button class="btn btn-outline-primary ml-auto" type="button" data-toggle="modal" data-target="#ModalPublicar">Manda a Trova</button>
+                </div>
+
 				<div class="tab-content">
 					<div class="tab-pane fade show active" id="TabDocente">
 
@@ -102,7 +107,12 @@
                         </div>
                         <!--Fim do card de um post -->
                     </div>
+<<<<<<< HEAD
 					<div class="tab-pane fade" id="TabAluno"> <!-- Mural pra Alunos -->
+=======
+                
+					<div class="tab-pane fade" id="TabAluno">
+>>>>>>> 645a74251aa1b547c4a8e3af4aa4d2b43b60358c
 						Mural para os Alunos
 					</div>
 				</div>
