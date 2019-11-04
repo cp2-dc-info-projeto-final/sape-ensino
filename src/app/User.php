@@ -44,7 +44,9 @@ class User extends Authenticatable
 
     #Muitos pra um
 
-
+    public function posts(){
+        return $this->hasMany('App\Posts');
+    }
     
     #Muitos pra Muitos
 
@@ -53,6 +55,8 @@ class User extends Authenticatable
     }
 
     public function turmas(){
-        return $this->belongsToMany('App\Turmas', 'aluno_turmas', 'turma_id', 'aluno_id');;
+        return $this->belongsToMany('App\Turmas', 'aluno_turmas', 'turma_id', 'aluno_id');
     }
+
+    
 }

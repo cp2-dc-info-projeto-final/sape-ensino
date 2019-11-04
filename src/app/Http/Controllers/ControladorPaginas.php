@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Escolas;
-use App\aluno_escolas;
+use App\posts_escola;
 
 class ControladorPaginas extends Controller
 {
@@ -40,7 +40,13 @@ class ControladorPaginas extends Controller
             $turmas = Escolas::find($eid)->Turmas;
         }
 
-        return view('Paginas.Escolas.muralE')->with(array('Sturmas' => $Sturmas, 'eid' => $eid, 'turmas' => $turmas));
+
+        $posts_escola = posts_escola::with('post.user')->where('id_escola', '=', $eid)->get();
+
+        
+
+
+        return view('Paginas.Escolas.muralE')->with(array('posts' => $posts_escola ,'Sturmas' => $Sturmas, 'eid' => $eid, 'turmas' => $turmas));
     }
 
     public function visuturmas()

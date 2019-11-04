@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Schema;
 use App\Escolas;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\posts_escola;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,6 +26,8 @@ class AppServiceProvider extends ServiceProvider
         view()->composer(['Paginas.Escolas.escolas', 'Paginas.Escolas.muralE'], function ($view) {
             $view->with('escolas',  Escolas::showescolas());
         });
+
+
     }
 
     /**

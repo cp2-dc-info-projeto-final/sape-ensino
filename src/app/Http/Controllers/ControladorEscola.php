@@ -49,7 +49,7 @@ class ControladorEscola extends Controller
                 }
 
             $alunoescolas = new aluno_escolas;
-            $alunoescolas->id_aluno = $this->getUserId();
+            $alunoescolas->id_aluno = Auth::user()->id;
             $alunoescolas->id_escolas = $escola_id;
             $alunoescolas->save();
             return redirect(route('Sescolas'));

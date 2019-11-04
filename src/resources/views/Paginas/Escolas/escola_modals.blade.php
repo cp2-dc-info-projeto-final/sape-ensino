@@ -1,4 +1,34 @@
-<div class="modal fade" id="ModalEscola" tabindex="-1" role="dialog">
+<!-- Modal para entrar em uma escola --> 
+<div class="modal fade" id="ModalEntrarEscolaAluno" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Entrar em uma Escola</h5>
+			</div>
+
+			<div class="modal-body"><!-- corpo do modal -->
+				<form class="form-signin" method="post" action="{{route('entrarEscola')}}">
+					{{ csrf_field() }}
+					<div class="form-label-group mb-3"> 
+						<label for="CodEscola">Código da Escola</label>
+						<div class="input-group">
+							<div class="input-group-pretend">
+								<span class="input-group-text"><i data-feather="key"></i></span>
+							</div>
+							<input class="form-control" maxlength=6 id="CodEscola" name="CodEscola" required="required" type="password" placeholder="EX. 123456"/>
+						</div>
+					</div>
+					<button class="btn btn-lg btn-primary btn-block" type="submit" value="EntrarEscola">Entrar</button>
+				</form>
+			</div><!--fim do corpo -->
+			<div class="modal-footer"> 
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+			</div>
+		</div>
+	</div>
+</div><!-- fim do modal para entrar na escola -->
+
+<div class="modal fade" id="ModalEscola" tabindex="-1" role="dialog"> <!-- Modal de cadastro de escola -->
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">

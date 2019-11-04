@@ -13,7 +13,7 @@
 			
 				@yield('turma.escola.materia')
 				
-			
+				@if(Auth::user()->cargo == 'Diretor')
 				<div class="dropdown-divider"></div>
 
 				<h4 class="text-center text-secondary my-2">Docentes</h4>
@@ -39,6 +39,21 @@
 					<p class="text-secondary ml-1"> Nome dos Alunos</p>
 				</li>
 			</ul>
+			@else
+
+			<h4 class="text-center text-secondary my-2">Docentes</h4>
+				
+					
+				<li class="row mx-auto ml-2">
+					<p class="text-secondary ml-1"> Nome dos Diretores</p>
+				</li>
+
+				<li class="row mx-auto ml-2">
+					<p class="text-secondary ml-1"> Nome dos Professores</p>
+				</li>
+				<div class="dropdown-divider"></div>
+			
+			@endif
 			
 		</div>
 	</nav>

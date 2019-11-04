@@ -10,9 +10,14 @@ class Escolas extends Model
 {
     protected $table = 'escolas';
 
+    protected $fillable = [
+        'nome', 'descricao', 'diretor'
+    ];
+
     protected $hidden = [
         'password', 'codigo',
     ];
+
     public function gerarCodigo(){
         $valido = false;
         $codigo = 0;
@@ -48,9 +53,9 @@ class Escolas extends Model
     #Um pra um
 
     #Um pra muitos
-    public function diretor(){
+    /*public function diretor(){
         return $this->belongsTo('App\Diretor', 'diretor'); //Escola só tem 1 diretor
-    }
+    }*/
 
     public function Turmas(){
         return $this->hasMany('App\Turmas', 'escola_id');
@@ -60,6 +65,8 @@ class Escolas extends Model
         return $this->belongsToMany('App\User', 'aluno_escolas', 'aluno_id', 'escola_id'); // Escola tem Varios Alunos
     }
 
-
+    public function postsescola(){
+        return $this->belongsToMany('App\Posts', 'posts_escola', 'id_escola', 'id_post');
+    }
     
 }
