@@ -1,13 +1,16 @@
 <div id="inicio" class="tab-pane active">
-    <h2 class="ml-3">{{$user->name}}</h2>
-    <div class="row ml-3 mt-4">
-        <i data-feather="mail"></i><h5 class="text-secondary mx-2">{{$user->email}}</h5>
+    <div class="row">
+        <h2 class="ml-3">{{$user->name}}</h2>
+        <i data-feather="user-plus" class="text-success mx-2"></i><h5 class="text-success mx-2">{{$user->cargo}}</h5>
     </div>
-    <div class="row ml-3 mt-4">
-        @if($user->bio != null)
-        <i data-feather="file-text"></i><h5 class="text-secondary col-10">{{$user->bio}}</h5>
-        @else
-        <i data-feather="file-text"></i><h5 class="text-secondary col-10">Usuario do Sape Ensino!</h5>
-        @endif
-    </div>
+        <div class="row ml-3 mt-4">
+            <i data-feather="mail"></i><h5 class="text-secondary mx-2">{{$user->email}}</h5>
+        </div>
+        <div class="row ml-3 mt-4">
+            @if($user->bio != null)
+            <i data-feather="file-text"></i><h5 class="text-secondary col-10">{{$user->bio}}</h5>
+            @else
+            <i data-feather="file-text"></i><h5 class="text-secondary col-10">Usuario do Sape Ensino!</h5>
+            @endif
+        </div>
 </div>
