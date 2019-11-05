@@ -123,7 +123,7 @@
 	</div><!-- fim do modal para criar uma turma -->
 
 
-
+@isset($eid)
 	<!-- Modal para criar uma Turma -->
 <div class="modal fade" id="ModalPublicar" tabindex="-1" role="dialog">
 		<div class="modal-dialog" role="document">
@@ -133,15 +133,15 @@
 				</div>
 
 				<div class="modal-body"><!-- corpo do modal da escola -->
-					<form class="form-signin" method="post" action="#">
+					<form class="form-signin" method="post" action="{{route('newpost', ['eid' => $eid])}}">
 						{{ csrf_field() }}
 						<div class="form-label-group mb-3"> 
 							<label for="titulo">Título</label>
-							<input class="form-control"  id="titulopub"  required="required" type="text" placeholder="Título da Publicação"/>
+							<input class="form-control"  id="titulopub" name="titulopub"  required="required" type="text" placeholder="Título da Publicação"/>
 						</div>
 						<div class="form-label-group mb-3"> 
 							<label for="titulo">Texto</label>
-							<textarea class="row form-control ml-1 col-12" id="textopub" rows="15" style="resize: none" placeholder="Conteúdo do Aviso" ></textarea>
+							<textarea class="row form-control ml-1 col-12" id="textopub" name="textopub" rows="15" style="resize: none" placeholder="Conteúdo do Aviso" ></textarea>
 						</div>
 
 						<div class="form-label-group mb-3"> 
@@ -167,4 +167,4 @@
 			</div>
 		</div>
 	</div><!-- fim do modal para criar uma turma -->
-
+@endisset

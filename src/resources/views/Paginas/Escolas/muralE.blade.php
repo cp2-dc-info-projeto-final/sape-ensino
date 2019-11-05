@@ -87,7 +87,7 @@
                        
                        @foreach($posts as $post)
                             @foreach($post->post as $pos)
-
+                            
                             @if($pos->user->cargo == 'Diretor')
                                     <!--Card de um post -->
                             <div class="card mt-3">
@@ -99,7 +99,7 @@
                                                 <img class="rounded-circle" width="45" src="{{asset('storage/images/'.$pos->user->profile_picture)}}" alt="">
                                             </div>
                                             <div class="ml-2 my-auto">
-                                                <div class="h5 m-0"><a href="#">{{$pos->user->name}}</a></div>
+                                                <div class="h5 m-0"><a href="{{route('perfil', ['userid' => $pos->user->id])}}">{{$pos->user->name}}</a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -150,7 +150,7 @@
                                             <img class="rounded-circle" width="45" src="{{asset('storage/images/'.$pos->user->profile_picture)}}" alt="">
                                         </div>
                                         <div class="ml-2 my-auto">
-                                            <div class="h5 m-0"><a href="#">{{$pos->user->name}}</a></div>
+                                            <div class="h5 m-0"><a href="{{route('perfil', ['userid' => $pos->user->id])}}">{{$pos->user->name}}</a></div>
                                         </div>
                                     </div>
                                 </div>

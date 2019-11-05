@@ -7,7 +7,7 @@
         @if($user->bio != null)
         <i data-feather="file-text"></i><h5 class="text-secondary col-10">{{$user->bio}}</h5>
         @else
-        <i data-feather="file-text"></i><h5 class="text-secondary col-10">Usuario do sistema Sape Ensino!</h5>
+        <i data-feather="file-text"></i><h5 class="text-secondary col-10">Usuario do Sape Ensino!</h5>
         @endif
     </div>
 </div>

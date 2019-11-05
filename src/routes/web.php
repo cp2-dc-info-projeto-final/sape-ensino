@@ -37,7 +37,7 @@
                 //ControladorPaginas
                 Route::get('escolas/mural/{eid}/{Sturmas?}', 'ControladorPaginas@showmural')->name('SmuralE');
                 Route::get('escolas', 'ControladorPaginas@showescolas')->name('Sescolas');
-                Route::get('perfil', 'ControladorPaginas@showperfil')->name('perfil');
+                Route::get('perfil/{userid?}', 'ControladorPaginas@showperfil')->name('perfil');
         
                 //ControladorPerfil
                 Route::patch('perfil', 'ControladorPerfil@update')->name('editar'); //EDITAR PERFIL
@@ -46,6 +46,12 @@
                 
                 Route::post('escolas/mural/createclass', 'ControladorTurmas@insert')->name('criaturma');
                 Route::get('turmas/mural', 'ControladorPaginas@visuturmas')->name('visuturmas');
+                
+                //ControladorPosts
+                Route::post('escolas/mural/{eid}', 'ControllerPosts@insert')->name('newpost');
+
+
+
                 //ControladorEscolas
                 Route::get('/newCode', 'ControladorEscola@newCode')->name('newCode');
 

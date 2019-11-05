@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PerfilRequest extends FormRequest
+class PostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,8 @@ class PerfilRequest extends FormRequest
     public function rules()
     {
         return [
-            'profile_picture' => 'image|mimes:jpeg,jpg,png|max:2048',
-            
+            'titulopub'  => 'required|string|max:50',
+            'textopub' =>   'required|string|max:300',
         ];
     }
 }

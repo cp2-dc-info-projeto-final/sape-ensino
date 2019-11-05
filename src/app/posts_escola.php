@@ -13,7 +13,7 @@ class posts_escola extends Model
     ];
 
     public function escolas(){
-        return $this->hasMany('App\Escolas', 'id_escola');
+        return $this->hasMany('App\Escolas', 'id');
     }   
 
 

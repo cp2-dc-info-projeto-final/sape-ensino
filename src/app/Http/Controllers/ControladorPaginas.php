@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Escolas;
 use App\posts_escola;
+use App\User;
 
 class ControladorPaginas extends Controller
 {
@@ -20,10 +21,15 @@ class ControladorPaginas extends Controller
     }
 
 
-    public function showperfil(){
-        return view('Paginas.Perfil.perfil')->with('user', Auth::user()); 
+    public function showperfil($userid = null){
+        if($userid == null)
+        {
+            return view('Paginas.Perfil.perfil')->with('user', Auth::user()); 
+        }
+        else {
+            return view('Paginas.Perfil.perfil')->with('user', User::find($userid));
+        }
     }
-
 
     public function showescolas(){
         return view('Paginas.Escolas.escolas');
