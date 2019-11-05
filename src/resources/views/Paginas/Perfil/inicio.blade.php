@@ -1,7 +1,7 @@
 <div id="inicio" class="tab-pane active">
     <div class="row">
         <h2 class="ml-3">{{$user->name}}</h2>
-        <i data-feather="user-plus" class="text-success mx-2"></i><h5 class="text-success mx-2">{{$user->cargo}}</h5>
+        <h6><span class="badge badge-success mt-3 ml-1">{{$user->cargo}}</span></h6>
     </div>
         <div class="row ml-3 mt-4">
             <i data-feather="mail"></i><h5 class="text-secondary mx-2">{{$user->email}}</h5>
