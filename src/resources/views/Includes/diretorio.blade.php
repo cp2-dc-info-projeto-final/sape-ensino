@@ -1,5 +1,5 @@
 
-    <div arial-label="breadcrumb" class="col-10 mx-auto mt-3"><!-- barra de diretório das paginas-->
+    <div arial-label="breadcrumb" class="col-9 mt-3"><!-- barra de diretório das paginas-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active">Home</li>
             </ol>

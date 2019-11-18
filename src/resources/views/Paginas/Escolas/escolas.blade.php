@@ -9,7 +9,7 @@
 
                 @if(Auth::User()->cargo == 'Diretor')
 
-                    <div class="btn-group my-3 col-2">
+                    <div class="btn-group my-3 col-2 mr-1">
                             <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#ModalEscola">Cadastrar Escola</button>
                     </div>
                 </div>

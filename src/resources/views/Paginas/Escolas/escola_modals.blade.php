@@ -148,8 +148,7 @@
 							<label for="anexos">Anexos</label>
 							<div class="border rounded p-3 mt-2">
 									<div class="row ml-2 mx-auto">
-										<h4><span class="badge badge-primary mx-1">Arquivos.pdf</span></h4>
-										<h4><span class="badge badge-primary mx-1">Arquivos.pdf</span></h4>
+									
 									</div>
 							</div>
 						</div>

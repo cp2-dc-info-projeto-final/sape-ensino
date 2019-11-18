@@ -25,7 +25,7 @@ class PostRequest extends FormRequest
     {
         return [
             'titulopub'  => 'required|string|max:50',
-            'textopub' =>   'required|string|max:300',
+            'textopub' =>   'required|string|max:9999',
         ];
     }
 }

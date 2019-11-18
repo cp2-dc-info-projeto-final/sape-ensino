@@ -3,31 +3,20 @@
 @section('content')
 
 <div id="apresentação">
-            <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide carousel-fade col-11 mx-auto" data-ride="carousel">
                     <ol class="carousel-indicators">
                       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
-                      <div class="carousel-item active" data-interval="90500">
-                        <img class="img-fluid d-block w-100" src="{{asset('images/banner-1.jpg')}}" height="800" alt="Primeiro Slide">
+                      <div class="carousel-item active '" data-interval="90500">
+                        <img class="img-fluid d-block w-100" src="{{asset('images/banner-2.png')}}"  alt="Primeiro Slide">
                       </div>
-                      <div class="carousel-item" data-interval="90500">
-                        <img class="img-fluid d-block w-100" src="{{asset('images/banner-2.jpg')}}" height="800" alt="Segundo Slide">
-                      </div>
-                      <div class="carousel-item" data-interval="90500">
-                        <img class="img-fluid d-block w-100" src="{{asset('images/banner-3.jpg')}}" height="800" alt="Terceiro Slide">
-                      </div>
+                      
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Anterior</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Próximo</span>
-                    </a>
+                   
+                    
                   </div>
     </div>
 
@@ -104,19 +93,33 @@
   <div class="jumbotron my-4">
     <div class="card-deck">
         <div class="card border-light text-center row no-gutters">
-            <img class="card-img-top" src="{{asset('images/guia/g1.png')}}" height="90" alt="Imagem de capa do card">
+            <img class="card-img-top" src="{{asset('images/cad_escola.png')}}"  alt="Imagem de capa do card">
             <div class="card-body">
-              <h5 class="card-title">Comunicação simples e abrangente</h5>
+              
             </div>
           </div>
           <div class="card border-light text-center">
-            <img class="card-img-top" src="{{asset('images/guia/g2.png')}}" height="90" alt="Imagem de capa do card">
+            <img class="card-img-top" src="{{asset('images/publicacao.png')}}" alt="Imagem de capa do card">
             <div class="card-body">
-              <h5 class="card-title">Compartilhamento de mídia</h5>            
+                         
+            </div>
+          </div>
+        </div>
+        <br>
+          <div class="card-deck">
+            <div class="card border-light text-center row no-gutters">
+            <img class="card-img-top" src="{{asset('images/cel.png')}}"  alt="Imagem de capa do card">
+            <div class="card-body">
+              
+            </div>
+          </div>
+          <div class="card border-light text-center">
+            <img class="card-img-top" src="{{asset('images/cad_turma.png')}}"  alt="Imagem de capa do card">
+            <div class="card-body">
+                         
             </div>
           </div>
     </div>
-  </div>
 </div>
 
 <div class="container" id="desenvolvedores">
