@@ -47,12 +47,22 @@ class ControladorPaginas extends Controller
         }
 
 
-        $posts_escola = posts_escola::with('post.user')->where('id_escola', '=', $eid)->get();
+        $posts_diretor = posts_escola::with('post.user')->where('id_escola', '=', $eid)
+        ->whereHas('post.user', function($q){
+            $q->where('cargo', '=', 'Diretor');
+        })
+        ->orderBy('created_at', 'DESC')->paginate(5, ['*'], 'posts_D');
+
+        $posts_aluno = posts_escola::with('post.user')->where('id_escola', '=', $eid)
+        ->whereHas('post.user', function($q){
+            $q->where('cargo', '=', 'Aluno');
+        })
+        ->orderBy('created_at', 'DESC')->paginate(5, ['*'], 'posts_A');
 
         
 
 
-        return view('Paginas.Escolas.muralE')->with(array('posts' => $posts_escola ,'Sturmas' => $Sturmas, 'eid' => $eid, 'turmas' => $turmas));
+        return view('Paginas.Escolas.muralE')->with(array('posts_A' => $posts_aluno, 'posts_D' => $posts_diretor ,'Sturmas' => $Sturmas, 'eid' => $eid, 'turmas' => $turmas));
     }
 
     public function visuturmas()

@@ -85,7 +85,7 @@
 
                        
                        
-                       @foreach($posts as $post)
+                       @foreach($posts_D as $post)
                             @foreach($post->post as $pos)
                             
                             @if($pos->user->cargo == 'Diretor')
@@ -96,7 +96,7 @@
                                     <div class="d-flex">
                                         <div class="d-flex justify-content-between">
                                             <div class="mr-2">
-                                                <img class="rounded-circle" width="45" src="{{asset('storage/images/'.$pos->user->profile_picture)}}" alt="">
+                                                <img class="rounded-circle" width="45" src="{{asset('storage/images/'.$pos->user->profile_picture)}}" alt="profile picture">
                                             </div>
                                             <div class="ml-2 my-auto">
                                                 <div class="h5 m-0"><a href="{{route('perfil', ['userid' => $pos->user->id])}}">{{$pos->user->name}}</a></div>
@@ -130,13 +130,13 @@
                         
 
                             @endif
-                        @endforeach
+                        @endforeach                        
                     @endforeach
-
+                    {{$posts_D->appends(['posts_D' => $posts_D->currentPage(), 'posts_A' => $posts_A->currentPage()])->links()}}
                     </div>
                     
                     <div class="tab-pane fade" id="TabAluno"> <!-- Mural pra Alunos -->
-                        @foreach($posts as $post)
+                        @foreach($posts_A as $post)
                         @foreach($post->post as $pos)
 
                         @if($pos->user->cargo == 'Aluno')
@@ -183,6 +183,7 @@
                         @endif
                     @endforeach
                 @endforeach
+                {{$posts_A->appends(['posts_D' => $posts_D->currentPage(), 'posts_A' => $posts_A->currentPage()])->links()}}
                     </div>    
 				</div>
             </div>
