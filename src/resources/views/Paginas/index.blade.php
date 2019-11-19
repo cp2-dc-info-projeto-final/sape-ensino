@@ -94,14 +94,14 @@
     <div class="card-deck">
         <div class="card border-light text-center row no-gutters">
             <img class="card-img-top" src="{{asset('images/cad_escola.png')}}"  alt="Imagem de capa do card">
-            <div class="card-body">
-              
+            <div class="card-footer bg-transparent border-primary text-secondary mt-3 ">
+              <h4 class="card-title"> Cadastre Sua Escola</h4>
             </div>
           </div>
           <div class="card border-light text-center">
             <img class="card-img-top" src="{{asset('images/publicacao.png')}}" alt="Imagem de capa do card">
-            <div class="card-body">
-                         
+            <div class="card-footer bg-transparent border-primary text-secondary mt-3 ">
+              <h4 class="card-title"> Publique Avisos e Conteúdos</h4>
             </div>
           </div>
         </div>
@@ -109,21 +109,21 @@
           <div class="card-deck">
             <div class="card border-light text-center row no-gutters">
             <img class="card-img-top" src="{{asset('images/cel.png')}}"  alt="Imagem de capa do card">
-            <div class="card-body">
-              
+            <div class="card-footer bg-transparent border-primary text-secondary mt-3 ">
+              <h4 class="card-title">Menus Simples e Intuitivos</h4>
             </div>
           </div>
           <div class="card border-light text-center">
             <img class="card-img-top" src="{{asset('images/cad_turma.png')}}"  alt="Imagem de capa do card">
-            <div class="card-body">
-                         
+            <div class="card-footer bg-transparent border-primary text-secondary mt-5 ">
+              <h4 class="card-title">Crie Turmas para suas escolas</h4>
             </div>
           </div>
     </div>
 </div>
 
-<div class="container" id="desenvolvedores">
-<div class="jumbotron container">
+<div class=" mb-5" id="desenvolvedores">
+  <div class="jumbotron container">
     <h1 class="font-weight-light text-center">Desenvolvedores</h1>
     <p class="lead text-center">Alunos do Colégio Pedro II cursando o Ensino Médio integrado ao técnico em desenvolvimento de sistemas.</p>
     
@@ -132,25 +132,25 @@
         <a href="https://github.com/LeinadAsid" target="_blank">
           <img class="rounded-circle" src="{{asset('images/daniel.jpg')}}" alt="Imagem Desenvolvedor" width="140" height="140">
           </a>
-          <h5>Daniel Dias</h2>
-        </div>
-        <div class="col-lg-3">
-          <a href="https://github.com/IsaakCPII" target="_blank">
-            <img class="rounded-circle" src="{{asset('images/isaak.jpg')}}" alt="Imagem Desenvolvedor" width="140" height="140">
-            </a>
-            <h5>Isaak Santos</h2>
-          </div>
-          <div class="col-lg-3">
-            <a href="https://github.com/PHasselmann" target="_blank"><img class="rounded-circle" src="{{asset('images/pedro.jpg')}}" alt="Imagem Desenvolvedor" width="140" height="140"></a>
-              <h5>Pedro Hasselmann</h2>
-          </div>
-            <div class="col-lg-3">
-                <a href="https://github.com/renancastro23" target="_blank"><img class="rounded-circle" src="{{asset('images/renan.jpg')}}" href="" alt="Imagem Desenvolvedor" width="140" height="140"></a>
-                <h5>Renan Castro</h5>
-            </div>
+          <h5>Daniel Dias</h5>
+      </div>
+      <div class="col-lg-3">
+        <a href="https://github.com/IsaakCPII" target="_blank">
+          <img class="rounded-circle" src="{{asset('images/isaak.jpg')}}" alt="Imagem Desenvolvedor" width="140" height="140">
+        </a>
+        <h5>Isaak Santos</h5>
+      </div>
+      <div class="col-lg-3">
+        <a href="https://github.com/PHasselmann" target="_blank"><img class="rounded-circle" src="{{asset('images/pedro.jpg')}}" alt="Imagem Desenvolvedor" width="140" height="140"></a>
+        <h5>Pedro Hasselmann</h5>
+      </div>
+      <div class="col-lg-3">
+        <a href="https://github.com/renancastro23" target="_blank"><img class="rounded-circle" src="{{asset('images/renan.jpg')}}" href="" alt="Imagem Desenvolvedor" width="140" height="140"></a>
+        <h5>Renan Castro</h5>
+      </div>
     </div>
-
-  </div> 
+  </div>
+</div> 
 <br>   
 <br>
 </div>

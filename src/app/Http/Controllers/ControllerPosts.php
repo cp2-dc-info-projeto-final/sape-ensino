@@ -49,7 +49,7 @@ class ControllerPosts extends Controller
            }
         }
 
-        return back();
+        return back()->with('success', 'Aviso criado com sucesso!');;
     }
 
 }

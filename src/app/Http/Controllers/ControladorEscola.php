@@ -32,7 +32,7 @@ class ControladorEscola extends Controller
         $Nescolas->codigo = $Nescolas->gerarCodigo();
         
         $Nescolas->save();
-        return redirect(route('Sescolas'));
+        return redirect(route('Sescolas'))->with('success', 'Escola criada com sucesso!');;
     }
 
     public function entrarEscola(Request $request){
