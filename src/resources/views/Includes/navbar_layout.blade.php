@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary pt-0 pb-0">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary pt-0 pb-0 wow fadeInDown">
     <div class="container">
         <a class="navbar-brand h1 mb-0" href="{{route('index')}}">Sape Ensino</a>
         <button class="navbar-toggler ml-auto mr-2" data-toggle="collapse" data-target="#collapsenavbar" href="#collapsenavbar" type="button" aria-expanded="false" aria-controls="collapsenavbar"><i data-feather="menu"></i></button>

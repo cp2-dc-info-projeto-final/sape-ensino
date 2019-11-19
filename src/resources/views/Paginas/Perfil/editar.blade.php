@@ -1,5 +1,5 @@
 
-<div id="edit" class="tab-pane fade ">
+<div id="edit" class="tab-pane fade wow bounceInUp">
     <h2 class="text-center mb-4">Editar Perfil</h2>
 
     

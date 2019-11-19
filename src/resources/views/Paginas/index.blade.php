@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div id="apresentação">
+<div id="apresentação" class="wow zoomIn">
             <div id="carouselExampleIndicators" class="carousel slide carousel-fade col-11 mx-auto" data-ride="carousel">
                     <ol class="carousel-indicators">
                       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -25,12 +25,12 @@
     <br>
     <br>
     <div class="row align-items-center my-5">
-      <div class="col-lg-7">
+      <div class="col-lg-7 wow fadeInLeft">
         <img class="img-fluid rounded mb-4 mb-lg-0" src="{{asset('images/objetivo.jpg')}}" alt="">
       </div>
       <!-- /.col-lg-8 -->
-      <div class="col-lg-5">
-        <h1 class="font-weight-light">Objetivos da Plataforma</h1>
+      <div class="col-lg-5 wow fadeInRight">
+        <h1 class="font-weight-light ">Objetivos da Plataforma</h1>
         <p>O projeto SAPE Ensino é uma plataforma web com o objetivo de simplificar o acesso entre o professor e o aluno dentro das escolas.</p>
         <p>Isso inclui troca de informações como por exemplo: mensagens, documentos, fotos, vídeos e planejamentos que o professor tem para seus alunos e suas turmas.</p>
       </div>
@@ -44,11 +44,11 @@
 <br> <br>
 
     <div class="text-center">
-        <h1 class="font-weight-light">Recursos Inovadores</h1>
+        <h1 class="font-weight-light wow fadeInUp">Recursos Inovadores</h1>
         <p>Recursos inovadores, comunicação escolar facilitada e um visual que você já está acostumado</p>
         <br> <br>
     </div>
-    <div class="card-deck">
+    <div class="card-deck wow flipInX">
             <div class="card border-light text-center">
               <img class="card-img-top" src="{{asset('images/apr-1.jpg')}}" width="120"  alt="Imagem de capa do card">
               <div class="card-body">
@@ -86,11 +86,11 @@
     <br> <br>
     <br> <br>
 
-    <div class="text-center">
+    <div class="text-center wow fadeInUp">
         <h1 class="font-weight-light">Guia Rápido</h1>
         <p>Nosso guia vai te mostrar como nossa plataforma apresenta seus recurso de formas simples e abrangete.</p>
       </div>
-  <div class="jumbotron my-4">
+  <div class="jumbotron my-4 wow fadeIn">
     <div class="card-deck">
         <div class="card border-light text-center row no-gutters">
             <img class="card-img-top" src="{{asset('images/cad_escola.png')}}"  alt="Imagem de capa do card">
@@ -123,14 +123,14 @@
 </div>
 
 <div class=" mb-5" id="desenvolvedores">
-  <div class="jumbotron container">
+  <div class="jumbotron container  wow fadeIn">
     <h1 class="font-weight-light text-center">Desenvolvedores</h1>
-    <p class="lead text-center">Alunos do Colégio Pedro II cursando o Ensino Médio integrado ao técnico em desenvolvimento de sistemas.</p>
+    <p class="lead text-center ">Alunos do Colégio Pedro II cursando o Ensino Médio integrado ao técnico em desenvolvimento de sistemas.</p>
     
-    <div class="row text-center">
+    <div class="row text-center wow flipInX">
       <div class="col-lg-3">
         <a href="https://github.com/LeinadAsid" target="_blank">
-          <img class="rounded-circle" src="{{asset('images/daniel.jpg')}}" alt="Imagem Desenvolvedor" width="140" height="140">
+          <img class="rounded-circle " src="{{asset('images/daniel.jpg')}}" alt="Imagem Desenvolvedor" width="140" height="140">
           </a>
           <h5>Daniel Dias</h5>
       </div>

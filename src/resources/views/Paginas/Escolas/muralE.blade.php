@@ -26,7 +26,7 @@
 
 
 @section('sub_content')
-    <div class="mt-3">
+    <div class="mt-3 wow fadeIn">
         {{ Breadcrumbs::render('escolas', $escolas) }}
     </div>
     @include('Includes.errors')
@@ -55,7 +55,7 @@
 
     <div class="row ml-md-2">
         @foreach ($turmas as $turma)
-            <div class="card my-4 mx-4 col-10 col-sm-10 col-lg-3 ">
+            <div class="card my-4 mx-4 col-10 col-sm-10 col-lg-3 wow flipInX">
                 <div class="card-body">
                     <h3 class="card-title"  style="white-space:nowrap;">{{$turma->nome}}</h3>
                 </div>
@@ -71,7 +71,7 @@
 
     
             <div>
-                <div class="row mx-auto">
+                <div class="row mx-auto wow fadeIn">
                     <ul class="nav nav-tabs col-12 col-md-9" id="turmaTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active primary text-secondary" data-toggle="tab" href="#TabDocente" role="tab" aria-controls="TabDocente" aria-selected="true">Avisos dos Docentes</a>
@@ -81,7 +81,7 @@
                         </li>
                     </ul>
                 
-                    <button class="btn btn-outline-primary ml-auto mt-3 mt-md-0" type="button" data-toggle="modal" data-target="#ModalPublicar">Manda a Trova</button>
+                    <button class="btn btn-outline-primary ml-auto mt-3 mt-md-0 wow bounceInRight" type="button" data-toggle="modal" data-target="#ModalPublicar">Manda a Trova</button>
                 </div>
 
 				<div class="tab-content">
@@ -94,7 +94,7 @@
                             
                             @if($pos->user->cargo == 'Diretor')
                                     <!--Card de um post -->
-                            <div class="card mt-3 shadow">
+                            <div class="card mt-3 shadow wow bounceInUp">
                                 <!-- Cabeçalho do post -->                            
                                 <div class="card-header">
                                     <div class="d-flex">
@@ -158,7 +158,7 @@
 
                         @if($pos->user->cargo == 'Aluno')
                                 <!--Card de um post -->
-                        <div class="card mt-3">
+                        <div class="card mt-3  wow flipInX">
                             <!-- Cabeçalho do post -->                            
                             <div class="card-header">
                                 <div class="d-flex">

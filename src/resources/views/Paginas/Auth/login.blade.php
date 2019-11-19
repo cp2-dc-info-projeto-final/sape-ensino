@@ -13,7 +13,7 @@ body{
 <div class="container">
         <div class="row">
           <div class="col-12 col-md-7 col-lg-5 mx-auto">
-            <div class="card card-signin my-5">
+            <div class="card card-signin my-5 wow fadeIn">
               <div class="card-body">
                 <h1 class="card-title text-center">Login</h1>
         

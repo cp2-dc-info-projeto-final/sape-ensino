@@ -9,6 +9,9 @@
     <!-- Bootstrap.css -->
     <link href="{{asset('css/bootstrap.min.css')}}" type="text/css" rel="stylesheet">
     <link href="{{asset('css/custom.css')}}" type="text/css" rel="stylesheet">
+
+    <!-- Animated.css-->
+    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
     
     <title>{{config('app.name')}}</title>
 
@@ -27,7 +30,12 @@
     <!-- Bootstrap.js and jquery.js --> 
     <script src="{{asset('js/feather.min.js')}}"></script>
     <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js') }}"></script>  
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>  
+    <script src="{{asset('js/wow.min.js')}}"></script> 
+
+    <script>
+         new WOW().init();
+    </script>
     <script>
         feather.replace()
     </script>

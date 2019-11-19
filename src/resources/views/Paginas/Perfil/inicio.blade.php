@@ -1,4 +1,4 @@
-<div id="inicio" class="tab-pane active">
+<div id="inicio" class="tab-pane active wow bounceInUp">
     <div class="row">
         <h2 class="ml-3">{{$user->name}}</h2>
         <h6><span class="badge badge-success mt-3 ml-1">{{$user->cargo}}</span></h6>
