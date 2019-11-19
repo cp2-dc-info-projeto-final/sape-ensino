@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row col-12">
 
-        <div class="col-10 mx-auto mt-3"><!-- barra de diretório das paginas-->
+        <div class="col-10 mt-3"><!-- barra de diretório das paginas-->
         {{ Breadcrumbs::render('home') }}
         </div><!-- fim da barra de diretório-->
 

@@ -143,20 +143,11 @@
 							<label for="titulo">Texto</label>
 							<textarea class="row form-control ml-1 col-12" id="textopub" name="textopub" rows="15" style="resize: none" placeholder="Conteúdo do Aviso" ></textarea>
 						</div>
-
-						<div class="form-label-group mb-3"> 
-							<label for="anexos">Anexos</label>
-							<div class="border rounded p-3 mt-2">
-									<div class="row ml-2 mx-auto">
-									
-									</div>
-							</div>
-						</div>
 						
 						<div class="row ml-1 col-12 ">
 							<input multiple="multiple" id="files" name="files[]" type="file" style="display: none;"> 
-							<input class="btn btn-lg btn-primary btn-block col-5 ml-auto mt-2" type="button" value="Anexar" onclick="document.getElementById('files').click();"><i data-feather="paperclip" class="m-1"></i> 
-							<button class="btn btn-lg btn-primary btn-block col-5 mx-auto" type="submit"><i data-feather="send" class="m-1"></i>Enviar</button>
+							<input class="btn btn-lg btn-primary btn-block col-5 ml-auto mt-2" type="button" value="Anexar" onclick="document.getElementById('files').click();">
+							<button class="btn btn-lg btn-primary btn-block col-5 mx-auto" type="submit">Enviar</button>
 						</div>
 					</form>
 				</div><!--fim do corpo -->

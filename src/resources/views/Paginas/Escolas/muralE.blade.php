@@ -26,7 +26,7 @@
 
 
 @section('sub_content')
-    <div class="col-9 mt-3">
+    <div class="mt-3">
         {{ Breadcrumbs::render('escolas', $escolas) }}
     </div>
     @include('Includes.errors')
@@ -71,8 +71,8 @@
 
     
             <div>
-                <div class="row col-11">
-                    <ul class="nav nav-tabs col-8" id="turmaTab" role="tablist">
+                <div class="row mx-auto">
+                    <ul class="nav nav-tabs col-12 col-md-9" id="turmaTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active primary text-secondary" data-toggle="tab" href="#TabDocente" role="tab" aria-controls="TabDocente" aria-selected="true">Avisos dos Docentes</a>
                         </li>
@@ -81,7 +81,7 @@
                         </li>
                     </ul>
                 
-                    <button class="btn btn-outline-primary ml-4" type="button" data-toggle="modal" data-target="#ModalPublicar">Manda a Trova</button>
+                    <button class="btn btn-outline-primary ml-auto mt-3 mt-md-0" type="button" data-toggle="modal" data-target="#ModalPublicar">Manda a Trova</button>
                 </div>
 
 				<div class="tab-content">
@@ -94,7 +94,7 @@
                             
                             @if($pos->user->cargo == 'Diretor')
                                     <!--Card de um post -->
-                            <div class="card mt-3">
+                            <div class="card mt-3 shadow">
                                 <!-- Cabeçalho do post -->                            
                                 <div class="card-header">
                                     <div class="d-flex">
@@ -103,9 +103,14 @@
                                                 <img class="rounded-circle" width="45" src="{{asset('storage/images/'.$pos->user->profile_picture)}}" alt="profile picture">
                                             </div>
                                             <div class="ml-2 my-auto">
-                                                <div class="h5 m-0"><a href="{{route('perfil', ['userid' => $pos->user->id])}}">{{$pos->user->name}}</a></div>
+                                                <div class="h5 m-0"><a class="text-decoration-none" href="{{route('perfil', ['userid' => $pos->user->id])}}">{{$pos->user->name}}</a></div>
                                             </div>
                                         </div>
+
+                                        @if(Auth::user()->cargo == "Diretor")
+                                        <button class="btn ml-auto" type="button" data-target=""><i class="text-danger" data-feather="trash"></i></button>
+                                        @endif
+                                        
                                     </div>
 
                                 </div>
@@ -113,21 +118,29 @@
 
 
                                 <!-- Conteudo do post -->
-                                <div class="card-body">
-                                
-                                    <a class="card-link" href="#">
-                                        <h5 class="card-title">{{$pos->titulo}}</h5>
-                                    </a>
-
-                                    <p class="card-text">
-                                        {{$pos->text}}
-                                    </p>
-                                    <div class="row ml-2">
-                                    @foreach($pos->anexos as $anexos) 
-                                        <h3><span class="badge badge-primary mx-1"><a href="{{asset('storage/post_files/'.$anexos->dir)}}">{!! trim(substr($anexos->dir, strpos($anexos->dir, '.') + 1)) !!}</a></span></h3>
-                                    @endforeach
+                                <div class="card-body ">
+                                    <div class=" h7 col-12 row"> 
+                                        
+                                        <a class="card- mr-auto" href="#">
+                                            <h5 class="card-title">{{$pos->titulo}}</h5>
+                                        </a>
+                                        <p class="text-muted ml-auto">19/11/2019</p>
                                     </div>
+                                    
+
+                                    <h5 class="card-text text-secondary">
+                                        {{$pos->text}}
+                                    </h5>
+
                                 </div>
+
+                                <hr>
+                                <div class="row pb-3 pl-5">
+                                    @foreach($pos->anexos as $anexos) 
+                                        <a class="text-decoration-none btn btn-outline-primary mr-2 mt-2" href="{{asset('storage/post_files/'.$anexos->dir)}}">{!! trim(substr($anexos->dir, strpos($anexos->dir, '.') + 1)) !!}</a>
+                                    @endforeach
+                                </div>
+                                
                                 <!--Fim do conteudo do post -->
                             </div>
                             <!--Fim do card de um post -->
@@ -157,6 +170,10 @@
                                             <div class="h5 m-0"><a href="{{route('perfil', ['userid' => $pos->user->id])}}">{{$pos->user->name}}</a></div>
                                         </div>
                                     </div>
+                                        @if(Auth::user()->cargo == "Diretor")
+                                        <button class="btn ml-auto" type="button" data-target=""><i class="text-danger" data-feather="trash"></i></button>
+                                        @endif
+                                    
                                 </div>
 
                             </div>
@@ -166,16 +183,21 @@
                             <!-- Conteudo do post -->
                             <div class="card-body">
                             
-                                <a class="card-link" href="#">
-                                    <h5 class="card-title">{{$pos->titulo}}</h5>
-                                </a>
+                                    <div class=" h7 col-12 row"> 
+                                        
+                                        <a class="card- mr-auto" href="#">
+                                            <h5 class="card-title">{{$pos->titulo}}</h5>
+                                        </a>
+                                        <p class="text-muted ml-auto">19/11/2019</p>
+                                    </div>
 
                                 <p class="card-text">
                                     {{$pos->text}}
                                 </p>
-                                <div class="row ml-2">
+                                <hr>
+                                <div class="row pb-3 pl-5">
                                     @foreach($pos->anexos as $anexos) 
-                                        <h3><span class="badge badge-primary mx-1"><a href="{{asset('storage/post_files/'.$anexos->dir)}}">{!! trim(substr($anexos->dir, strpos($anexos->dir, '.') + 1)) !!}</a></span></h3>
+                                        <a class="class= text-decoration-none btn btn-outline-primary mr-2 mt-2" href="{{asset('storage/post_files/'.$anexos->dir)}}">{!! trim(substr($anexos->dir, strpos($anexos->dir, '.') + 1)) !!}</a>
                                     @endforeach
                                 </div>
                             </div>
