@@ -26,6 +26,7 @@
 
 
 @section('sub_content')
+    @include('Includes.errors')
     @include('Paginas.Escolas.escola_modals')
     <!-- Modal para mostrar codigo de acesso--> 
 	<div class="modal fade" id="ModalCod" tabindex="-1" role="dialog">
@@ -119,9 +120,9 @@
                                         {{$pos->text}}
                                     </p>
                                     <div class="row ml-2">
-                                        <h3><span class="badge badge-primary mx-1">Arquivos.pdf</span></h3>
-                                        <h3><span class="badge badge-warning mx-1">Arquivos.mp3</span></h3>
-                                        <h3><span class="badge badge-info mx-1">Arquivos.png</span></h3>
+                                    @foreach($pos->anexos as $anexos) 
+                                        <h3><span class="badge badge-primary mx-1"><a href="{{asset('storage/post_files/'.$anexos->dir)}}">{!! trim(substr($anexos->dir, strpos($anexos->dir, '.') + 1)) !!}</a></span></h3>
+                                    @endforeach
                                     </div>
                                 </div>
                                 <!--Fim do conteudo do post -->
@@ -170,9 +171,9 @@
                                     {{$pos->text}}
                                 </p>
                                 <div class="row ml-2">
-                                    <h3><span class="badge badge-primary mx-1">Arquivos.pdf</span></h3>
-                                    <h3><span class="badge badge-warning mx-1">Arquivos.mp3</span></h3>
-                                    <h3><span class="badge badge-info mx-1">Arquivos.png</span></h3>
+                                    @foreach($pos->anexos as $anexos) 
+                                        <h3><span class="badge badge-primary mx-1"><a href="{{asset('storage/post_files/'.$anexos->dir)}}">{!! trim(substr($anexos->dir, strpos($anexos->dir, '.') + 1)) !!}</a></span></h3>
+                                    @endforeach
                                 </div>
                             </div>
                             <!--Fim do conteudo do post -->

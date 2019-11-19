@@ -133,7 +133,7 @@
 				</div>
 
 				<div class="modal-body"><!-- corpo do modal da escola -->
-					<form class="form-signin" method="post" action="{{route('newpost', ['eid' => $eid])}}">
+					<form class="form-signin" enctype="multipart/form-data" method="post" action="{{route('newpost', ['eid' => $eid])}}">
 						{{ csrf_field() }}
 						<div class="form-label-group mb-3"> 
 							<label for="titulo">Título</label>
@@ -154,7 +154,8 @@
 						</div>
 						
 						<div class="row ml-1 col-12 ">
-							<button class="btn btn-lg btn-primary btn-block col-5 ml-auto mt-2"  type="file"><i data-feather="paperclip" class="m-1"></i>Anexar</button>
+							<input multiple="multiple" id="files" name="files[]" type="file" style="display: none;"> 
+							<input class="btn btn-lg btn-primary btn-block col-5 ml-auto mt-2" type="button" value="Anexar" onclick="document.getElementById('files').click();"><i data-feather="paperclip" class="m-1"></i> 
 							<button class="btn btn-lg btn-primary btn-block col-5 mx-auto" type="submit"><i data-feather="send" class="m-1"></i>Enviar</button>
 						</div>
 					</form>

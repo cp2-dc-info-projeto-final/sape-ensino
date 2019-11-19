@@ -25,7 +25,8 @@ class PostRequest extends FormRequest
     {
         return [
             'titulopub'  => 'required|string|max:50',
-            'textopub' =>   'required|string|max:9999',
+            'textopub' =>   'required|string|max:500',
+            'files.*' => 'mimes:doc,pdf,docx,zip,rar,txt,jpg,png,jpeg',
         ];
     }
 }
