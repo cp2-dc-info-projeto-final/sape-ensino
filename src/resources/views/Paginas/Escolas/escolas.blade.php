@@ -3,20 +3,23 @@
     <div class="container">
         <div class="row col-12">
 
-                @include('Includes.diretorio')
+        <div class="col-10 mx-auto mt-3"><!-- barra de diretório das paginas-->
+        {{ Breadcrumbs::render('home') }}
+        </div><!-- fim da barra de diretório-->
+
         <!-- Botão & Modals-->
             @include('Paginas.Escolas.escola_modals')
 
                 @if(Auth::User()->cargo == 'Diretor')
 
-                    <div class="btn-group my-3 col-2 mr-1">
+                    <div class="btn-group my-3 col-2 ">
                             <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#ModalEscola">Cadastrar Escola</button>
                     </div>
                 </div>
 
                 @elseif(Auth::User()->cargo != 'Diretor')
 
-                    <div class="btn-group my-3">
+                    <div class="btn-group my-3 col-2">
                         <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#ModalEntrarEscolaAluno" data-toggle="modal">Entrar</button>
                     </div>
                 </div>

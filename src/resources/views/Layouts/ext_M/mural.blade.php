@@ -58,8 +58,6 @@
 		</div>
 	</nav>
 	<div class="col-9 mx-auto">
-	<!--Diretorio -->
-	@include('Includes.diretorio')
 
 <!-- Fim da sidebar & e começo do conteudo da página--> 
 

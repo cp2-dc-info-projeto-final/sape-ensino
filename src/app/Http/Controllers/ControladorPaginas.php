@@ -59,10 +59,10 @@ class ControladorPaginas extends Controller
         })
         ->orderBy('created_at', 'DESC')->paginate(5, ['*'], 'posts_A');
 
-        
+        $escolas = Escolas::find($eid);
         
 
-        return view('Paginas.Escolas.muralE')->with(array('posts_A' => $posts_aluno, 'posts_D' => $posts_diretor ,'Sturmas' => $Sturmas, 'eid' => $eid, 'turmas' => $turmas));
+        return view('Paginas.Escolas.muralE')->with(array('escolas' => $escolas, 'posts_A' => $posts_aluno, 'posts_D' => $posts_diretor ,'Sturmas' => $Sturmas, 'eid' => $eid, 'turmas' => $turmas));
     }
 
     public function visuturmas()

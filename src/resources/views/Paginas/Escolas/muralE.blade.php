@@ -26,6 +26,9 @@
 
 
 @section('sub_content')
+    <div class="col-9 mt-3">
+        {{ Breadcrumbs::render('escolas', $escolas) }}
+    </div>
     @include('Includes.errors')
     @include('Paginas.Escolas.escola_modals')
     <!-- Modal para mostrar codigo de acesso--> 
@@ -69,7 +72,7 @@
     
             <div>
                 <div class="row col-11">
-                    <ul class="nav nav-tabs col-10" id="turmaTab" role="tablist">
+                    <ul class="nav nav-tabs col-8" id="turmaTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active primary text-secondary" data-toggle="tab" href="#TabDocente" role="tab" aria-controls="TabDocente" aria-selected="true">Avisos dos Docentes</a>
                         </li>
@@ -78,7 +81,7 @@
                         </li>
                     </ul>
                 
-                    <button class="btn btn-outline-primary ml-auto" type="button" data-toggle="modal" data-target="#ModalPublicar">Manda a Trova</button>
+                    <button class="btn btn-outline-primary ml-4" type="button" data-toggle="modal" data-target="#ModalPublicar">Manda a Trova</button>
                 </div>
 
 				<div class="tab-content">

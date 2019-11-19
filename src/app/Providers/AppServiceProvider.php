@@ -23,10 +23,9 @@ class AppServiceProvider extends ServiceProvider
 
         //View Composers
         //Data das escolas
-        view()->composer(['Paginas.Escolas.escolas', 'Paginas.Escolas.muralE'], function ($view) {
+        view()->composer(['Paginas.Escolas.escolas'], function ($view) {
             $view->with('escolas',  Escolas::showescolas());
         });
-
 
     }
 

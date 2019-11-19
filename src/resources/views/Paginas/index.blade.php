@@ -50,28 +50,28 @@
     </div>
     <div class="card-deck">
             <div class="card border-light text-center">
-              <img class="card-img-top" src="{{asset('images/apr-1.jpg')}}" width="120" height="170" alt="Imagem de capa do card">
+              <img class="card-img-top" src="{{asset('images/apr-1.jpg')}}" width="120"  alt="Imagem de capa do card">
               <div class="card-body">
                 <h5 class="card-title">Comunicação simples e abrangente</h5>
                 <p class="card-text">Com o Sape, sua escola pode enviar mensagens (textos, arquivos e mídias) para todas as turmas simultâneamente, de forma simples e limpa.</p>
               </div>
             </div>
             <div class="card border-light text-center">
-              <img class="card-img-top" src="{{asset('images/apr-2.png')}}" width="120" height="170" alt="Imagem de capa do card">
+              <img class="card-img-top" src="{{asset('images/apr-2.png')}}" width="120"  alt="Imagem de capa do card">
               <div class="card-body">
                 <h5 class="card-title">Compartilhamento de mídia</h5>
                 <p class="card-text">Troca de informações rápido e fácil entre aluno e professor. Com suporte para texto, imagens, áudio, vídeo e documentos.</p>
               </div>
             </div>
             <div class="card border-light text-center">
-              <img class="card-img-top" src="{{asset('images/apr-3.jpg')}}" width="120" height="170" alt="Imagem de capa do card">
+              <img class="card-img-top" src="{{asset('images/apr-3.jpg')}}" width="120"  alt="Imagem de capa do card">
               <div class="card-body">
                 <h5 class="card-title">Visual fácil</h5>
                 <p class="card-text">Visual simples e sofisticado, facilitando o uso da plataforma sem perder a qualidade.</p>
               </div>
             </div>
             <div class="card border-light text-center">
-                <img class="card-img-top" src="{{asset('images/apr-4.png')}}" width="120" height="170" alt="Imagem de capa do card">
+                <img class="card-img-top" src="{{asset('images/apr-4.png')}}" width="120"  alt="Imagem de capa do card">
                 <div class="card-body">
                   <h5 class="card-title">Portabilidade</h5>
                   <p class="card-text">Site responsivo com ajuste automático para qualquer tipo de tela, compatível com dispositivos móveis</p>
