@@ -53,7 +53,7 @@
 
 
                 //ControladorEscolas
-                Route::get('/newCode', 'ControladorEscola@newCode')->name('newCode');
+                Route::get('/newCode/{eid}', 'ControladorEscola@newCode')->name('newCode');
 
         });
 

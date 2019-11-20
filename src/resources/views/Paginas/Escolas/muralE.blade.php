@@ -43,7 +43,7 @@
 						<h1 class="text-success text-center">{{$escolas->codigo}}</h1>
 					</div><!--fim do corpo -->
 					<div class="modal-footer"> 
-						<button type="button" class="btn btn-outline-danger">Gerar Novo Código</button>
+						<button type="button" class="btn btn-outline-danger"><a href="{{route('newCode', ['eid' => $eid])}}">Gerar Novo Código</a></button>
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 					</div>
 				</div>

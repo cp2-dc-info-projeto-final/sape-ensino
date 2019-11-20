@@ -69,12 +69,11 @@ class ControladorEscola extends Controller
     }
     
     public function newCode($eid){
-        $Nescolas = Escolas::all();
-        $CurrentEscola = Escolas::find($eid);
+        $escola = Escolas::find($eid);
 
-        $CurrentEscola->codigo = $Nescolas->gerarCodigo();
-        $CurrentEscola->save();
+        $escola->codigo = $escola->gerarCodigo();
+        $escola->save();
 
-        return back();
+        return back()->with('success', 'Código atualizado!');
     }
 }
