@@ -40,7 +40,7 @@
                     <h3 class="card-title"  style="white-space:nowrap;">Dale</h3>
                 </div>
                 <div class="card-footer bg-white">
-                    <a class="text-decoration-none" href='{{route("visuturmas")}}'><button class="btn btn-primary btn-block">Entrar</button></a>
+                    <a class="text-decoration-none" href='#'><button class="btn btn-primary btn-block">Entrar</button></a>
                 </div>
 
     </div> <!-- fim do alinhamento horizontal dos cards-->
