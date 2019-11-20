@@ -35,6 +35,7 @@
 
         Route::group(['middleware' => 'auth'], function() {
                 //ControladorPaginas
+                Route::get('turmas/mural/{eid}/{tid}/{Smaterias?}', 'ControladorPaginas@visuturmas')->name('visuturmas');
                 Route::get('escolas/mural/{eid}/{Sturmas?}', 'ControladorPaginas@showmural')->name('SmuralE');
                 Route::get('escolas', 'ControladorPaginas@showescolas')->name('Sescolas');
                 Route::get('perfil/{userid?}', 'ControladorPaginas@showperfil')->name('perfil');
@@ -45,8 +46,7 @@
                 //ControladorTurmas
                 
                 Route::post('escolas/mural/createclass', 'ControladorTurmas@insert')->name('criaturma');
-                Route::get('turmas/mural', 'ControladorPaginas@visuturmas')->name('visuturmas');
-                
+
                 //ControladorPosts
                 Route::post('escolas/mural/{eid}', 'ControllerPosts@insert')->name('newpost');
 

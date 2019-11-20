@@ -40,7 +40,7 @@
 					</div>
 
 					<div class="modal-body"><!-- corpo do modal -->
-						<h1 class="text-success text-center">{{App\Escolas::find($eid)->codigo}}</h1>
+						<h1 class="text-success text-center">{{$escolas->codigo}}</h1>
 					</div><!--fim do corpo -->
 					<div class="modal-footer"> 
 						<button type="button" class="btn btn-outline-danger">Gerar Novo Código</button>
@@ -60,7 +60,7 @@
                     <h3 class="card-title"  style="white-space:nowrap;">{{$turma->nome}}</h3>
                 </div>
                 <div class="card-footer bg-white">
-                    <a class="text-decoration-none" href='{{route("visuturmas")}}'><button class="btn btn-primary btn-block">Entrar</button></a>
+                    <a class="text-decoration-none" href='{{route("visuturmas", ["eid" => "$eid", "tid" => "$turma->id"])}}'><button class="btn btn-primary btn-block">Entrar</button></a>
                 </div>
             </div>
         @endforeach
@@ -81,7 +81,7 @@
                         </li>
                     </ul>
                 
-                    <button class="btn btn-outline-primary ml-auto mt-3 mt-md-0 wow bounceInRight" type="button" data-toggle="modal" data-target="#ModalPublicar">Manda a Trova</button>
+                    <button class="btn btn-outline-primary ml-auto mt-3 mt-md-0 wow bounceInRight" type="button" data-toggle="modal" data-target="#ModalPublicar">Criar aviso</button>
                 </div>
 
 				<div class="tab-content">
@@ -124,7 +124,7 @@
                                         <a class="card- mr-auto" href="#">
                                             <h5 class="card-title">{{$pos->titulo}}</h5>
                                         </a>
-                                        <p class="text-muted ml-auto">19/11/2019</p>
+                                        <p class="text-muted ml-auto">{{$pos->created_at->format('d M Y')}}</p>
                                     </div>
                                     
 
@@ -188,7 +188,7 @@
                                         <a class="card- mr-auto" href="#">
                                             <h5 class="card-title">{{$pos->titulo}}</h5>
                                         </a>
-                                        <p class="text-muted ml-auto">19/11/2019</p>
+                                        <p class="text-muted ml-auto">{{$pos->created_at->format('d M Y')}}</p>
                                     </div>
 
                                 <p class="card-text">

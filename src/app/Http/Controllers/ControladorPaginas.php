@@ -9,6 +9,7 @@ use App\Escolas;
 use App\posts_escola;
 use App\User;
 use App\anexos;
+use App\Turmas;
 class ControladorPaginas extends Controller
 {
     public function __construct(){
@@ -65,8 +66,10 @@ class ControladorPaginas extends Controller
         return view('Paginas.Escolas.muralE')->with(array('escolas' => $escolas, 'posts_A' => $posts_aluno, 'posts_D' => $posts_diretor ,'Sturmas' => $Sturmas, 'eid' => $eid, 'turmas' => $turmas));
     }
 
-    public function visuturmas()
+    public function visuturmas($eid, $tid, $Smaterias = null)
     {
-        return view('Paginas.Turmas.turmas')->with(array('Sturmas' => "true"));
+        $escolas = Escolas::find($eid);
+        $turmas = Turmas::find($tid);
+        return view('Paginas.Turmas.turmas')->with(array('escolas' => $escolas, 'turmas' => $turmas, 'Smaterias' => $Smaterias));
     }
 }

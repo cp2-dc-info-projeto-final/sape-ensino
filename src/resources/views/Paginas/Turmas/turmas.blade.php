@@ -2,10 +2,10 @@
 
 @section('turma.escola.materia')
 
-    @if($Sturmas == "true")
-        <a class="text-decoration-none btn btn-outline-primary btn-block my-2" href='#'>Mural</a>
-    @elseif($Sturmas == "false"|| $Sturmas == null)
-        <a class="text-decoration-none btn btn-outline-primary btn-block my-2" href='#'>Suas Turmas</a>
+    @if($Smaterias == "true")
+        <a class="text-decoration-none btn btn-outline-primary btn-block my-2" href='{{route("visuturmas", ["Smaterias" => "false", "tid" => "$turmas->id", "eid" => "$escolas->id"])}}'>Mural</a>
+    @elseif($Smaterias == "false"|| $Smaterias == null)
+        <a class="text-decoration-none btn btn-outline-primary btn-block my-2" href='{{route("visuturmas", ["Smaterias" => "true", "tid" => "$turmas->id", "eid" => "$escolas->id"])}}'>Materias</a>
     @endif
 
 
@@ -13,9 +13,9 @@
         
 		<button class="btn btn-outline-primary btn-block my-2" data-toggle="collapse" data-target="#CollapseSidebar">Opções</button>
 			<div class="collapse bg-light p-2" id ="CollapseSidebar">
-                <button class="btn btn-outline-primary btn-block my-2"  type="button" data-toggle="modal" data-target="#ModalCod">Código de Acesso</button>
-				<button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#ModalTurma">Cadastrar Turmas</button>
-				<a class="btn btn-danger btn-block font-weight-bold text-white" data-toggle="modal" data-target="#apagarescola">Apagar escola</a>
+                <!--<button class="btn btn-outline-primary btn-block my-2"  type="button" data-toggle="modal" data-target="#ModalCod">Código de Acesso</button>-->
+				<!--<button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#ModalTurma">Cadastrar Turmas</button>-->
+				<a class="btn btn-danger btn-block font-weight-bold text-white" data-toggle="modal" data-target="#apagarescola">Apagar turma</a>
 			</div>
 	@endif
 
@@ -25,7 +25,12 @@
 
 @section('sub_content')
     
-    @if($Sturmas == 'false')
+    <div class="mt-3 wow fadeIn">
+        {{ Breadcrumbs::render('turmas', $turmas, $escolas) }}
+    </div>
+    @include('Includes.errors')        
+
+    @if($Smaterias == 'true')
 
 
     <div class="row ml-md-2">
@@ -56,7 +61,7 @@
                         </li>
                     </ul>
                 
-                    <button class="btn btn-outline-primary ml-auto" type="button" data-toggle="modal" data-target="#ModalPublicar">Manda a Trova</button>
+                    <button class="btn btn-outline-primary ml-auto" type="button" data-toggle="modal" data-target="#ModalPublicar">Criar aviso</button>
                 </div>
 
 				<div class="tab-content">
