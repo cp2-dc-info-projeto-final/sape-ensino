@@ -15,7 +15,7 @@
 			<div class="collapse bg-light p-2" id ="CollapseSidebar">
                 <!--<button class="btn btn-outline-primary btn-block my-2"  type="button" data-toggle="modal" data-target="#ModalCod">Código de Acesso</button>-->
 				<!--<button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#ModalTurma">Cadastrar Turmas</button>-->
-				<a class="btn btn-danger btn-block font-weight-bold text-white" data-toggle="modal" data-target="#apagarescola">Apagar turma</a>
+				<a class="btn btn-danger btn-block font-weight-bold text-white" data-toggle="modal" data-target="#ModalApagarTurma">Apagar turma</a>
 			</div>
 	@endif
 
@@ -24,6 +24,83 @@
 @stop
 
 @section('sub_content')
+
+
+
+
+    <!--Modal para apagar uma Turma -->
+    <div class="modal fade" id="ModalApagarTurma" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header text-center">
+					<h5 class="modal-title text-danger">Você apagará toda a turma e seu Conteúdo!</h5>
+				</div>
+                <div class="modal-body"><!-- corpo do modal da escola -->
+					<form class="form-signin" method="post" action="#">
+						{{ csrf_field() }}
+						<button class="btn btn-lg btn-danger btn-block" type="submit" value="ApagarTurma">Deletar Escola Permanentemente</button>
+					</form>
+				</div><!--fim do corpo -->
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+    </div>
+
+    <!-- fim do modal de apagar uma turma -->
+
+
+
+            <!-- Modal para criar um aviso Para cada Materia-->
+        <div class="modal fade" id="ModalPublicarMateria" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Criar Aviso</h5>
+                        </div>
+
+                        <div class="modal-body"><!-- corpo do modal da escola -->
+                            <form class="form-signin" enctype="multipart/form-data" method="post" action="">
+                                {{ csrf_field() }}
+                                <div class="form-label-group mb-3"> 
+                                    <label for="titulo">Título</label>
+                                    <input class="form-control"  id="titulopubMateria" name="titulopubMateria"  required="required" type="text" placeholder="Título da Publicação"/>
+                                </div>
+                                <div class="form-label-group mb-3"> 
+                                    <label for="titulo">Texto</label>
+                                    <textarea class="row form-control ml-1 col-12" id="textopubMateria" name="textopub" rows="15" style="resize: none" placeholder="Conteúdo do Aviso" ></textarea>
+                                </div>
+                                
+                                <div class="row ml-1 col-12 ">
+                                    <input multiple="multiple" id="files" name="files[]" type="file" style="display: none;"> 
+                                    <input class="btn btn-lg btn-primary btn-block col-5 ml-auto mt-2" type="button" value="Anexar" onclick="document.getElementById('files').click();">
+                                    <button class="btn btn-lg btn-primary btn-block col-5 mx-auto" type="submit">Enviar</button>
+                                </div>
+                            </form>
+                        </div><!--fim do corpo -->
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- fim do modal para criar um aviso -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     <div class="mt-3 wow fadeIn">
         {{ Breadcrumbs::render('turmas', $turmas, $escolas) }}

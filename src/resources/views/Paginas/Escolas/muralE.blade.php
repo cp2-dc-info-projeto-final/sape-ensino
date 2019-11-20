@@ -16,7 +16,7 @@
 			<div class="collapse bg-light p-2" id ="CollapseSidebar">
                 <button class="btn btn-outline-primary btn-block my-2"  type="button" data-toggle="modal" data-target="#ModalCod">Código de Acesso</button>
 				<button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#ModalTurma">Cadastrar Turmas</button>
-				<a class="btn btn-danger btn-block font-weight-bold text-white" data-toggle="modal" data-target="#apagarescola">Apagar escola</a>
+				<a class="btn btn-danger btn-block font-weight-bold text-white" data-toggle="modal" data-target="#ModalDeleteEscola">Apagar escola</a>
 			</div>
 	@endif
 
@@ -31,8 +31,11 @@
     </div>
     @include('Includes.errors')
     @include('Paginas.Escolas.escola_modals')
-    <!-- Modal para mostrar codigo de acesso--> 
-	<div class="modal fade" id="ModalCod" tabindex="-1" role="dialog">
+
+
+    
+   <!-- Modal para mostrar codigo de acesso--> 
+   <div class="modal fade" id="ModalCod" tabindex="-1" role="dialog">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -43,13 +46,15 @@
 						<h1 class="text-success text-center">{{$escolas->codigo}}</h1>
 					</div><!--fim do corpo -->
 					<div class="modal-footer"> 
-						<button type="button" class="btn btn-outline-danger"><a href="{{route('newCode', ['eid' => $eid])}}">Gerar Novo Código</a></button>
+						<button type="button" class="btn btn-outline-danger"><a class="text-decoration-none text-dark"href="{{route('newCode', ['eid' => $eid])}}">Gerar Novo Código</a></button>
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 					</div>
 				</div>
 			</div>
 		</div><!-- fim do modal para a escola -->
-    
+
+
+
     @if($Sturmas == 'true')
 
 

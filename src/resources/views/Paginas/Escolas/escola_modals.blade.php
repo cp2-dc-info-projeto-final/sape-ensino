@@ -124,7 +124,7 @@
 
 
 @isset($eid)
-	<!-- Modal para criar uma Turma -->
+	<!-- Modal para criar um aviso -->
 <div class="modal fade" id="ModalPublicar" tabindex="-1" role="dialog">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -157,6 +157,51 @@
 				</div>
 			</div>
 		</div>
-	</div><!-- fim do modal para criar uma turma -->
+	</div><!-- fim do modal para criar um aviso -->
 @endisset
+
+
+
+
+    <!--Modal para apagar uma escola -->
+    <div class="modal fade" id="ModalDeleteEscola" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-danger">Cuidado! Você apagará permanente sua escola!</h5>
+				</div>
+
+				<div class="modal-body"><!-- corpo do modal da escola -->
+					<form class="form-signin" method="post" action="#">
+						{{ csrf_field() }}
+						<div class="form-label-group mb-3"> 
+								<label for="password">Senha da Escola</label>
+								<div class="input-group">
+									<div class="input-group-pretend">
+										<span class="input-group-text"><i data-feather="alert-circle"></i></span>
+									</div>
+									<input class="form-control" id="senhaescola" name="SenhaDeleteSchool" required="required" type="password" placeholder="EX. 12345678"/>
+								</div>
+							</div>
+							<div class="form-label-group mb-3"> 
+								<label for="password">Confirmar Senha</label>
+								<div class="input-group">
+									<div class="input-group-pretend">
+										<span class="input-group-text"><i data-feather="alert-circle"></i></span>
+									</div>
+									<input class="form-control" id="senhaescola" name="ConfirmacaoSenhaDeleteSchool" required="required" type="password" placeholder="EX. 12345678"/>
+								</div>
+							</div>
+						<button class="btn btn-lg btn-danger btn-block" type="submit" value="ApagarEscola">Deletar Escola Permanentemente</button>
+					</form>
+				</div><!--fim do corpo -->
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+    </div>
+
+    <!-- fim do modal de apar uma escola-->
 
