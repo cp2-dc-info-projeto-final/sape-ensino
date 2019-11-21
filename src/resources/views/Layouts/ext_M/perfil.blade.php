@@ -17,10 +17,6 @@
                     @if($user->id == Auth::user()->id)
                     <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#edit" role="tab" aria-controls="v-pills-profile"
                         aria-selected="false">Editar Perfil</a>
-                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#msg" role="tab" aria-controls="v-pills-messages"
-                        aria-selected="false">Mensagem</a>
-                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#conf" role="tab" aria-controls="v-pills-settings"
-                        aria-selected="false">Configurações</a>
                     @endif
                 </div>
             </div>
