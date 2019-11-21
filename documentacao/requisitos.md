@@ -9,10 +9,6 @@
 - [RF05](#RF05)
 - [RF06](#RF06)
 - [RF07](#RF07)
-- [RF08](#RF08)
-- [RF09](#RF09)
-- [RF10](#RF10)
-- [RF11](#RF11)
 ## Requisitos Não-Funcionais:
 - [RNF1](#RF01)
 - [RNF2](#RF02)
@@ -28,44 +24,30 @@ O site possuirá dois tipos de cadastros. Para professores, e alunos.
     
         1.Nome completo;
         2.Email;
-        3.Senha;
-        4.Data de Nascimento;
-        5.Sexo;
+        3.Senha.
 
 + Informações ara se armazenar dos Alunos:
        
         1.Nome completo;
         2.Email;
-        3.Senha;
-        4.Data de Nascimento;
-        5.Sexo;
-        
+        3.Senha.
+
 ### RF02
     Para acesso completo do site, é necessário realizar um Login.
 
-### RF03
-    O site terá um sistema de notificação quando um usuário se logar.
-
-### RF04
-    O site possuirá uma aba para Qualquer usuário criar sua própria grades de horários, com auxílio do site.
-
 ## Requisitos dos Alunos
-### RF05
+### RF03
     O aluno pode entrar em uma turma com o cógido de acesso.
-### RF06
-    O aluno deverá ser capaz de se comunicar diretamente com o professor de cada matéria.
-### RF07
-    Ele poderá baixar os arquivos colocados pelos professores, e poderá responder a cada um deles.
+### RF04
+    Ele poderá baixar os arquivos colocados pelos professores.
 
 ## Requisitos dos Professores
-### RF08
+### RF05
     O professor será capaz de criar turmas que possuem quantas matérias quiser.
-### RF09
-    Professores podem entrar em turmas de outros professores através de um código exclusivo, para coordenar 1 matéria dessa turma
-### RF10
+### RF06
+    Professores podem entrar em turmas de outros professores através de um código exclusivo, para coordenar 1 matéria dessa turma.
+### RF07
     O professor pode colocar conteúdos e avisos nas suas Matérias em específico.
-### RF11
-    O professor pode enviar um mensagem privada para qualquer um dos seus aluno.
 
 
 
@@ -76,6 +58,6 @@ O site possuirá dois tipos de cadastros. Para professores, e alunos.
 ### RNF02
     As informações dos usuários e os conteúdos disponibilizados serão guardados em um banco de dados My SQL.
 ### RNF03
-    As paginas terão um como princípio um visual simples e facil
+    As paginas terão um como princípio um visual simples e abrangente.
 ### RNF04
-    O site terá suporte somente ao idioma Português-brasileiro
+    O site terá suporte somente ao idioma Português-brasileiro.
