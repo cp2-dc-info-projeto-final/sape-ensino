@@ -19,7 +19,7 @@
                         aria-selected="false">Editar Perfil</a>
                     @endif
                 </div>
-            </div>
+            </div>s
 
             
             @yield('pills')
