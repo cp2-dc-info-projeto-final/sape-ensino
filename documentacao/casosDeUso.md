@@ -7,14 +7,14 @@
 - [CDU 03 - Login](#CDU-03---Login)
 
 ## Somente para Docentes
-- [CDU 05 - Criação de Turmas](#CDU-05---Criação-de-Turmas)
-- [CDU 06 - Criação de Escola](#CDU-)
-- [CDU 07 - Inserir conteúdo](#CDU-07---Inserir-conteúdo)
-- [CDU 09 - Entrar em uma Escola](#CDU-09---Entrar-em-uma-Escola)
+- [CDU 04 - Criação de Turmas](#CDU-04---Criação-de-Turmas)
+- [CDU 05 - Criação de Escola](#CDU-05---Criação-de-Escola)
+- [CDU 06 - Inserir conteúdo](#CDU-06---Inserir-conteúdo)
+- [CDU 07 - Entrar em uma Escola](#CDU-07---Entrar-em-uma-Escola)
 
 ## Somente para Alunos
-- [CDU 10 - Entrar em uma turma](#CDU-10---Entrar-em-uma-turma)
-- [CDU 12 - Entrar em uma Escola](#CDU-12---Entrar-em-uma-Escola)
+- [CDU 08 - Entrar em uma turma](#CDU-08---Entrar-em-uma-turma)
+- [CDU 09 - Entrar em uma Escola](#CDU-09---Entrar-em-uma-Escola)
 
 
 # Descrição
@@ -81,7 +81,7 @@
 2. Professor - Digita seu texto e anexa seus arquivos, e aperta em postar.
 3. Sistema - Adicionar as informações no banco de dados e torna disponível para todos os alunos e outros docentes dentro da turma ou escola, e para o próprio Docente.
 
-## CDU 08 - Entrar em uma Escola
+## CDU 07 - Entrar em uma Escola
 **Atores:** Docente  e Professor(outro docente)
 
 **Pré-condições:** 
@@ -100,7 +100,7 @@
 
 # Casos de Uso do Aluno.
 
-## CDU 09 - Entrar em uma turma
+## CDU 08 - Entrar em uma turma
 **Atores:** Aluno
 
 **Pré-condições:** Estar logado no site como aluno
@@ -114,7 +114,7 @@
 3. Sistema - Adiciona a nova turma na tela de Turmas do aluno.
 
 
-## CDU 11 - Entrar em uma Escola
+## CDU 09 - Entrar em uma Escola
 **Atores:** Aluno e Docente
 
 **Pré-condições:** 
