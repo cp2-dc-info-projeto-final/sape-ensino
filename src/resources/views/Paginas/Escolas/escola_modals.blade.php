@@ -162,7 +162,7 @@
 
 
 
-
+@isset($eid)
     <!--Modal para apagar uma escola -->
     <div class="modal fade" id="ModalDeleteEscola" tabindex="-1" role="dialog">
 		<div class="modal-dialog" role="document">
@@ -172,7 +172,7 @@
 				</div>
 
 				<div class="modal-body"><!-- corpo do modal da escola -->
-					<form class="form-signin" method="post" action="#">
+					<form class="form-signin" method="post" action="{{route('Sdelete')}}">
 						{{ csrf_field() }}
 						<div class="form-label-group mb-3"> 
 								<label for="password">Senha da Escola</label>
@@ -192,6 +192,7 @@
 									<input class="form-control" id="senhaescola" name="ConfirmacaoSenhaDeleteSchool" required="required" type="password" placeholder="EX. 12345678"/>
 								</div>
 							</div>
+						<input type="hidden" value="{{$eid}}" name="eid">
 						<button class="btn btn-lg btn-danger btn-block" type="submit" value="ApagarEscola">Deletar Escola Permanentemente</button>
 					</form>
 				</div><!--fim do corpo -->
@@ -205,3 +206,4 @@
 
     <!-- fim do modal de apar uma escola-->
 
+@endisset

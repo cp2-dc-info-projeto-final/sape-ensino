@@ -54,6 +54,7 @@
 
                 //ControladorEscolas
                 Route::get('/newCode/{eid}', 'ControladorEscola@newCode')->name('newCode');
+                Route::post('/delete', 'ControladorEscola@delete')->name('Sdelete');
 
         });
 

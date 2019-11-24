@@ -76,4 +76,20 @@ class ControladorEscola extends Controller
 
         return back()->with('success', 'Código atualizado!');
     }
+
+    public function delete(Request $request){
+        $eid = $request["eid"];
+        $senha = $request["SenhaDeleteSchool"];
+        $senha2 = $request['ConfirmacaoSenhaDeleteSchool'];
+
+        if ($senha == $senha2){
+            $escolas = Escolas::find($eid)->delete();
+            return redirect(route('Sescolas'))->with('success', 'Escola deletada com sucesso!');
+        }
+        else
+        {
+            return redirect(route('Sescolas'))->withErrors(['SenhaDeleteSchool' => 'Senhas não coincidem, tente novamente!']);
+        }
+
+    }
 }

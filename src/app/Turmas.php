@@ -19,4 +19,8 @@ class Turmas extends Model
     public function Escolas(){
         return $this->belongsTo('App\Escolas', 'escola_id');
     }
+
+    public function Materias(){
+        return $this->hasMany('App\Materias', 'turma_id');
+    }
 }
