@@ -18,7 +18,7 @@
         <button class="btn btn-outline-primary btn-block my-2" data-toggle="collapse" data-target="#CollapseSidebar">Opções</button>
         <div class="collapse bg-light p-2" id="CollapseSidebar">
             <!--<button class="btn btn-outline-primary btn-block my-2"  type="button" data-toggle="modal" data-target="#ModalCod">Código de Acesso</button>-->
-            <button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#ModalTurma">Cadastrar Materias</button>
+            <button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#ModalCriarMateria">Cadastrar Materias</button>
         </div>
 
 	@endif

@@ -44,7 +44,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#desenvolvedores">Desenvolvedores</a>
-                </li>
+                    </li>
 					
 	            </ul>
 	        </div>

@@ -6,12 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- Animated.css-->
+    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+    
     <!-- Bootstrap.css -->
     <link href="{{asset('css/bootstrap.min.css')}}" type="text/css" rel="stylesheet">
     <link href="{{asset('css/custom.css')}}" type="text/css" rel="stylesheet">
 
-    <!-- Animated.css-->
-    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+    
     
     <title>{{config('app.name')}}</title>
 

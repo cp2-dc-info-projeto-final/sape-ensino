@@ -20,3 +20,41 @@
     </div>
 
     <!-- fim do modal de apagar uma turma -->
+
+
+	<!-- Modal para criar uma Turma -->
+<div class="modal fade" id="ModalCriarMateria" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Cadastro de uma Matéria</h5>
+				</div>
+
+				<div class="modal-body"><!-- corpo do modal da escola -->
+					<form class="form-signin" method="post" action="">
+						{{ csrf_field() }}
+						<div class="form-label-group mb-3"> 
+							<label for="NomeMateria">Nome da Matéria</label>
+							<div class="input-group">
+								<div class="input-group-pretend">
+									<span class="input-group-text"><i data-feather="file-text"></i></span>
+								</div>
+								<input class="form-control" maxlength=15 id="nomemateria" name="nome" required="required" type="text" placeholder="Português"/>
+							</div>
+						</div>
+						<!--
+						@isset($eid)
+							<input type="hidden" name="escola_id" value="{{$eid}}">
+						@endisset
+
+						-->
+						<button class="btn btn-lg btn-primary btn-block" type="submit" value="CriarMateria">Criar Matéria</button>
+					</form>
+				</div><!--fim do corpo -->
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div><!-- fim do modal para criar uma turma -->
