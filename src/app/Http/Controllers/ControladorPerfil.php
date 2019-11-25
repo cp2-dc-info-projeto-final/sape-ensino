@@ -24,31 +24,41 @@ class ControladorPerfil extends Controller
         }
     }
     protected function updatePic(User $user, PerfilRequest $request){
-
-        $this->apagarfotoantiga($user);
         $validated = $request->validated();
 
-        if($validated['profile_picture'] != null){
+        if($request['profile_picture'] != null){
             $profileImage = $validated['profile_picture'];
             
             $uploadpath = time().'.'.$profileImage->guessExtension();
 
             $img = Image::make($profileImage->getRealPath());
             $img->resize(200, 200)->save(public_path('storage/images').'/'.$uploadpath);
-        
+            
+            $this->apagarfotoantiga($user);
+
         } else {
-            $uploadpath = 'default.jpg';
+            $uploadpath = $user->profile_picture;
         }
 
         $user->profile_picture = $uploadpath;
-        $user->save();
     }
 
     public function update(PerfilRequest $request){
         $user = Auth::user();
         $this->updatePic($user, $request);
         
+        if($request['name'] != null){
+            $user->name = $request['name'];
+        }
+        if($request['email'] != null){
+            $user->email = $request['email'];
+        }
+        if($request['bio'] != null){
+            $user->bio = $request['bio'];
+        }
 
+        $user->save();
+        
         return back();
     }
 }

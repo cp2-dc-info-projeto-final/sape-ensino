@@ -28,65 +28,29 @@
 @stop
 
 @section('sub_content')
+@include('Paginas.Turmas.turmas_modals')
 
-
-
-    <!--Modal para apagar uma Turma -->
-    <div class="modal fade" id="ModalApagarTurma" tabindex="-1" role="dialog">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header text-center">
-					<h5 class="modal-title text-danger">Você apagará toda a turma e seu Conteúdo!</h5>
-				</div>
-                <div class="modal-body"><!-- corpo do modal da escola -->
-					<form class="form-signin" method="post" action="#">
-						{{ csrf_field() }}
-						<button class="btn btn-lg btn-danger btn-block" type="submit" value="ApagarTurma">Deletar Turma Permanentemente</button>
-					</form>
-				</div><!--fim do corpo -->
-
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-				</div>
-			</div>
-		</div>
-    </div>
-
-    <!-- fim do modal de apagar uma turma -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     <div class="mt-3 wow fadeIn">
         {{ Breadcrumbs::render('turmas', $turmas, $escolas) }}
     </div>
+
+
     @include('Includes.errors')        
 
-   
-
-
-        <div class="row ml-md-2">
-        
+    
+    <div class="row ml-md-2">
+    @foreach($materias as $materia)
                 <div class="card my-4 mx-4 col-10 col-sm-10 col-lg-3 ">
                     <div class="card-body">
-                        <h3 class="card-title"  style="white-space:nowrap;">Dale</h3>
+                        <h3 class="card-title"  style="white-space:nowrap;">{{$materia->nome}}</h3>
+                        <p class="card-text">{{$materia->profname}}</p>
                     </div>
                     <div class="card-footer bg-white">
-                        <a class="text-decoration-none" href='#'><button class="btn btn-primary btn-block">Entrar</button></a>
+                    <a class="text-decoration-none" href='{{route("showmaterias", ["eid" => $escolas->id, "tid" => $turmas->id, "mid" => $materia->id])}}'><button class="btn btn-primary btn-block">Entrar</button></a>
                     </div>
-
-        </div> <!-- fim do alinhamento horizontal dos cards-->
-
+                </div>
+    @endforeach
+    </div><!-- fim do alinhamento horizontal dos cards-->
     
     
 

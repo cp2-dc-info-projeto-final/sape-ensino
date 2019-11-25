@@ -86,7 +86,10 @@
                         </li>
                     </ul>
                 
-                    <button class="btn btn-outline-primary ml-auto mt-3 mt-md-0 wow bounceInRight" type="button" data-toggle="modal" data-target="#ModalPublicar">Criar aviso</button>
+                    @if(Auth::user()->cargo != "Professor")
+                      <button class="btn btn-outline-primary ml-auto mt-3 mt-md-0 wow bounceInRight" type="button" data-toggle="modal" data-target="#ModalPublicar">Criar aviso</button>
+                    @endif
+
                 </div>
 
 				<div class="tab-content">
@@ -113,7 +116,7 @@
                                         </div>
 
                                         @if(Auth::user()->cargo == "Diretor")
-                                        <button class="btn ml-auto" type="button" data-target=""><i class="text-danger" data-feather="trash"></i></button>
+                                            <button class="btn ml-auto" type="button" data-target=""><i class="text-danger" data-feather="trash"></i></button>
                                         @endif
                                         
                                     </div>
@@ -142,7 +145,7 @@
                                 <hr>
                                 <div class="row pb-3 pl-5">
                                     @foreach($pos->anexos as $anexos) 
-                                        <a class="text-decoration-none btn btn-outline-primary mr-2 mt-2" href="{{asset('storage/post_files/'.$anexos->dir)}}">{!! trim(substr($anexos->dir, strpos($anexos->dir, '.') + 1)) !!}</a>
+                                        <a target="_blank" class="text-decoration-none btn btn-outline-primary mr-2 mt-2" href="{{asset('storage/post_files/'.$anexos->dir)}}">{!! trim(substr($anexos->dir, strpos($anexos->dir, '.') + 1)) !!}</a>
                                     @endforeach
                                 </div>
                                 
@@ -202,7 +205,7 @@
                                 <hr>
                                 <div class="row pb-3 pl-5">
                                     @foreach($pos->anexos as $anexos) 
-                                        <a class="class= text-decoration-none btn btn-outline-primary mr-2 mt-2" href="{{asset('storage/post_files/'.$anexos->dir)}}">{!! trim(substr($anexos->dir, strpos($anexos->dir, '.') + 1)) !!}</a>
+                                        <a target="_blank" class="class= text-decoration-none btn btn-outline-primary mr-2 mt-2" href="{{asset('storage/post_files/'.$anexos->dir)}}">{!! trim(substr($anexos->dir, strpos($anexos->dir, '.') + 1)) !!}</a>
                                     @endforeach
                                 </div>
                             </div>

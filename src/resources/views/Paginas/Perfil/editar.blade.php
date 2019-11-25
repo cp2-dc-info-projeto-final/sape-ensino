@@ -1,6 +1,7 @@
 
 <div id="edit" class="tab-pane fade wow bounceInUp">
     <h2 class="text-center mb-4">Editar Perfil</h2>
+    <p style="color: gray"> Se quiser mudar apenas um campo em especifico, basta não preencher os outros! </p>
 
     
     <!-- COLOCAR ^ DENTRO DO FORM 
@@ -19,7 +20,7 @@
 
                     <span class="row"><i class="mr-2" data-feather="mail"></i>
                         <h5>Novo email:</h5>
-                        <input class="ml-3 col-10 form-control" placeholder="E-mail">
+                        <input class="ml-3 col-10 form-control" placeholder="E-mail" type="email" name="email">
                     </span>
                     <br>
 
@@ -27,7 +28,7 @@
 
                     <span class="row"><i class="mr-2" data-feather="file-text"></i>
                         <h5>Nova Biografia:</h5>
-                        <textarea class="row form-control ml-3 col-10" id="biografia" rows="2" style="resize: none" placeholder="Biografia" ></textarea>
+                        <input type="textarea" class="row form-control ml-3 col-10" id="biografia" name="bio" rows="2" style="resize: none" placeholder="Biografia" >
                     </span>
                     <br> 
 

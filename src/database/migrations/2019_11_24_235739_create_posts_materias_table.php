@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostsTurmasTable extends Migration
+class CreatePostsMateriasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreatePostsTurmasTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts_turmas', function (Blueprint $table) {
+        Schema::create('posts_materias', function (Blueprint $table) {
             $table->increments('id');
 
             $table->integer('id_post')->unsigned();
             $table->foreign('id_post')->references('id')->on('posts')->onDelete('cascade');
             
-            $table->integer('id_turma')->unsigned();
-            $table->foreign('id_turma')->references('id')->on('turmas')->onDelete('cascade');
+            $table->integer('id_materia')->unsigned();
+            $table->foreign('id_materia')->references('id')->on('materias')->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -33,6 +33,6 @@ class CreatePostsTurmasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts_turmas');
+        Schema::dropIfExists('posts_materias');
     }
 }

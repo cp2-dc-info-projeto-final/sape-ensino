@@ -47,6 +47,11 @@ class User extends Authenticatable
     public function posts(){
         return $this->hasMany('App\Posts');
     }
+
+
+    public function materias(){
+        return $this->hasMany('App\Materias');
+    }
     
     #Muitos pra Muitos
 
@@ -57,6 +62,8 @@ class User extends Authenticatable
     public function turmas(){
         return $this->belongsToMany('App\Turmas', 'aluno_turmas', 'turma_id', 'aluno_id');
     }
+
+    
 
     
 }

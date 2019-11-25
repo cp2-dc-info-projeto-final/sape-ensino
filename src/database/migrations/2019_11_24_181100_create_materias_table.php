@@ -17,7 +17,9 @@ class CreateMateriasTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->integer('turma_id')->unsigned();
+            $table->integer('professor')->unsigned();
             $table->foreign('turma_id')->references('id')->on('turmas')->onDelete('cascade');
+            $table->foreign('professor')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

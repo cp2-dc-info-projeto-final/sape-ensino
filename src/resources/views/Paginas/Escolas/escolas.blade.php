@@ -4,7 +4,7 @@
         <div class="row col-12">
 
         <div class="col-10 mt-3 wow fadeIn"><!-- barra de diretório das paginas-->
-        {{ Breadcrumbs::render('home') }}
+            {{ Breadcrumbs::render('home') }}
         </div><!-- fim da barra de diretório-->
 
         <!-- Botão & Modals-->

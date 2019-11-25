@@ -22,6 +22,10 @@ class Posts extends Model
         return $this->belongsToMany('App\Escolas', 'posts_escola', 'id_post', 'id_escola');
     }
 
+    public function postsmaterias(){
+        return $this->belongsToMany('App\Materias', 'posts_materias', 'id_post', 'id_materia');
+    }
+
     public function user(){
         return $this->belongsTo('App\User', 'dono');
     }

@@ -17,3 +17,9 @@ Breadcrumbs::for('turmas', function($trail, $turmas, $escolas){
     $trail->parent('escolas', $escolas);
     $trail->push($turmas->nome, route("visuturmas", ["eid" => "$escolas->id", "tid" => "$turmas->id"]));
 });
+
+
+Breadcrumbs::for('materias', function($trail, $materias, $turmas, $escolas){
+    $trail->parent('turmas', $turmas, $escolas);
+    $trail->push($materias->nome, route('showmaterias', ["mid" => $materias->id, "eid" => $escolas->id, "tid" => $turmas->id]));
+});

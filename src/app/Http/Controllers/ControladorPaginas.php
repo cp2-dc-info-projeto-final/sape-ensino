@@ -10,6 +10,9 @@ use App\posts_escola;
 use App\User;
 use App\anexos;
 use App\Turmas;
+use App\Materias;
+use App\posts_materias;
+
 class ControladorPaginas extends Controller
 {
     public function __construct(){
@@ -66,10 +69,39 @@ class ControladorPaginas extends Controller
         return view('Paginas.Escolas.muralE')->with(array('escolas' => $escolas, 'posts_A' => $posts_aluno, 'posts_D' => $posts_diretor ,'Sturmas' => $Sturmas, 'eid' => $eid, 'turmas' => $turmas));
     }
 
-    public function visuturmas($eid, $tid, $Smaterias = null)
+    public function visuturmas($eid, $tid)
     {
         $escolas = Escolas::find($eid);
         $turmas = Turmas::find($tid);
-        return view('Paginas.Turmas.turmas')->with(array('escolas' => $escolas, 'turmas' => $turmas, 'Smaterias' => $Smaterias));
+
+        $materias = $turmas->Materias;
+        foreach($materias as $materia){
+            $professor_obj = User::find($materia->professor);
+            $materia->profname = $professor_obj->name;
+        }
+        return view('Paginas.Turmas.turmas')->with(array('materias' => $materias, 'escolas' => $escolas, 'turmas' => $turmas));
+    }
+
+
+    public function showmaterias($eid, $tid, $mid){
+        $escolas = Escolas::find($eid);
+        $turmas = Turmas::find($tid);
+        $materias = Materias::find($mid);
+
+
+        
+        $posts_diretor = posts_materias::with('post.user', 'post.anexos')->where('id_materia', '=', $mid)
+        ->whereHas('post.user', function($q){
+            $q->where('cargo', '=', 'Diretor');
+        })
+        ->orderBy('created_at', 'DESC')->paginate(5, ['*'], 'posts_D');
+
+        $posts_aluno = posts_materias::with('post.user', 'post.anexos')->where('id_materia', '=', $mid)
+        ->whereHas('post.user', function($q){
+            $q->where('cargo', '=', 'Aluno');
+        })
+        ->orderBy('created_at', 'DESC')->paginate(5, ['*'], 'posts_A');
+
+        return view('Paginas.Materias.materias')->with(array( 'posts_A' => $posts_aluno, 'posts_D' => $posts_diretor, 'materias' => $materias, 'escolas' => $escolas, 'turmas' => $turmas));
     }
 }
