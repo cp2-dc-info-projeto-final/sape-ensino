@@ -92,7 +92,7 @@ class ControladorPaginas extends Controller
         
         $posts_diretor = posts_materias::with('post.user', 'post.anexos')->where('id_materia', '=', $mid)
         ->whereHas('post.user', function($q){
-            $q->where('cargo', '=', 'Diretor');
+            $q->where('cargo', '=', 'Professor');
         })
         ->orderBy('created_at', 'DESC')->paginate(5, ['*'], 'posts_D');
 

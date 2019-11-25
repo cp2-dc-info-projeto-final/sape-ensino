@@ -52,4 +52,39 @@ class ControllerPosts extends Controller
         return back()->with('success', 'Aviso criado com sucesso!');;
     }
 
+    public function insertM(PostRequest $request, $mid){
+
+        $validated = $request->validated();
+
+        $new_post = new Posts;
+
+        $new_post->titulo = $validated['titulopub'];
+        $new_post->text = $validated['textopub'];
+        $new_post->dono = Auth::user()->id;
+
+        $new_post->save();
+
+        $posts_materia = new posts_materia;
+
+        $posts_escola->id_post = $new_post->id;
+        $posts_escola->id_materia = $mid;
+
+        $posts_escola->save();
+
+       if($request->hasFile('files'))
+        {
+           foreach($request->file('files') as $file)
+           {
+               $anexo = new anexos;
+               $name = time().'.'.$file->getClientOriginalName();
+               $file->storeAs('post_files', $name);  
+               $anexo->dir = $name;
+               $anexo->id_post = $new_post->id;
+               $anexo->save();
+           }
+        }
+
+        return back()->with('success', 'Aviso criado com sucesso!');;
+    }
+
 }

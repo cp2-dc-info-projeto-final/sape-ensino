@@ -40,6 +40,7 @@
                 Route::get('escolas', 'ControladorPaginas@showescolas')->name('Sescolas');
                 Route::get('perfil/{userid?}', 'ControladorPaginas@showperfil')->name('perfil');
                 Route::get('turmas/materias/{eid}/{tid}/{mid}', 'ControladorPaginas@showmaterias')->name('showmaterias');
+
         
                 //ControladorPerfil
                 Route::patch('perfil', 'ControladorPerfil@update')->name('editar'); //EDITAR PERFIL
@@ -50,6 +51,7 @@
 
                 //ControladorPosts
                 Route::post('escolas/mural/{eid}', 'ControllerPosts@insert')->name('newpost');
+                Route::poost('turmas/materias/{mid}', 'ControllerPosts@insertM')->name('newpostM');
 
 
 
