@@ -51,7 +51,7 @@
 
                 //ControladorPosts
                 Route::post('escolas/mural/{eid}', 'ControllerPosts@insert')->name('newpost');
-                Route::poost('turmas/materias/{mid}', 'ControllerPosts@insertM')->name('newpostM');
+                Route::post('turmas/materias/{mid}', 'ControllerPosts@insertM')->name('newpostM');
 
 
 
