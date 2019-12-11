@@ -18,7 +18,7 @@ class CreateAnexosTable extends Migration
             $table->string('dir');
 
             $table->integer('id_post')->unsigned();
-            $table->foreign('id_post')->references('id')->on('posts');
+            $table->foreign('id_post')->references('id')->on('posts')->onDelete('cascade');
 
             $table->timestamps();
         });

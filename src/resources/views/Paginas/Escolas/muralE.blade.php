@@ -116,7 +116,13 @@
                                         </div>
 
                                         @if(Auth::user()->cargo == "Diretor")
-                                            <button class="btn ml-auto" type="button" data-target=""><i class="text-danger" data-feather="trash"></i></button>
+                                            <form method="post" action="{{route('deletepost')}}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input type="hidden" name="id_post" value="{{$pos->id}}">
+                                            <input type="submit" id="submit_hidden" style="display: none;">
+                                            </form>
+                                            <button class="btn ml-auto" type="button" data-target="" onclick="document.getElementById('submit_hidden').click();"><i class="text-danger" data-feather="trash"></i></button>
                                         @endif
                                         
                                     </div>

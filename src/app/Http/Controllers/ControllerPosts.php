@@ -87,4 +87,12 @@ class ControllerPosts extends Controller
         return back()->with('success', 'Aviso criado com sucesso!');;
     }
 
+
+    public function delete(Request $request){
+        $post_id = $request['id_post'];
+        $post = Posts::find($post_id)->delete();
+
+        return back()->with('success', 'Post deletado com sucesso!');
+    }
+
 }
