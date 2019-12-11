@@ -14,7 +14,6 @@
 
         //DIRETOR ROUTES
         Route::group(['middleware' => 'roles:Diretor'], function(){
-                Route::delete('deletepost', 'ControllerPosts@delete')->name('deletepost');
                 Route::post('regEscola', 'ControladorEscola@insert')->name('regEscola');
 
         });
@@ -52,7 +51,7 @@
                 //ControladorPosts
                 Route::post('escolas/mural/{eid}', 'ControllerPosts@insert')->name('newpost');
                 Route::post('turmas/materias/{mid}', 'ControllerPosts@insertM')->name('newpostM');
-
+                Route::delete('deletepost', 'ControllerPosts@delete')->name('deletepost');
 
 
                 //ControladorEscolas

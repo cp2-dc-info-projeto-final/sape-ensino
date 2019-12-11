@@ -184,8 +184,14 @@
                                             <div class="h5 m-0"><a href="{{route('perfil', ['userid' => $pos->user->id])}}">{{$pos->user->name}}</a></div>
                                         </div>
                                     </div>
-                                        @if(Auth::user()->cargo == "Diretor")
-                                        <button class="btn ml-auto" type="button" data-target=""><i class="text-danger" data-feather="trash"></i></button>
+                                        @if(Auth::user()->cargo == "Diretor" || Auth::user()->id == $pos->dono)
+                                        <form method="post" action="{{route('deletepost')}}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <input type="hidden" name="id_post" value="{{$pos->id}}">
+                                                <input type="submit" id="submit_hidden2" style="display: none;">
+                                        </form>
+                                        <button class="btn ml-auto" type="button" data-target="" onclick="document.getElementById('submit_hidden2').click();"><i class="text-danger" data-feather="trash"></i></button>
                                         @endif
                                     
                                 </div>
